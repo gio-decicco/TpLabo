@@ -21,7 +21,8 @@ constraint pk_tipo_cliente primary key (idTipoCliente))
 
 create table Auto_Planes
 (idAutoPlan int identity (1,1),
-descripcion varchar(50),
+cuotas int,
+interes int
 constraint pk_auto_plan primary key(idAutoPlan))
 
 
@@ -33,23 +34,21 @@ calle varchar(50),
 altura int,
 idBarrio int,
 idTipoCliente int,
-idAutoPlan int,
 constraint pk_cliente primary key (idCliente),
 constraint fk_barrio_cliente foreign key (idBarrio) references Barrios (idBarrio),
-constraint fk_tipo_cliente foreign key (idTipoCliente) references Tipos_Clientes (idTipoCliente),
-constraint fk_plan_cliente foreign key (idAutoPlan) references Auto_Planes(idAutoPlan))
+constraint fk_tipo_cliente foreign key (idTipoCliente) references Tipos_Clientes (idTipoCliente))
 
 create table Facturas
 (nroFactura int identity (1,1),
 idCliente int,
 fecha datetime,
 descuento int,
-interes int,
-cuotas int,
+idAutoPlan int,
 idFormaPago int,
  constraint pk_facturas primary key (nroFactura),
  constraint fk_cliente_factura foreign key (idCliente) references Clientes(idCliente),
- constraint fk_forma_pago_Factura foreign key (idFormaPago) references Formas_Pago (idFormaPago))
+ constraint fk_forma_pago_Factura foreign key (idFormaPago) references Formas_Pago (idFormaPago),
+ constraint fk_auto_plan_factura foreign key (idAutoPlan) references Auto_Planes (idAutoPlan))
 
  create table Pedidos
  (nroPedido int identity (1,1),
@@ -117,3 +116,8 @@ insert into Formas_Pago values ('Débito')
 insert into Formas_Pago values ('Efectivo')
 insert into Formas_Pago values ('Cheque')
 insert into Formas_Pago values ('Transferencia')
+
+insert into Tipos_Clientes values ('Consumidor Final')
+insert into Tipos_Clientes values ('Empresa')
+insert into Tipos_Clientes values ('Concesionario')
+insert into Tipos_Clientes values ('Casa de Repuestos')
