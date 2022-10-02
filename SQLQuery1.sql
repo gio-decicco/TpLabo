@@ -5,7 +5,7 @@ go
 
 
 create table Barrios
-(idBarrio int,
+(idBarrio int identity (1,1),
 barrio varchar(50),
 constraint pk_barrio primary key (idBarrio))
 
@@ -15,18 +15,18 @@ formaPago varchar(50),
 constraint pk_forma_pago primary key (idFormaPago))
 
 create table Tipos_Clientes
-(idTipoCliente int,
+(idTipoCliente int identity (1,1),
 descripcion varchar(50),
 constraint pk_tipo_cliente primary key (idTipoCliente))
 
 create table Auto_Planes
-(idAutoPlan int,
+(idAutoPlan int identity (1,1),
 descripcion varchar(50),
 constraint pk_auto_plan primary key(idAutoPlan))
 
 
 create table Clientes
-(idCliente int,
+(idCliente int identity (1,1),
 nomCliente varchar(50),
 apeCliente varchar(50),
 calle varchar(50),
@@ -40,7 +40,7 @@ constraint fk_tipo_cliente foreign key (idTipoCliente) references Tipos_Clientes
 constraint fk_plan_cliente foreign key (idAutoPlan) references Auto_Planes(idAutoPlan))
 
 create table Facturas
-(nroFactura int,
+(nroFactura int identity (1,1),
 idCliente int,
 fecha datetime,
 descuento int,
@@ -52,7 +52,7 @@ idFormaPago int,
  constraint fk_forma_pago_Factura foreign key (idFormaPago) references Formas_Pago (idFormaPago))
 
  create table Pedidos
- (nroPedido int,
+ (nroPedido int identity (1,1),
  fechaOrden datetime,
  fechaPedido datetime,
  idCliente int,
@@ -60,12 +60,12 @@ idFormaPago int,
  constraint fk_cliente_pedido foreign key (idCliente) references Clientes(idCliente))
 
  create table Tipos_Productos
- (idTipoProducto int,
+ (idTipoProducto int identity (1,1),
  descripcion varchar(50),
  constraint pk_tipo_producto primary key (idTipoProducto))
 
  create table Productos 
- (idProducto int,
+ (idProducto int identity (1,1),
  descripcion varchar(50),
  stock_min int,
  stock_actual int,
@@ -75,7 +75,7 @@ idFormaPago int,
  constraint fk_tipo_prod foreign key (idTipoProducto) references Tipos_Productos (idTipoProducto))
 
  create table Historial
- (idHistorial int,
+ (idHistorial int identity (1,1),
  idProducto int,
  precio money,
  fecha datetime,
