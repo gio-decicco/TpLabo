@@ -110,6 +110,7 @@ insert into Barrios values ('Micro Centro')
 insert into Barrios values ('Argüello')
 insert into Barrios values ('Zona Norte')
 insert into Barrios values ('Chateau')
+insert into Barrios values ('Hernando') 
 
 insert into Formas_Pago values ('Crédito')
 insert into Formas_Pago values ('Débito')
