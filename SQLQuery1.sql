@@ -10,7 +10,7 @@ barrio varchar(50),
 constraint pk_barrio primary key (idBarrio))
 
 create table Formas_Pago
-(idFormaPago int,
+(idFormaPago int identity (1,1),
 formaPago varchar(50), 
 constraint pk_forma_pago primary key (idFormaPago))
 
@@ -100,3 +100,20 @@ idFormaPago int,
 constraint pk_detalle_pedidos primary key (idDetallePedido, nroPedido),
 constraint fk_pedido_detalle foreign key (nroPedido) references Pedidos(nroPedido),
 constraint fk_detalle_producto foreign key(idProducto) references Productos(idProducto))
+
+insert into Tipos_Productos values ('Automóvil')
+insert into Tipos_Productos values ('Autoparte')
+
+insert into Barrios values ('Nueva Córdoba')
+insert into Barrios values ('Alta Córdoba')
+insert into Barrios values ('Poeta Lugones')
+insert into Barrios values ('Micro Centro')
+insert into Barrios values ('Argüello')
+insert into Barrios values ('Zona Norte')
+insert into Barrios values ('Chateau')
+
+insert into Formas_Pago values ('Crédito')
+insert into Formas_Pago values ('Débito')
+insert into Formas_Pago values ('Efectivo')
+insert into Formas_Pago values ('Cheque')
+insert into Formas_Pago values ('Transferencia')
