@@ -8,5 +8,6 @@ namespace TpLaboAutomóviles.Dominio
 {
     internal class Detalle_Facturas
     {
+
     }
 }
