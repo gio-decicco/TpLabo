@@ -19,13 +19,20 @@ namespace TpLaboAutomóviles.Dominio
 
         public Factura()
         {
-            this.Cliente = new Cliente();
             lDetalles = new List<Detalle_Facturas>();
             Fecha = DateTime.Today;
             Descuento = 0;
             Interes = 0;
             Cuotas = 0;
             FormaPago = 0;
+        }
+        public void AgregarDetalle(Detalle_Facturas detalle)
+        {
+            lDetalles.Add(detalle);
+        }
+        public void QuitarDetalle(int indice)
+        {
+            lDetalles.RemoveAt(indice);
         }
     }
 }

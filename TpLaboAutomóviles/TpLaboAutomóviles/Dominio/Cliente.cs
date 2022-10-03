@@ -15,5 +15,6 @@ namespace TpLaboAutomóviles.Dominio
         private int Altura { get; set; }
         private int IdBarrio { get; set; }
         private int IdAutoplan { get; set; }
+        private int IdTipoCliente { get; set; }
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace TpLaboAutomóviles.Dominio
 {
-    internal class Detalle_Facturas
+    internal class Detalle_Pedido
     {
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }
-        public double PrecioUnitario { get; set; }
     }
 }
