@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using TpLaboAutomóviles.Datos.Interfaces;
@@ -22,23 +23,101 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spInsertarProducto";
-                cmd.Parameters.AddWithValue("@descripcion", producto.);
+                cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
+                cmd.Parameters.AddWithValue("@stock_min", producto.Stock_Min);
+                cmd.Parameters.AddWithValue("@stock_actual", producto.Stock_Actual);
+                cmd.Parameters.AddWithValue("@precio", producto.Precio);
+                cmd.Parameters.AddWithValue("@idTipoProducto", producto.IdTipoProducto);
+                cmd.ExecuteNonQuery();
+                t.Commit();
             }
+            catch (Exception)
+            {
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                if(cnn.State == ConnectionState.Open)
+                {
+                    Desconectar();
+                }
+            }
+            return ok;
         }
 
         public bool Delete(Producto producto)
         {
-            throw new NotImplementedException();
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                Conectar();
+                t = cnn.BeginTransaction();
+                cmd.Transaction = t;
+                cmd.CommandText = "spBorrarProducto";
+                cmd.Parameters.AddWithValue("@idProducto", producto.IdProducto);
+                cmd.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception)
+            {
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    Desconectar();
+                }
+            }
+            return ok;
         }
 
         public DataTable Read(int idTipoProducto)
         {
-            throw new NotImplementedException();
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarProductos";
+            cmd.Parameters.AddWithValue("@idTipoProductos", idTipoProducto);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
         }
 
         public bool Update(Producto producto)
         {
-            throw new NotImplementedException();
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                Conectar();
+                t = cnn.BeginTransaction();
+                cmd.Transaction = t;
+                cmd.CommandText = "spActualizarProducto";
+                cmd.Parameters.AddWithValue("@idProducto", producto.IdProducto);
+                cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
+                cmd.Parameters.AddWithValue("@stock_min", producto.Stock_Min);
+                cmd.Parameters.AddWithValue("@stock_actual", producto.Stock_Actual);
+                cmd.Parameters.AddWithValue("@precio", producto.Precio);
+                cmd.Parameters.AddWithValue("@idTipoProducto", producto.IdTipoProducto);
+                cmd.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception)
+            {
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    Desconectar();
+                }
+            }
+            return ok;
         }
     }
 }

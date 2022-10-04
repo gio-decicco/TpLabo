@@ -110,7 +110,8 @@ insert into Barrios values ('Micro Centro')
 insert into Barrios values ('Argüello')
 insert into Barrios values ('Zona Norte')
 insert into Barrios values ('Chateau')
-insert into Barrios values ('Hernando') 
+insert into Barrios values ('Hernando')
+insert into Barrios values ('Alberdi')
 
 insert into Formas_Pago values ('Crédito')
 insert into Formas_Pago values ('Débito')
@@ -122,3 +123,59 @@ insert into Tipos_Clientes values ('Consumidor Final')
 insert into Tipos_Clientes values ('Empresa')
 insert into Tipos_Clientes values ('Concesionario')
 insert into Tipos_Clientes values ('Casa de Repuestos')
+
+create procedure spInsertarFacturaMaestro
+@idCliente int,
+@fecha datetime,
+@descuento int,
+@idFormaPago int,
+@idAutoPlan int,
+@id int output
+as
+insert into Facturas values (@idCliente, @fecha, @descuento, @idFormaPago, @idAutoPlan)
+set @id = SCOPE_IDENTITY();
+
+create procedure spInsertarFacturaDetalle
+@nroFactura int,
+@idDetalleFactura int,
+@idProducto int,
+@cantidad int,
+@pre_unitario money
+as
+insert into Detalles_Factura values (@idDetalleFactura, @nroFactura, @idProducto, @cantidad, @pre_unitario)
+
+create procedure SpInsertarPedidoMaestro
+@id int output,
+@fechaOrden datetime,
+@fechaPedido datetime,
+@idCliente int
+as 
+insert into Pedidos values (@fechaOrden, @fechaPedido, @idCliente)
+set @id = SCOPE_IDENTITY();
+
+create procedure SpInsertarPedidoDetalle
+@nroPedido int,
+@idDetallePedido int,
+@idProducto int,
+@cantidad int
+as
+insert into Detalles_Pedidos values (@idDetallePedido, @nroPedido, @idProducto, @cantidad)
+
+create procedure SpInsertarCliente
+@nomCliente varchar (50),
+@apeCliente varchar (50),
+@calle varchar(50),
+@altura int,
+@idBarrio int,
+@idTipoCliente int
+as
+insert into Clientes values (@nomCliente,@apeCliente,@calle,@altura,@idBarrio,@idTipoCliente)
+
+create procedure spInsertarProducto
+@descripcion varchar (50),
+@stock_min int,
+@stock_actual int,
+@precio money,
+@idTipoProducto int
+as
+insert into Productos values (@descripcion,@stock_min,@stock_actual,@precio,@idTipoProducto)

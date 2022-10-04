@@ -11,7 +11,7 @@ namespace TpLaboAutomóviles.Dominio
         public int IdProducto { get; set; }
         public string Descripcion { get; set; }
         public int Stock_Min { get; set; }
-        public int Stock_Max { get; set; }
+        public int Stock_Actual { get; set; }
         public double Precio { get; set; }
         public int IdTipoProducto { get; set; }
     }

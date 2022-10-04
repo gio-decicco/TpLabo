@@ -8,23 +8,21 @@ namespace TpLaboAutomóviles.Dominio
 {
     internal class Factura
     {
-        private List<Detalle_Facturas> lDetalles;
-        private int IdFactura { get; set; }
-        private Cliente Cliente { get; set; }
-        private DateTime Fecha { get; set; }
-        private int Descuento { get; set; }
-        private int Interes { get; set; }
-        private int Cuotas { get; set; }
-        private int FormaPago { get; set; }
+        public List<Detalle_Facturas> lDetalles;
+        public int IdFactura { get; set; }
+        public Cliente Cliente { get; set; }
+        public DateTime Fecha { get; set; }
+        public int Descuento { get; set; }
+        public int FormaPago { get; set; }
+        public int IdAutoplan { get; set; }
 
         public Factura()
         {
             lDetalles = new List<Detalle_Facturas>();
             Fecha = DateTime.Today;
             Descuento = 0;
-            Interes = 0;
-            Cuotas = 0;
             FormaPago = 0;
+            IdAutoplan = 0;
         }
         public void AgregarDetalle(Detalle_Facturas detalle)
         {
