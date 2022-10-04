@@ -90,7 +90,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarClientes";
-            cmd.Parameters.AddWithValue("@idTipoCliente", idTipoCliente);
+            cmd.Parameters.AddWithValue("@id", idTipoCliente);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
             return tabla;

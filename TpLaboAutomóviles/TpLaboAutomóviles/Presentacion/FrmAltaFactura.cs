@@ -29,6 +29,25 @@ namespace TpLaboAutomóviles.Presentacion
         private void FrmAltaFactura_Load(object sender, EventArgs e)
         {
             cargarComboTipoCliente();
+            cargarComboTipoProducto();
+            cargarComboFormasPago();
+            cargarComboAutoPlan();
+        }
+
+        private void cargarComboAutoPlan()
+        {
+            CboAutoPlan.DataSource = DaoFacturas.Instancia().ReadAutoPlan();
+            CboAutoPlan.ValueMember = "idAutoPlan";
+            CboAutoPlan.DisplayMember = "descripcion";
+            CboAutoPlan.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cargarComboFormasPago()
+        {
+            CboFormaPago.DataSource = DaoFacturas.Instancia().ReadFormasPago();
+            CboFormaPago.ValueMember = "idFormaPago";
+            CboFormaPago.DisplayMember = "formaPago";
+            CboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cargarComboTipoCliente()
@@ -39,12 +58,39 @@ namespace TpLaboAutomóviles.Presentacion
             CboTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarComboCliente()
+        private void cargarComboCliente(int id)
         {
-            CboClientes.DataSource = DaoClientes.Instancia().Read(Convert.ToInt32(CboTipoCliente.SelectedValue));
+            CboClientes.DataSource = DaoClientes.Instancia().Read(id);
             CboClientes.ValueMember = "idCliente";
             CboClientes.DisplayMember = "nomCliente";
             CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void CboTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView item = (DataRowView)CboTipoCliente.SelectedItem;
+            cargarComboCliente(Convert.ToInt32(item[0]));
+        }
+        private void cargarComboTipoProducto()
+        {
+            CboTipoProducto.DataSource = DaoProductos.Instancia().ReadTiposProducto();
+            CboTipoProducto.ValueMember = "idTipoProducto";
+            CboTipoProducto.DisplayMember = "descripcion";
+            CboTipoProducto.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void CboTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView item = (DataRowView)CboTipoProducto.SelectedItem;
+            cargarComboTipoProducto(Convert.ToInt32(item[0]));
+        }
+
+        private void cargarComboTipoProducto(int v)
+        {
+            CboProductos.DataSource = DaoProductos.Instancia().Read(v);
+            CboProductos.ValueMember = "idProducto";
+            CboProductos.DisplayMember = "descripcion";
+            CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

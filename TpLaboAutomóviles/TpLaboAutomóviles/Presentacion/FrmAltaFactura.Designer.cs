@@ -36,8 +36,8 @@
             this.GroupFactura = new System.Windows.Forms.GroupBox();
             this.GroupDetalles = new System.Windows.Forms.GroupBox();
             this.DtgDetalles = new System.Windows.Forms.DataGridView();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.CboProductos = new System.Windows.Forms.ComboBox();
+            this.CboTipoProducto = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,6 +82,7 @@
             // TxtDescuento
             // 
             this.TxtDescuento.Location = new System.Drawing.Point(211, 165);
+            this.TxtDescuento.MaxLength = 2;
             this.TxtDescuento.Name = "TxtDescuento";
             this.TxtDescuento.Size = new System.Drawing.Size(100, 20);
             this.TxtDescuento.TabIndex = 2;
@@ -134,8 +135,8 @@
             this.GroupDetalles.Controls.Add(this.label7);
             this.GroupDetalles.Controls.Add(this.textBox2);
             this.GroupDetalles.Controls.Add(this.label6);
-            this.GroupDetalles.Controls.Add(this.comboBox5);
-            this.GroupDetalles.Controls.Add(this.comboBox4);
+            this.GroupDetalles.Controls.Add(this.CboTipoProducto);
+            this.GroupDetalles.Controls.Add(this.CboProductos);
             this.GroupDetalles.Controls.Add(this.DtgDetalles);
             this.GroupDetalles.Location = new System.Drawing.Point(12, 247);
             this.GroupDetalles.Name = "GroupDetalles";
@@ -161,21 +162,22 @@
             this.DtgDetalles.TabIndex = 0;
             this.DtgDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // comboBox4
+            // CboProductos
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(341, 28);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 1;
+            this.CboProductos.FormattingEnabled = true;
+            this.CboProductos.Location = new System.Drawing.Point(341, 28);
+            this.CboProductos.Name = "CboProductos";
+            this.CboProductos.Size = new System.Drawing.Size(121, 21);
+            this.CboProductos.TabIndex = 1;
             // 
-            // comboBox5
+            // CboTipoProducto
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(114, 28);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 2;
+            this.CboTipoProducto.FormattingEnabled = true;
+            this.CboTipoProducto.Location = new System.Drawing.Point(114, 28);
+            this.CboTipoProducto.Name = "CboTipoProducto";
+            this.CboTipoProducto.Size = new System.Drawing.Size(121, 21);
+            this.CboTipoProducto.TabIndex = 2;
+            this.CboTipoProducto.SelectedIndexChanged += new System.EventHandler(this.CboTipoProducto_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -346,8 +348,9 @@
             this.CboTipoCliente.FormattingEnabled = true;
             this.CboTipoCliente.Location = new System.Drawing.Point(211, 76);
             this.CboTipoCliente.Name = "CboTipoCliente";
-            this.CboTipoCliente.Size = new System.Drawing.Size(100, 21);
+            this.CboTipoCliente.Size = new System.Drawing.Size(124, 21);
             this.CboTipoCliente.TabIndex = 13;
+            this.CboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.CboTipoCliente_SelectedIndexChanged);
             // 
             // FrmAltaFactura
             // 
@@ -379,8 +382,8 @@
         private System.Windows.Forms.GroupBox GroupDetalles;
         private System.Windows.Forms.DataGridView DtgDetalles;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox CboTipoProducto;
+        private System.Windows.Forms.ComboBox CboProductos;
         private System.Windows.Forms.Label LblNroFactura;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

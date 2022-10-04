@@ -162,5 +162,23 @@ namespace TpLaboAutomóviles.Datos.Concretas
             }
             return ok;
         }
+        public DataTable ReadFormasPago()
+        {
+            DataTable dt = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarFormasPago";
+            dt.Load(cmd.ExecuteReader());
+            Desconectar();
+            return dt;
+        }
+        public DataTable ReadAutoPlan()
+        {
+            DataTable dt = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarAutoPlan";
+            dt.Load(cmd.ExecuteReader());
+            Desconectar();
+            return dt;
+        }
     }
 }
