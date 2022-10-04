@@ -106,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FrmAltaFactura.resx">
+      <DependentUpon>FrmAltaFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAltaPedido.resx">
       <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </EmbeddedResource>
