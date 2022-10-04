@@ -12,6 +12,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
 {
     internal class DaoFacturas : accesoDatos, IDaoFacturas
     {
+        private static DaoFacturas instancia;
+        public static DaoFacturas Instancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new DaoFacturas();
+            }
+            return instancia;
+        }
         public bool Create(Factura factura)
         {
             bool ok = true;
@@ -22,7 +31,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spInsertarFacturaMaestro";
-                cmd.Parameters.AddWithValue("@idCliente", factura.Cliente.IdCliente);
+                cmd.Parameters.AddWithValue("@idCliente", factura.IdCliente);
                 cmd.Parameters.AddWithValue("@fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@descuento", factura.Descuento);
                 cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);
@@ -116,7 +125,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 cmd.Transaction = t;
                 cmd.CommandText = "spActualizarFacturaMaestro";
                 cmd.Parameters.AddWithValue("@nroFactura", factura.IdFactura);
-                cmd.Parameters.AddWithValue("@idCliente", factura.Cliente.IdCliente);
+                cmd.Parameters.AddWithValue("@idCliente", factura.IdCliente);
                 cmd.Parameters.AddWithValue("@fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@descuento", factura.Descuento);
                 cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);

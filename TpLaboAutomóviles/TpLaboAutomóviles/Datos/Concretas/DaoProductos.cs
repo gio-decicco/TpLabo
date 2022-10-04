@@ -13,6 +13,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
 {
     internal class DaoProductos : accesoDatos, IDaoProductos
     {
+        private static DaoProductos instancia;
+        public static DaoProductos Instancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new DaoProductos();
+            }
+            return instancia;
+        }
         public bool Create(Producto producto)
         {
             bool ok = true;
@@ -81,6 +90,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Conectar();
             cmd.CommandText = "spConsultarProductos";
             cmd.Parameters.AddWithValue("@idTipoProductos", idTipoProducto);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+        public DataTable ReadTiposProducto()
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarTipoProducto";
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
             return tabla;

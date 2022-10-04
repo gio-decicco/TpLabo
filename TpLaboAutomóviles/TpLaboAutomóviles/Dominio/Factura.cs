@@ -10,7 +10,7 @@ namespace TpLaboAutomóviles.Dominio
     {
         public List<Detalle_Facturas> lDetalles;
         public int IdFactura { get; set; }
-        public Cliente Cliente { get; set; }
+        public int IdCliente { get; set; }
         public DateTime Fecha { get; set; }
         public int Descuento { get; set; }
         public int FormaPago { get; set; }

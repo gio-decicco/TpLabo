@@ -13,6 +13,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
 {
     internal class DaoPedidos : accesoDatos, IDaoPedidos
     {
+        private static DaoPedidos instancia;
+        public static DaoPedidos Instancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new DaoPedidos();
+            }
+            return instancia;
+        }
         public bool Create(Pedido pedido)
         {
             bool ok = true;

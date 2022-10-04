@@ -179,3 +179,11 @@ create procedure spInsertarProducto
 @idTipoProducto int
 as
 insert into Productos values (@descripcion,@stock_min,@stock_actual,@precio,@idTipoProducto)
+
+create procedure spConsultarTipoProducto
+as
+select * from Tipos_Productos
+
+create procedure spConsultarTipoCliente
+as
+select * from Tipos_Clientes

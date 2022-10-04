@@ -13,6 +13,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
 {
     internal class DaoClientes : accesoDatos,IDaoClientes
     {
+        private static DaoClientes instancia;
+        public static DaoClientes Instancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new DaoClientes();
+            }
+            return instancia;
+        }
         public bool Create(Cliente cliente)
         {
             bool ok = true;
@@ -86,7 +95,16 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
+        public DataTable ReadTipoCliente()
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarTipoCliente";
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
 
+        }
         public bool Update(Cliente cliente)
         {
             bool ok = true;
