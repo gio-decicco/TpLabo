@@ -48,14 +48,14 @@ namespace TpLaboAutomóviles.Presentacion
         }
         private void CargarComboTipoClientes()
         {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
+            cboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
             cboTipoCliente.ValueMember = "idTipoCliente";
             cboTipoCliente.DisplayMember = "descripcion";
         }
         
         private void CargarComboBarrio()
         {
-            cboBarrio.DataSource = oDao.ReadBarrio();
+            cboBarrio.DataSource = DaoClientes.Instancia().ReadBarrios();
             cboBarrio.ValueMember = "idBarrio";
             cboBarrio.DisplayMember = "barrio";
         }
