@@ -22,3 +22,6 @@ C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóvile
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.exe
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.pdb
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaPedido.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaProducto.resources
