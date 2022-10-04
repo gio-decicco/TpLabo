@@ -173,6 +173,7 @@
             this.Controls.Add(this.lblTituloAltaProd);
             this.Name = "FrmAltaProducto";
             this.Text = "FrmAltaProducto";
+            this.Load += new System.EventHandler(this.FrmAltaProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -85,6 +85,15 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
+        public DataTable ReadTiposProducto() 
+        { 
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarTipoProducto";
+            tabla.Load(cmd.ExecuteReader()); 
+            Desconectar();
+            return tabla;
+        }
 
         public bool Update(Producto producto)
         {

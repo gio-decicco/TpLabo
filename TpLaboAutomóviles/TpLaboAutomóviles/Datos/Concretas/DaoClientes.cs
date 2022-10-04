@@ -86,6 +86,33 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
+        public DataTable ReadTipoClientes()
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarTipoCliente";
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+        public DataTable ReadAutoPlan()
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarAutoplan";
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+        public DataTable ReadBarrios()
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarBarrio";
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
 
         public bool Update(Cliente cliente)
         {

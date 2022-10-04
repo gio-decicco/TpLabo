@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboBarrio = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.txtCalle = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblBarrio = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
@@ -44,24 +44,24 @@
             this.gboNombre = new System.Windows.Forms.GroupBox();
             this.gboDireccion = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboAutoPlan = new System.Windows.Forms.ComboBox();
             this.cboTipoCliente = new System.Windows.Forms.ComboBox();
             this.lblTipoCliente = new System.Windows.Forms.Label();
-            this.gboDatosPersonales = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lblTipoAutoPlan = new System.Windows.Forms.Label();
+            this.gboDatosPersonales = new System.Windows.Forms.GroupBox();
             this.gboNombre.SuspendLayout();
             this.gboDireccion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gboDatosPersonales.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cboBarrio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 26;
+            this.cboBarrio.FormattingEnabled = true;
+            this.cboBarrio.Location = new System.Drawing.Point(115, 91);
+            this.cboBarrio.Name = "cboBarrio";
+            this.cboBarrio.Size = new System.Drawing.Size(166, 21);
+            this.cboBarrio.TabIndex = 26;
             // 
             // btnCancelar
             // 
@@ -80,34 +80,35 @@
             this.btnAceptar.TabIndex = 24;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // textBox4
+            // txtAltura
             // 
-            this.textBox4.Location = new System.Drawing.Point(115, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 20);
-            this.textBox4.TabIndex = 23;
+            this.txtAltura.Location = new System.Drawing.Point(115, 56);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(166, 20);
+            this.txtAltura.TabIndex = 23;
             // 
-            // textBox3
+            // txtCalle
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 20);
-            this.textBox3.TabIndex = 22;
+            this.txtCalle.Location = new System.Drawing.Point(115, 19);
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Size = new System.Drawing.Size(166, 20);
+            this.txtCalle.TabIndex = 22;
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 21;
+            this.txtApellido.Location = new System.Drawing.Point(94, 54);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(160, 20);
+            this.txtApellido.TabIndex = 21;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtNombre.Location = new System.Drawing.Point(94, 18);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(160, 20);
+            this.txtNombre.TabIndex = 20;
             // 
             // lblBarrio
             // 
@@ -167,9 +168,9 @@
             // gboNombre
             // 
             this.gboNombre.Controls.Add(this.lblNombre);
-            this.gboNombre.Controls.Add(this.textBox2);
+            this.gboNombre.Controls.Add(this.txtApellido);
             this.gboNombre.Controls.Add(this.lblPrecio);
-            this.gboNombre.Controls.Add(this.textBox1);
+            this.gboNombre.Controls.Add(this.txtNombre);
             this.gboNombre.Location = new System.Drawing.Point(9, 19);
             this.gboNombre.Name = "gboNombre";
             this.gboNombre.Size = new System.Drawing.Size(322, 120);
@@ -178,12 +179,12 @@
             // 
             // gboDireccion
             // 
-            this.gboDireccion.Controls.Add(this.comboBox1);
+            this.gboDireccion.Controls.Add(this.cboBarrio);
             this.gboDireccion.Controls.Add(this.lblCalle);
             this.gboDireccion.Controls.Add(this.lblAltura);
-            this.gboDireccion.Controls.Add(this.textBox3);
+            this.gboDireccion.Controls.Add(this.txtCalle);
             this.gboDireccion.Controls.Add(this.lblBarrio);
-            this.gboDireccion.Controls.Add(this.textBox4);
+            this.gboDireccion.Controls.Add(this.txtAltura);
             this.gboDireccion.Location = new System.Drawing.Point(346, 19);
             this.gboDireccion.Name = "gboDireccion";
             this.gboDireccion.Size = new System.Drawing.Size(313, 120);
@@ -192,7 +193,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cboAutoPlan);
             this.groupBox1.Controls.Add(this.cboTipoCliente);
             this.groupBox1.Controls.Add(this.lblTipoCliente);
             this.groupBox1.Controls.Add(this.lblTipoAutoPlan);
@@ -201,6 +202,14 @@
             this.groupBox1.Size = new System.Drawing.Size(665, 70);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
+            // 
+            // cboAutoPlan
+            // 
+            this.cboAutoPlan.FormattingEnabled = true;
+            this.cboAutoPlan.Location = new System.Drawing.Point(432, 29);
+            this.cboAutoPlan.Name = "cboAutoPlan";
+            this.cboAutoPlan.Size = new System.Drawing.Size(191, 21);
+            this.cboAutoPlan.TabIndex = 27;
             // 
             // cboTipoCliente
             // 
@@ -219,6 +228,15 @@
             this.lblTipoCliente.TabIndex = 16;
             this.lblTipoCliente.Text = "Tipo de Cliente";
             // 
+            // lblTipoAutoPlan
+            // 
+            this.lblTipoAutoPlan.AutoSize = true;
+            this.lblTipoAutoPlan.Location = new System.Drawing.Point(353, 32);
+            this.lblTipoAutoPlan.Name = "lblTipoAutoPlan";
+            this.lblTipoAutoPlan.Size = new System.Drawing.Size(53, 13);
+            this.lblTipoAutoPlan.TabIndex = 19;
+            this.lblTipoAutoPlan.Text = "Auto Plan";
+            // 
             // gboDatosPersonales
             // 
             this.gboDatosPersonales.Controls.Add(this.gboNombre);
@@ -229,23 +247,6 @@
             this.gboDatosPersonales.TabIndex = 27;
             this.gboDatosPersonales.TabStop = false;
             this.gboDatosPersonales.Text = "Datos personales";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(432, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 21);
-            this.comboBox2.TabIndex = 27;
-            // 
-            // lblTipoAutoPlan
-            // 
-            this.lblTipoAutoPlan.AutoSize = true;
-            this.lblTipoAutoPlan.Location = new System.Drawing.Point(353, 32);
-            this.lblTipoAutoPlan.Name = "lblTipoAutoPlan";
-            this.lblTipoAutoPlan.Size = new System.Drawing.Size(53, 13);
-            this.lblTipoAutoPlan.TabIndex = 19;
-            this.lblTipoAutoPlan.Text = "Auto Plan";
             // 
             // FrmAltaCliente
             // 
@@ -259,6 +260,7 @@
             this.Controls.Add(this.gboDatosPersonales);
             this.Name = "FrmAltaCliente";
             this.Text = "FrmAltaCliente";
+            this.Load += new System.EventHandler(this.FrmAltaCliente_Load);
             this.gboNombre.ResumeLayout(false);
             this.gboNombre.PerformLayout();
             this.gboDireccion.ResumeLayout(false);
@@ -273,13 +275,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboBarrio;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.TextBox txtCalle;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblBarrio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblAltura;
@@ -289,7 +291,7 @@
         private System.Windows.Forms.GroupBox gboNombre;
         private System.Windows.Forms.GroupBox gboDireccion;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboAutoPlan;
         private System.Windows.Forms.ComboBox cboTipoCliente;
         private System.Windows.Forms.Label lblTipoCliente;
         private System.Windows.Forms.Label lblTipoAutoPlan;
