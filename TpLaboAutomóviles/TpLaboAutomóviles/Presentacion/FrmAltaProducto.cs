@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Dominio;
+using TpLaboAutomóviles.Datos;
 using TpLaboAutomóviles.Datos.Concretas;
 
 namespace TpLaboAutomóviles.Presentacion
@@ -15,12 +16,10 @@ namespace TpLaboAutomóviles.Presentacion
     public partial class FrmAltaProducto : Form
     {
         Producto p;
-        DaoProductos oDao;
         public FrmAltaProducto()
         {
             InitializeComponent();
             p= new Producto();
-            oDao = new DaoProductos();
             
         }
         
@@ -38,7 +37,7 @@ namespace TpLaboAutomóviles.Presentacion
             p.Stock_Min = Convert.ToInt32(txtStockMinimo.Text);
             p.Stock_Actual=Convert.ToInt32(txtStockActual.Text);
 
-            if (oDao.Create(p))
+            if (DaoProductos.Instancia().Create(p))
             {
                 MessageBox.Show("Su producto ha sido cargado con exito");
                 LimpiarCampos();
@@ -57,7 +56,7 @@ namespace TpLaboAutomóviles.Presentacion
          
         private void CargarCombo()
         {
-            cboTipoProd.DataSource = oDao.ReadTiposProducto();
+            cboTipoProd.DataSource = DaoProductos.Instancia().ReadTiposProducto();
             cboTipoProd.ValueMember= "idTipoProducto";
             cboTipoProd.DisplayMember = "descripcion";
         }

@@ -32,26 +32,17 @@ namespace TpLaboAutomóviles.Presentacion
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             CargarComboTipoClientes();
-            CargarComboAutoPlanes();
             CargarComboBarrio();
         }
         private void CargarComboTipoClientes()
         {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
-            cboTipoCliente.ValueMember = "idTipoCliente";
-            cboTipoCliente.DisplayMember = "descripcion";
-        }
-        private void CargarComboAutoPlanes()
-        {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
+            cboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
             cboTipoCliente.ValueMember = "idTipoCliente";
             cboTipoCliente.DisplayMember = "descripcion";
         }
         private void CargarComboBarrio()
         {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
-            cboTipoCliente.ValueMember = "idTipoCliente";
-            cboTipoCliente.DisplayMember = "descripcion";
+            
         }
     }
 }
