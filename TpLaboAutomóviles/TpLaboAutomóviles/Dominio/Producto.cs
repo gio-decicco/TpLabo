@@ -8,11 +8,11 @@ namespace TpLaboAutomóviles.Dominio
 {
     internal class Producto
     {
-        private int IdProducto { get; set; }
-        private string Descripcion { get; set; }
-        private int Stock_Min { get; set; }
-        private int Stock_Max { get; set; }
-        private double Precio { get; set; }
-        private int IdTipoProducto { get; set; }
+        public int IdProducto { get; set; }
+        public string Descripcion { get; set; }
+        public int Stock_Min { get; set; }
+        public int Stock_Max { get; set; }
+        public double Precio { get; set; }
+        public int IdTipoProducto { get; set; }
     }
 }

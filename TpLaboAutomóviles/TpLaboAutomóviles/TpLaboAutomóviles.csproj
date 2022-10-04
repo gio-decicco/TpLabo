@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\accesoDatos.cs" />
+    <Compile Include="Datos\Base\accesoDatos.cs" />
+    <Compile Include="Datos\Concretas\DaoClientes.cs" />
+    <Compile Include="Datos\Concretas\DaoFacturas.cs" />
+    <Compile Include="Datos\Concretas\DaoPedidos.cs" />
+    <Compile Include="Datos\Concretas\DaoProductos.cs" />
     <Compile Include="Datos\Interfaces\IDaoClientes.cs" />
     <Compile Include="Datos\Interfaces\IDaoFacturas.cs" />
     <Compile Include="Datos\Interfaces\IDaoPedidos.cs" />

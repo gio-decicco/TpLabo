@@ -8,13 +8,12 @@ namespace TpLaboAutomóviles.Dominio
 {
     internal class Cliente
     {
-        private int IdCliente { get; set; }
-        private string Nombre { get; set; }
-        private string Apellido { get; set; }
-        private string Calle { get; set; }
-        private int Altura { get; set; }
-        private int IdBarrio { get; set; }
-        private int IdAutoplan { get; set; }
-        private int IdTipoCliente { get; set; }
+        public int IdCliente { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Calle { get; set; }
+        public int Altura { get; set; }
+        public int IdBarrio { get; set; }
+        public int IdTipoCliente { get; set; }
     }
 }
