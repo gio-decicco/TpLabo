@@ -34,13 +34,13 @@
             this.lblStockMin = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblTipoProd = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDescrpicion = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
+            this.txtStockMinimo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboTipoProd = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTituloAltaProd
@@ -98,33 +98,33 @@
             this.lblTipoProd.TabIndex = 5;
             this.lblTipoProd.Text = "Tipo de producto";
             // 
-            // textBox1
+            // txtDescrpicion
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtDescrpicion.Location = new System.Drawing.Point(119, 62);
+            this.txtDescrpicion.Name = "txtDescrpicion";
+            this.txtDescrpicion.Size = new System.Drawing.Size(166, 20);
+            this.txtDescrpicion.TabIndex = 6;
             // 
-            // textBox2
+            // txtPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtPrecio.Location = new System.Drawing.Point(119, 95);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(166, 20);
+            this.txtPrecio.TabIndex = 7;
             // 
-            // textBox3
+            // txtStockActual
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtStockActual.Location = new System.Drawing.Point(119, 128);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.Size = new System.Drawing.Size(166, 20);
+            this.txtStockActual.TabIndex = 8;
             // 
-            // textBox4
+            // txtStockMinimo
             // 
-            this.textBox4.Location = new System.Drawing.Point(119, 161);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtStockMinimo.Location = new System.Drawing.Point(119, 161);
+            this.txtStockMinimo.Name = "txtStockMinimo";
+            this.txtStockMinimo.Size = new System.Drawing.Size(166, 20);
+            this.txtStockMinimo.TabIndex = 9;
             // 
             // btnAceptar
             // 
@@ -134,6 +134,7 @@
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -144,26 +145,26 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cboTipoProd
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 194);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cboTipoProd.FormattingEnabled = true;
+            this.cboTipoProd.Location = new System.Drawing.Point(119, 194);
+            this.cboTipoProd.Name = "cboTipoProd";
+            this.cboTipoProd.Size = new System.Drawing.Size(166, 21);
+            this.cboTipoProd.TabIndex = 13;
             // 
             // FrmAltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 286);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboTipoProd);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtStockMinimo);
+            this.Controls.Add(this.txtStockActual);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtDescrpicion);
             this.Controls.Add(this.lblTipoProd);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblStockMin);
@@ -185,12 +186,12 @@
         private System.Windows.Forms.Label lblStockMin;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblTipoProd;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDescrpicion;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtStockActual;
+        private System.Windows.Forms.TextBox txtStockMinimo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTipoProd;
     }
 }
