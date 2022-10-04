@@ -17,6 +17,9 @@ namespace TpLaboAutomóviles.Presentacion
             InitializeComponent();
         }
 
-       
+        private void FrmAltaPedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

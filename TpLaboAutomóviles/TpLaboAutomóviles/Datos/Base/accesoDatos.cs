@@ -10,7 +10,7 @@ namespace TpLaboAutomóviles.Datos
 {
     internal class accesoDatos
     {
-        protected SqlConnection cnn = new SqlConnection(Properties.Resources.String1);
+        protected SqlConnection cnn = new SqlConnection(Properties.Resources.CadenaConexion);
         protected SqlCommand cmd = new SqlCommand();
         protected SqlParameter param = new SqlParameter();
 
