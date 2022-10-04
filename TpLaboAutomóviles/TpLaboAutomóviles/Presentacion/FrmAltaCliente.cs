@@ -26,13 +26,24 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            c.Calle = txtCalle.Text;
+            c.Altura = Convert.ToInt32(txtAltura.Text);
+            c.Nombre = txtNombre.Text;
+            c.Apellido=txtApellido.Text;
+            DataRowView item1 = (DataRowView)cboBarrio.SelectedItem;
+            c.IdBarrio = Convert.ToInt32(item1[0]);
+            DataRowView item2 = (DataRowView)cboTipoCliente.SelectedItem;
+            c.IdTipoCliente = Convert.ToInt32(item2[0]);
+            if (oDao.Create(c))
+            {
+                MessageBox.Show("Su cliente ha sido cargado con exito");
+            }
         }
 
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             CargarComboTipoClientes();
-            CargarComboAutoPlanes();
+           
             CargarComboBarrio();
         }
         private void CargarComboTipoClientes()
@@ -41,17 +52,12 @@ namespace TpLaboAutomóviles.Presentacion
             cboTipoCliente.ValueMember = "idTipoCliente";
             cboTipoCliente.DisplayMember = "descripcion";
         }
-        private void CargarComboAutoPlanes()
-        {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
-            cboTipoCliente.ValueMember = "idTipoCliente";
-            cboTipoCliente.DisplayMember = "descripcion";
-        }
+        
         private void CargarComboBarrio()
         {
-            cboTipoCliente.DataSource = oDao.ReadTipoClientes();
-            cboTipoCliente.ValueMember = "idTipoCliente";
-            cboTipoCliente.DisplayMember = "descripcion";
+            cboBarrio.DataSource = oDao.ReadBarrio();
+            cboBarrio.ValueMember = "idBarrio";
+            cboBarrio.DisplayMember = "barrio";
         }
     }
 }

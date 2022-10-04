@@ -44,10 +44,8 @@
             this.gboNombre = new System.Windows.Forms.GroupBox();
             this.gboDireccion = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboAutoPlan = new System.Windows.Forms.ComboBox();
             this.cboTipoCliente = new System.Windows.Forms.ComboBox();
             this.lblTipoCliente = new System.Windows.Forms.Label();
-            this.lblTipoAutoPlan = new System.Windows.Forms.Label();
             this.gboDatosPersonales = new System.Windows.Forms.GroupBox();
             this.gboNombre.SuspendLayout();
             this.gboDireccion.SuspendLayout();
@@ -65,7 +63,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(410, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(577, 256);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 25;
@@ -74,7 +72,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(191, 330);
+            this.btnAceptar.Location = new System.Drawing.Point(395, 256);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 24;
@@ -193,23 +191,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboAutoPlan);
             this.groupBox1.Controls.Add(this.cboTipoCliente);
             this.groupBox1.Controls.Add(this.lblTipoCliente);
-            this.groupBox1.Controls.Add(this.lblTipoAutoPlan);
             this.groupBox1.Location = new System.Drawing.Point(12, 229);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(665, 70);
+            this.groupBox1.Size = new System.Drawing.Size(322, 70);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
-            // 
-            // cboAutoPlan
-            // 
-            this.cboAutoPlan.FormattingEnabled = true;
-            this.cboAutoPlan.Location = new System.Drawing.Point(432, 29);
-            this.cboAutoPlan.Name = "cboAutoPlan";
-            this.cboAutoPlan.Size = new System.Drawing.Size(191, 21);
-            this.cboAutoPlan.TabIndex = 27;
             // 
             // cboTipoCliente
             // 
@@ -228,15 +216,6 @@
             this.lblTipoCliente.TabIndex = 16;
             this.lblTipoCliente.Text = "Tipo de Cliente";
             // 
-            // lblTipoAutoPlan
-            // 
-            this.lblTipoAutoPlan.AutoSize = true;
-            this.lblTipoAutoPlan.Location = new System.Drawing.Point(353, 32);
-            this.lblTipoAutoPlan.Name = "lblTipoAutoPlan";
-            this.lblTipoAutoPlan.Size = new System.Drawing.Size(53, 13);
-            this.lblTipoAutoPlan.TabIndex = 19;
-            this.lblTipoAutoPlan.Text = "Auto Plan";
-            // 
             // gboDatosPersonales
             // 
             this.gboDatosPersonales.Controls.Add(this.gboNombre);
@@ -252,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 375);
+            this.ClientSize = new System.Drawing.Size(685, 316);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTituloAltaCliente);
@@ -291,10 +270,8 @@
         private System.Windows.Forms.GroupBox gboNombre;
         private System.Windows.Forms.GroupBox gboDireccion;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboAutoPlan;
         private System.Windows.Forms.ComboBox cboTipoCliente;
         private System.Windows.Forms.Label lblTipoCliente;
-        private System.Windows.Forms.Label lblTipoAutoPlan;
         private System.Windows.Forms.GroupBox gboDatosPersonales;
     }
 }
