@@ -28,10 +28,16 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void FrmAltaFactura_Load(object sender, EventArgs e)
         {
+            cargarProximoId();
             cargarComboTipoCliente();
             cargarComboTipoProducto();
             cargarComboFormasPago();
             cargarComboAutoPlan();
+        }
+
+        private void cargarProximoId()
+        {
+            LblNroFactura.Text = "Factura N°" + DaoFacturas.Instancia().ConsultarProximoId();
         }
 
         private void cargarComboAutoPlan()

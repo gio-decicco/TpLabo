@@ -15,17 +15,15 @@ namespace TpLaboAutomóviles.Presentacion
     public partial class FrmAltaCliente : Form
     {
         DaoClientes oDao;
-        Cliente c;
         
         public FrmAltaCliente()
         {
             InitializeComponent();
-            oDao = new DaoClientes();
-            c = new Cliente();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            Cliente c = new Cliente();
             c.Calle = txtCalle.Text;
             c.Altura = Convert.ToInt32(txtAltura.Text);
             c.Nombre = txtNombre.Text;
@@ -37,6 +35,10 @@ namespace TpLaboAutomóviles.Presentacion
             if (oDao.Create(c))
             {
                 MessageBox.Show("Su cliente ha sido cargado con exito");
+            }
+            else
+            {
+                MessageBox.Show("Error en la carga de cliente");
             }
         }
 
@@ -51,6 +53,7 @@ namespace TpLaboAutomóviles.Presentacion
             cboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
             cboTipoCliente.ValueMember = "idTipoCliente";
             cboTipoCliente.DisplayMember = "descripcion";
+            cboTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         
         private void CargarComboBarrio()
@@ -58,6 +61,7 @@ namespace TpLaboAutomóviles.Presentacion
             cboBarrio.DataSource = DaoClientes.Instancia().ReadBarrios();
             cboBarrio.ValueMember = "idBarrio";
             cboBarrio.DisplayMember = "barrio";
+            cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

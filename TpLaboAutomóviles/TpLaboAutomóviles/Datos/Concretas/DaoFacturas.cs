@@ -21,6 +21,35 @@ namespace TpLaboAutomóviles.Datos.Concretas
             }
             return instancia;
         }
+        public int ConsultarProximoId()
+        {
+            int nro = 0;
+
+            try
+            {
+                Conectar();
+                cmd.CommandText = "spConsultarProximoIdFactura";
+                SqlParameter param = new SqlParameter();
+                param.Direction = ParameterDirection.Output;
+                param.ParameterName = "@id";
+                param.DbType = DbType.Int32;
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+                nro = param.Value.GetType() == typeof(int) ? (int)param.Value : 1;
+            }
+            catch (Exception)
+            {
+                nro = 1;
+            }
+            finally
+            {
+                if(cnn.State == ConnectionState.Open)
+                {
+                    Desconectar();
+                }
+            }
+            return nro;
+        }
         public bool Create(Factura factura)
         {
             bool ok = true;
