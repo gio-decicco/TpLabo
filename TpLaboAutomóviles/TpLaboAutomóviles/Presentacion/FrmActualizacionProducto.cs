@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TpLaboAutomóviles
+namespace TpLaboAutomóviles.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class FrmActualizacionProducto : Form
     {
-        public Form1()
+        public FrmActualizacionProducto()
         {
             InitializeComponent();
         }

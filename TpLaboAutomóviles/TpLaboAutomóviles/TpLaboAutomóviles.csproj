@@ -57,16 +57,62 @@
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Dominio\Pedido.cs" />
     <Compile Include="Dominio\Producto.cs" />
-    <Compile Include="Presentacion\Form1.cs">
+    <Compile Include="Presentacion\FrmAltaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentacion\FrmAltaFactura.Designer.cs">
+      <DependentUpon>FrmAltaFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaPedido.Designer.cs">
+      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaCliente.Designer.cs">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAltaProducto.Designer.cs">
+      <DependentUpon>FrmAltaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmActualizacionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmActualizacionCliente.Designer.cs">
+      <DependentUpon>FrmActualizacionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmActualizacionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmActualizacionProducto.Designer.cs">
+      <DependentUpon>FrmActualizacionProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentacion\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FrmAltaPedido.resx">
+      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmAltaCliente.resx">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmAltaProducto.resx">
+      <DependentUpon>FrmAltaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
