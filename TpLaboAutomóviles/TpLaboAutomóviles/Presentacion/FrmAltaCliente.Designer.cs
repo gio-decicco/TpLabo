@@ -63,7 +63,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(410, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(577, 256);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 25;
@@ -72,7 +72,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(191, 330);
+            this.btnAceptar.Location = new System.Drawing.Point(395, 256);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 24;
@@ -195,7 +195,7 @@
             this.groupBox1.Controls.Add(this.lblTipoCliente);
             this.groupBox1.Location = new System.Drawing.Point(12, 229);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(665, 70);
+            this.groupBox1.Size = new System.Drawing.Size(322, 70);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             // 
@@ -231,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 375);
+            this.ClientSize = new System.Drawing.Size(685, 316);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTituloAltaCliente);
