@@ -40,7 +40,7 @@ namespace AppConcesionaria.Presentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void txtClave_Enter(object sender, EventArgs e)
@@ -65,10 +65,8 @@ namespace AppConcesionaria.Presentacion
         {
             if (txtUsuario.Text == "admin" && txtClave.Text == "admin")
             {
-
-                var frm = new FrmPrincipal(); frm.Show(); 
-                this.Visible = false;
                 login = true;
+                this.Close();
             }
             else
             {
@@ -77,5 +75,9 @@ namespace AppConcesionaria.Presentacion
             }
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

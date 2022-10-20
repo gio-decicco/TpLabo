@@ -17,7 +17,13 @@ namespace TpLaboAutomóviles
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            frmLogin form = new frmLogin();
+            form.ShowDialog();
+            if (form.login)
+            {
+                form.Dispose();
+                Application.Run(new FrmPrincipal());
+            }
         }
     }
 }
