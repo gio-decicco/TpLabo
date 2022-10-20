@@ -73,6 +73,12 @@
     <Compile Include="Presentacion\FrmAltaPedido.Designer.cs">
       <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAltaPedido.resx">
       <DependentUpon>FrmAltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
