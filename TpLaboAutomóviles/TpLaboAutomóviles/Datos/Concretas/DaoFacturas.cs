@@ -86,6 +86,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                     cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
                     cmdDetalle.Parameters.AddWithValue("@pre_unitario", detalle.PrecioUnitario);
                     cmdDetalle.ExecuteNonQuery();
+                    idDetalle++;
                 }
                 t.Commit();
             }

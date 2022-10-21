@@ -33,6 +33,7 @@ namespace TpLaboAutomóviles.Presentacion
             cargarComboTipoProducto();
             cargarComboFormasPago();
             cargarComboAutoPlan();
+            GroupDetalles.Enabled = false;
         }
 
         private void cargarProximoId()
@@ -88,15 +89,150 @@ namespace TpLaboAutomóviles.Presentacion
         private void CboTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView item = (DataRowView)CboTipoProducto.SelectedItem;
-            cargarComboTipoProducto(Convert.ToInt32(item[0]));
+            cargarComboProducto(Convert.ToInt32(item[0]));
         }
 
-        private void cargarComboTipoProducto(int v)
+        private void cargarComboProducto(int v)
         {
             CboProductos.DataSource = DaoProductos.Instancia().Read(v);
             CboProductos.ValueMember = "idProducto";
             CboProductos.DisplayMember = "descripcion";
             CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!validar())
+            {
+                return;
+            }
+            DataRowView item = (DataRowView)CboProductos.SelectedItem;
+
+            Producto p = new Producto();
+            p.IdProducto = Convert.ToInt32(item[0]);
+            p.Descripcion = Convert.ToString(item[1]);
+            p.Stock_Min = Convert.ToInt32(item[2]);
+            p.Stock_Actual = Convert.ToInt32(item[3]);
+            p.Precio = Convert.ToDouble(item[4]);
+            p.IdTipoProducto = Convert.ToInt32(item[5]);
+
+            Detalle_Facturas d = new Detalle_Facturas();
+            d.Producto = p;
+            d.Cantidad = Convert.ToInt32(TxtCantidad.Text);
+            d.PrecioUnitario = p.Precio;
+            nueva.AgregarDetalle(d);
+            DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion, TxtCantidad.Text });
+        }
+
+        private bool validar()
+        {
+            if (CboTipoCliente.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un tipo de Cliente");
+                return false;
+            }
+            if (CboClientes.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return false;
+            }
+            if (CboFormaPago.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione una forma de pago");
+                return false;
+            }
+            if (CboAutoPlan.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un autoplan");
+                return false;
+            }
+            if (TxtDescuento.Text == "")
+            {
+                MessageBox.Show("Ingrese un valor para descuento");
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    int.Parse(TxtDescuento.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ingrese un valor numérico para descuento");
+                    return false;
+                }
+            }
+            if (Convert.ToInt32(TxtDescuento.Text) > 100 || Convert.ToInt32(TxtDescuento.Text) < 0)
+            {
+                MessageBox.Show("Ingrese un valor entre 0 y 100 para descuento");
+                return false;
+            }
+            if (CboTipoProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Ingrese un tipo de producto");
+                return false;
+            }
+            if (CboProductos.SelectedIndex == -1)
+            {
+                MessageBox.Show("Ingrese un producto");
+                return false;
+            }
+            if (TxtCantidad.Text == "")
+            {
+                MessageBox.Show("Ingrese un valor para cantidad");
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    int.Parse(TxtCantidad.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ingrese un valor numérico para cantidad");
+                    return false;
+                }
+            }
+            if (Convert.ToInt32(TxtCantidad.Text) < 0)
+            {
+                MessageBox.Show("Ingrese un valor positivo para cantidad");
+                return false;
+            }
+            return true;
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (DaoFacturas.Instancia().Create(nueva))
+            {
+                MessageBox.Show("La factura se ingreso correctamente");
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("No fue posible la incersion");
+            }
+        }
+
+        private void BtnListo_Click(object sender, EventArgs e)
+        {
+            if (!validar())
+            {
+                return;
+            }
+            GroupFactura.Enabled = false;
+            GroupDetalles.Enabled = true;
+
+            DataRowView item = (DataRowView)CboClientes.SelectedItem;
+            nueva.IdCliente = Convert.ToInt32(item[0]);
+            nueva.Fecha = DtpFecha.Value;
+            DataRowView item2 = (DataRowView)CboFormaPago.SelectedItem;
+            nueva.FormaPago = Convert.ToInt32(item2[0]);
+            nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
+            DataRowView item3 = (DataRowView)CboAutoPlan.SelectedItem;
+            nueva.IdAutoplan = Convert.ToInt32(item3[0]);
         }
     }
 }
