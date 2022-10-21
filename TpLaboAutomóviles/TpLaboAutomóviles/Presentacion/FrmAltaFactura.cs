@@ -98,5 +98,15 @@ namespace TpLaboAutomóviles.Presentacion
             CboProductos.DisplayMember = "descripcion";
             CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

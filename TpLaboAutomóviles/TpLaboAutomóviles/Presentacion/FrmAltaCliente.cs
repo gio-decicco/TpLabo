@@ -63,5 +63,10 @@ namespace TpLaboAutomóviles.Presentacion
             cboBarrio.DisplayMember = "barrio";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

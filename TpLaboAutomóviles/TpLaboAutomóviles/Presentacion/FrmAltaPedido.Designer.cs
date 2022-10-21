@@ -28,186 +28,323 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblTituloPedido = new System.Windows.Forms.Label();
             this.lblFechaPedido = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
-            this.lblNumeroPedido = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.gboPedido = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cboTipoCliente = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dtpOrden = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboTipoProducto = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.colIdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gboPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTitulo
+            // lblTituloPedido
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(26, 19);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(110, 24);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Pedido N°:";
+            this.lblTituloPedido.AutoSize = true;
+            this.lblTituloPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloPedido.Location = new System.Drawing.Point(47, 30);
+            this.lblTituloPedido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTituloPedido.Name = "lblTituloPedido";
+            this.lblTituloPedido.Size = new System.Drawing.Size(139, 29);
+            this.lblTituloPedido.TabIndex = 0;
+            this.lblTituloPedido.Text = "Pedido N°:";
             // 
             // lblFechaPedido
             // 
             this.lblFechaPedido.AutoSize = true;
-            this.lblFechaPedido.Location = new System.Drawing.Point(20, 23);
+            this.lblFechaPedido.Location = new System.Drawing.Point(27, 28);
+            this.lblFechaPedido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaPedido.Name = "lblFechaPedido";
-            this.lblFechaPedido.Size = new System.Drawing.Size(87, 13);
+            this.lblFechaPedido.Size = new System.Drawing.Size(110, 16);
             this.lblFechaPedido.TabIndex = 1;
             this.lblFechaPedido.Text = "Fecha de pedido";
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(20, 68);
+            this.lblCliente.Location = new System.Drawing.Point(27, 163);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(39, 13);
+            this.lblCliente.Size = new System.Drawing.Size(48, 16);
             this.lblCliente.TabIndex = 2;
             this.lblCliente.Text = "Cliente";
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(20, 19);
+            this.lblProducto.Location = new System.Drawing.Point(30, 77);
+            this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(50, 13);
+            this.lblProducto.Size = new System.Drawing.Size(61, 16);
             this.lblProducto.TabIndex = 3;
             this.lblProducto.Text = "Producto";
             // 
-            // lblNumeroPedido
+            // cboProducto
             // 
-            this.lblNumeroPedido.AutoSize = true;
-            this.lblNumeroPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroPedido.Location = new System.Drawing.Point(142, 19);
-            this.lblNumeroPedido.Name = "lblNumeroPedido";
-            this.lblNumeroPedido.Size = new System.Drawing.Size(21, 24);
-            this.lblNumeroPedido.TabIndex = 4;
-            this.lblNumeroPedido.Text = "0";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(104, 74);
+            this.cboProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(220, 24);
+            this.cboProducto.TabIndex = 5;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(259, 19);
+            this.lblCantidad.Location = new System.Drawing.Point(348, 77);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(61, 16);
             this.lblCantidad.TabIndex = 6;
             this.lblCantidad.Text = "Cantidad";
             // 
             // gboPedido
             // 
-            this.gboPedido.Controls.Add(this.comboBox2);
-            this.gboPedido.Controls.Add(this.dateTimePicker1);
+            this.gboPedido.Controls.Add(this.label2);
+            this.gboPedido.Controls.Add(this.dtpOrden);
+            this.gboPedido.Controls.Add(this.cboTipoCliente);
+            this.gboPedido.Controls.Add(this.label1);
+            this.gboPedido.Controls.Add(this.cboCliente);
+            this.gboPedido.Controls.Add(this.dtpFechaPedido);
             this.gboPedido.Controls.Add(this.lblFechaPedido);
             this.gboPedido.Controls.Add(this.lblCliente);
-            this.gboPedido.Location = new System.Drawing.Point(30, 46);
+            this.gboPedido.Location = new System.Drawing.Point(49, 91);
+            this.gboPedido.Margin = new System.Windows.Forms.Padding(4);
             this.gboPedido.Name = "gboPedido";
-            this.gboPedido.Size = new System.Drawing.Size(363, 100);
+            this.gboPedido.Padding = new System.Windows.Forms.Padding(4);
+            this.gboPedido.Size = new System.Drawing.Size(640, 203);
             this.gboPedido.TabIndex = 7;
             this.gboPedido.TabStop = false;
             // 
-            // comboBox2
+            // cboTipoCliente
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(116, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(206, 21);
-            this.comboBox2.TabIndex = 8;
+            this.cboTipoCliente.FormattingEnabled = true;
+            this.cboTipoCliente.Location = new System.Drawing.Point(155, 109);
+            this.cboTipoCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTipoCliente.Name = "cboTipoCliente";
+            this.cboTipoCliente.Size = new System.Drawing.Size(273, 24);
+            this.cboTipoCliente.TabIndex = 10;
+            this.cboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cboTipoCliente_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // label1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(206, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 112);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tipo Cliente";
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(155, 159);
+            this.cboCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(273, 24);
+            this.cboCliente.TabIndex = 8;
+            // 
+            // dtpFechaPedido
+            // 
+            this.dtpFechaPedido.Location = new System.Drawing.Point(155, 23);
+            this.dtpFechaPedido.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaPedido.Name = "dtpFechaPedido";
+            this.dtpFechaPedido.Size = new System.Drawing.Size(273, 22);
+            this.dtpFechaPedido.TabIndex = 8;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cboTipoProducto);
+            this.groupBox1.Controls.Add(this.dgvPedidos);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.nudCantidad);
             this.groupBox1.Controls.Add(this.lblCantidad);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboProducto);
             this.groupBox1.Controls.Add(this.lblProducto);
-            this.groupBox1.Location = new System.Drawing.Point(30, 161);
+            this.groupBox1.Location = new System.Drawing.Point(49, 311);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(480, 203);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(640, 337);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvPedidos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 115);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdProducto,
+            this.colProducto,
+            this.colCantidad,
+            this.colAcciones});
+            this.dgvPedidos.Location = new System.Drawing.Point(30, 138);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
+            this.dgvPedidos.RowHeadersWidth = 51;
+            this.dgvPedidos.Size = new System.Drawing.Size(589, 177);
+            this.dgvPedidos.TabIndex = 12;
+            this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellContentClick);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(390, 14);
+            this.btnAgregar.Location = new System.Drawing.Point(523, 71);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(314, 17);
+            this.nudCantidad.Location = new System.Drawing.Point(422, 75);
+            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(49, 20);
+            this.nudCantidad.Size = new System.Drawing.Size(65, 22);
             this.nudCantidad.TabIndex = 10;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(130, 401);
+            this.btnAceptar.Location = new System.Drawing.Point(171, 668);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(335, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(445, 668);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // dtpOrden
+            // 
+            this.dtpOrden.Location = new System.Drawing.Point(155, 68);
+            this.dtpOrden.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpOrden.Name = "dtpOrden";
+            this.dtpOrden.Size = new System.Drawing.Size(273, 22);
+            this.dtpOrden.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Fecha de Orden";
+            // 
+            // cboTipoProducto
+            // 
+            this.cboTipoProducto.FormattingEnabled = true;
+            this.cboTipoProducto.Location = new System.Drawing.Point(140, 25);
+            this.cboTipoProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTipoProducto.Name = "cboTipoProducto";
+            this.cboTipoProducto.Size = new System.Drawing.Size(220, 24);
+            this.cboTipoProducto.TabIndex = 13;
+            this.cboTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cboTipoProducto_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Tipo Producto";
+            // 
+            // colIdProducto
+            // 
+            this.colIdProducto.HeaderText = "IdProducto";
+            this.colIdProducto.MinimumWidth = 6;
+            this.colIdProducto.Name = "colIdProducto";
+            this.colIdProducto.ReadOnly = true;
+            this.colIdProducto.Visible = false;
+            this.colIdProducto.Width = 125;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.MinimumWidth = 6;
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 125;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.MinimumWidth = 6;
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            this.colCantidad.Width = 125;
+            // 
+            // colAcciones
+            // 
+            this.colAcciones.HeaderText = "Acciones";
+            this.colAcciones.MinimumWidth = 6;
+            this.colAcciones.Name = "colAcciones";
+            this.colAcciones.ReadOnly = true;
+            this.colAcciones.Text = "Quitar";
+            this.colAcciones.UseColumnTextForButtonValue = true;
+            this.colAcciones.Width = 125;
+            // 
             // FrmAltaPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 450);
+            this.ClientSize = new System.Drawing.Size(773, 725);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblNumeroPedido);
-            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.lblTituloPedido);
             this.Controls.Add(this.gboPedido);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAltaPedido";
             this.Text = "FrmAltaPedido";
             this.Load += new System.EventHandler(this.FrmAltaPedido_Load);
@@ -215,7 +352,7 @@
             this.gboPedido.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,21 +361,30 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblTituloPedido;
         private System.Windows.Forms.Label lblFechaPedido;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.Label lblNumeroPedido;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboProducto;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.GroupBox gboPedido;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cboCliente;
+        private System.Windows.Forms.DateTimePicker dtpFechaPedido;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPedidos;
+        private System.Windows.Forms.ComboBox cboTipoCliente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpOrden;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboTipoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewButtonColumn colAcciones;
     }
 }
