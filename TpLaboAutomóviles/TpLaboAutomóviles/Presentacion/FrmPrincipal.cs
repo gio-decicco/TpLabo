@@ -57,5 +57,15 @@ namespace TpLaboAutomóviles
         {
 
         }
+
+        private void consulta1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte1().ShowDialog();
+        }
+
+        private void soporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

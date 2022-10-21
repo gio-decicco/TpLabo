@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +44,9 @@
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,16 +54,30 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
             this.facturaToolStripMenuItem,
             this.pedidoToolStripMenuItem,
-            this.soporteToolStripMenuItem,
-            this.archivoToolStripMenuItem});
+            this.soporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // facturaToolStripMenuItem
             // 
@@ -74,14 +91,14 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // nuevaToolStripMenuItem
             // 
             this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.nuevaToolStripMenuItem.Text = "Nueva";
             this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.nuevaToolStripMenuItem_Click);
             // 
@@ -111,10 +128,12 @@
             // 
             this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productoToolStripMenuItem,
-            this.clienteToolStripMenuItem});
+            this.clienteToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
             this.soporteToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.soporteToolStripMenuItem.Text = "Soporte";
+            this.soporteToolStripMenuItem.Click += new System.EventHandler(this.soporteToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
@@ -122,7 +141,7 @@
             this.nuevoToolStripMenuItem,
             this.actualizarToolStripMenuItem});
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.productoToolStripMenuItem.Text = "Producto";
             // 
             // nuevoToolStripMenuItem
@@ -145,7 +164,7 @@
             this.nuevoToolStripMenuItem1,
             this.actualizarToolStripMenuItem1});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // nuevoToolStripMenuItem1
@@ -162,19 +181,27 @@
             this.actualizarToolStripMenuItem1.Text = "Actualizar";
             this.actualizarToolStripMenuItem1.Click += new System.EventHandler(this.actualizarToolStripMenuItem1_Click);
             // 
-            // archivoToolStripMenuItem
+            // reportesToolStripMenuItem
             // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consulta1ToolStripMenuItem,
+            this.consulta2ToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // salirToolStripMenuItem
+            // consulta1ToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.consulta1ToolStripMenuItem.Name = "consulta1ToolStripMenuItem";
+            this.consulta1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta1ToolStripMenuItem.Text = "Consulta1";
+            this.consulta1ToolStripMenuItem.Click += new System.EventHandler(this.consulta1ToolStripMenuItem_Click);
+            // 
+            // consulta2ToolStripMenuItem
+            // 
+            this.consulta2ToolStripMenuItem.Name = "consulta2ToolStripMenuItem";
+            this.consulta2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta2ToolStripMenuItem.Text = "Consulta 2";
             // 
             // FrmPrincipal
             // 
@@ -212,6 +239,9 @@
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta2ToolStripMenuItem;
     }
 }
 
