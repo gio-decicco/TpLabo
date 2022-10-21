@@ -45,7 +45,9 @@ namespace TpLaboAutomóviles
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmConsultarFacturas form = new FrmConsultarFacturas();
+            form.ShowDialog();
+            form.Dispose();
         }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.CboTipoProducto = new System.Windows.Forms.ComboBox();
             this.CboProductos = new System.Windows.Forms.ComboBox();
@@ -58,6 +58,7 @@
             this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnListo = new System.Windows.Forms.Button();
             this.GroupFactura.SuspendLayout();
             this.GroupDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDetalles)).BeginInit();
@@ -74,6 +75,7 @@
             // 
             // DtpFecha
             // 
+            this.DtpFecha.Enabled = false;
             this.DtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtpFecha.Location = new System.Drawing.Point(281, 153);
             this.DtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -110,6 +112,7 @@
             // 
             // GroupFactura
             // 
+            this.GroupFactura.Controls.Add(this.BtnListo);
             this.GroupFactura.Controls.Add(this.CboTipoCliente);
             this.GroupFactura.Controls.Add(this.label9);
             this.GroupFactura.Controls.Add(this.BtnNuevoCliente);
@@ -231,7 +234,7 @@
             this.GroupDetalles.Controls.Add(this.button1);
             this.GroupDetalles.Controls.Add(this.label8);
             this.GroupDetalles.Controls.Add(this.label7);
-            this.GroupDetalles.Controls.Add(this.textBox2);
+            this.GroupDetalles.Controls.Add(this.TxtCantidad);
             this.GroupDetalles.Controls.Add(this.label6);
             this.GroupDetalles.Controls.Add(this.CboTipoProducto);
             this.GroupDetalles.Controls.Add(this.CboProductos);
@@ -268,7 +271,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(907, 36);
+            this.button1.Location = new System.Drawing.Point(906, 32);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 26);
@@ -297,13 +300,14 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Producto";
             // 
-            // textBox2
+            // TxtCantidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(739, 36);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 3;
+            this.TxtCantidad.Location = new System.Drawing.Point(739, 36);
+            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(132, 22);
+            this.TxtCantidad.TabIndex = 3;
+            this.TxtCantidad.Text = "1";
             // 
             // label6
             // 
@@ -390,6 +394,16 @@
             this.ColQuitar.ToolTipText = "Quitar";
             this.ColQuitar.Width = 125;
             // 
+            // BtnListo
+            // 
+            this.BtnListo.Location = new System.Drawing.Point(796, 204);
+            this.BtnListo.Name = "BtnListo";
+            this.BtnListo.Size = new System.Drawing.Size(125, 23);
+            this.BtnListo.TabIndex = 14;
+            this.BtnListo.Text = "Listo";
+            this.BtnListo.UseVisualStyleBackColor = true;
+            this.BtnListo.Click += new System.EventHandler(this.BtnListo_Click);
+            // 
             // FrmAltaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -420,7 +434,7 @@
         private System.Windows.Forms.GroupBox GroupFactura;
         private System.Windows.Forms.GroupBox GroupDetalles;
         private System.Windows.Forms.DataGridView DtgDetalles;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.ComboBox CboTipoProducto;
         private System.Windows.Forms.ComboBox CboProductos;
         private System.Windows.Forms.Label LblNroFactura;
@@ -442,5 +456,6 @@
         private System.Windows.Forms.Button BtnNuevoCliente;
         private System.Windows.Forms.ComboBox CboTipoCliente;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button BtnListo;
     }
 }
