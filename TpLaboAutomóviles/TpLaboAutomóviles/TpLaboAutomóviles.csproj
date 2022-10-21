@@ -73,6 +73,12 @@
     <Compile Include="Presentacion\FrmAltaPedido.Designer.cs">
       <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmConsultarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarFacturas.Designer.cs">
+      <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
