@@ -12,7 +12,8 @@ namespace TpLaboAutomóviles.Datos.Interfaces
     {
         bool Create(Pedido pedido);
         DataTable Read();
-        bool Delete(Pedido pedido);
+        bool Delete(int id);
         bool Update(Pedido pedido);
+        List<Pedido> ConsultarPedidos(int id);
     }
 }

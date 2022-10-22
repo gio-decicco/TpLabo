@@ -74,7 +74,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
-        public bool Delete(Pedido pedido)
+        public bool Delete(int nro)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -84,7 +84,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarPedido";
-                cmd.Parameters.AddWithValue("@nroPedido", pedido.IdPedido);
+                cmd.Parameters.AddWithValue("@nroPedido", nro);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -141,6 +141,42 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 }
             }
             return nro;
+        }
+
+        public List<Pedido> ConsultarPedidos(int id)
+        {
+            List<Pedido> pedidos = new List<Pedido>();
+            string sp = "SP_CONSULTAR_PEDIDOS";
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@idCliente", id));
+            DataTable tabla = consultaSql(sp, lst);
+
+            foreach(DataRow row in tabla.Rows)
+            {
+                Pedido pedido = new Pedido();
+                pedido.IdPedido = int.Parse(row[0].ToString());
+                pedido.FechaOrden = Convert.ToDateTime(row[1].ToString());
+                pedido.FechaPedido = Convert.ToDateTime(row[2].ToString());
+                pedido.IdCliente = (int)row[3];
+                pedidos.Add(pedido);
+            }
+            return pedidos;
+        }
+        public DataTable consultaSql(string NameSP, List<Parametro> values)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = NameSP;
+            if (values != null)
+            {
+                foreach(Parametro val in values)
+                {
+                    cmd.Parameters.AddWithValue(val.Clave, val.Valor);
+                }
+            }
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
         }
     }
 }

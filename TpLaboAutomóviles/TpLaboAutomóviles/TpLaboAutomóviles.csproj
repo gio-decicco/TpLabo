@@ -55,6 +55,7 @@
     <Compile Include="Datos\Interfaces\IDaoFacturas.cs" />
     <Compile Include="Datos\Interfaces\IDaoPedidos.cs" />
     <Compile Include="Datos\Interfaces\IDaoProductos.cs" />
+    <Compile Include="Datos\Parametro.cs" />
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Detalle Facturas.cs" />
     <Compile Include="Dominio\Detalle_Pedido.cs" />
