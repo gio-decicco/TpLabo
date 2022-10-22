@@ -62,7 +62,8 @@ namespace TpLaboAutomóviles
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            frmConsultarPedidos frm = new frmConsultarPedidos();
+            frm.ShowDialog();
         }
     }
 }
