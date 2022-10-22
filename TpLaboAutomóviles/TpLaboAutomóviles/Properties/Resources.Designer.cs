@@ -61,7 +61,7 @@ namespace TpLaboAutomóviles.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-EH3B4VN\SQLEXPRESS01;Initial Catalog=automotriz;Integrated Security=True.
+        ///   Busca una cadena traducida similar a Data Source=LAPTOP-AIP6C37C\SQLEXPRESS;Initial Catalog=automotriz;Integrated Security=True.
         /// </summary>
         internal static string CadenaConexion {
             get {
