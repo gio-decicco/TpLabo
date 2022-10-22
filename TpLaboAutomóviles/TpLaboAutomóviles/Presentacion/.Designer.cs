@@ -47,6 +47,12 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consulta1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consulta2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulta8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,7 +191,13 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consulta1ToolStripMenuItem,
-            this.consulta2ToolStripMenuItem});
+            this.consulta2ToolStripMenuItem,
+            this.consulta3ToolStripMenuItem,
+            this.consulta4ToolStripMenuItem,
+            this.consulta5ToolStripMenuItem,
+            this.consulta6ToolStripMenuItem,
+            this.consulta7ToolStripMenuItem,
+            this.consulta8ToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -202,6 +214,48 @@
             this.consulta2ToolStripMenuItem.Name = "consulta2ToolStripMenuItem";
             this.consulta2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consulta2ToolStripMenuItem.Text = "Consulta 2";
+            this.consulta2ToolStripMenuItem.Click += new System.EventHandler(this.consulta2ToolStripMenuItem_Click);
+            // 
+            // consulta3ToolStripMenuItem
+            // 
+            this.consulta3ToolStripMenuItem.Name = "consulta3ToolStripMenuItem";
+            this.consulta3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta3ToolStripMenuItem.Text = "Consulta 3";
+            this.consulta3ToolStripMenuItem.Click += new System.EventHandler(this.consulta3ToolStripMenuItem_Click);
+            // 
+            // consulta4ToolStripMenuItem
+            // 
+            this.consulta4ToolStripMenuItem.Name = "consulta4ToolStripMenuItem";
+            this.consulta4ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta4ToolStripMenuItem.Text = "Consulta 4";
+            this.consulta4ToolStripMenuItem.Click += new System.EventHandler(this.consulta4ToolStripMenuItem_Click);
+            // 
+            // consulta5ToolStripMenuItem
+            // 
+            this.consulta5ToolStripMenuItem.Name = "consulta5ToolStripMenuItem";
+            this.consulta5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta5ToolStripMenuItem.Text = "Consulta 5";
+            this.consulta5ToolStripMenuItem.Click += new System.EventHandler(this.consulta5ToolStripMenuItem_Click);
+            // 
+            // consulta6ToolStripMenuItem
+            // 
+            this.consulta6ToolStripMenuItem.Name = "consulta6ToolStripMenuItem";
+            this.consulta6ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta6ToolStripMenuItem.Text = "Consulta 6";
+            this.consulta6ToolStripMenuItem.Click += new System.EventHandler(this.consulta6ToolStripMenuItem_Click);
+            // 
+            // consulta7ToolStripMenuItem
+            // 
+            this.consulta7ToolStripMenuItem.Name = "consulta7ToolStripMenuItem";
+            this.consulta7ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta7ToolStripMenuItem.Text = "Consulta 7";
+            this.consulta7ToolStripMenuItem.Click += new System.EventHandler(this.consulta7ToolStripMenuItem_Click);
+            // 
+            // consulta8ToolStripMenuItem
+            // 
+            this.consulta8ToolStripMenuItem.Name = "consulta8ToolStripMenuItem";
+            this.consulta8ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consulta8ToolStripMenuItem.Text = "Consulta 8";
             // 
             // FrmPrincipal
             // 
@@ -242,6 +296,12 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consulta1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consulta2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulta8ToolStripMenuItem;
     }
 }
 

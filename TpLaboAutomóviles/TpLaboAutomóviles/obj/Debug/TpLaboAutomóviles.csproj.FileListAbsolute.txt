@@ -94,6 +94,10 @@ C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\pt\Microso
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmReporte1.resources
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.CopyComplete
-C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmReporte2.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmConsulta2.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte1.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte3.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte4.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte5.resources
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte6.resources

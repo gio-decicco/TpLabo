@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Presentacion;
+using TpLaboAutomóviles.Presentacion.Reportes.Forms;
 
 namespace TpLaboAutomóviles
 {
@@ -65,7 +66,37 @@ namespace TpLaboAutomóviles
 
         private void soporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void consulta2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConsulta2().ShowDialog();
+        }
+
+        private void consulta3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte3().ShowDialog();
+        }
+
+        private void consulta4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte4().ShowDialog();
+        }
+
+        private void consulta5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte5().ShowDialog();
+        }
+
+        private void consulta6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte6().ShowDialog();
+        }
+
+        private void consulta7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte7().ShowDialog();
         }
     }
 }
