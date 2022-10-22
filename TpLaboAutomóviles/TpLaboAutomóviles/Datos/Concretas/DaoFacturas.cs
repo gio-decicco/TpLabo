@@ -144,6 +144,17 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return tabla;
         }
 
+        public DataTable ReadDetalle(int idFactura)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarDetalles";
+            cmd.Parameters.AddWithValue("@idFactura", idFactura);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+
         public bool Update(Factura factura)
         {
             bool ok = true;

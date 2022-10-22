@@ -124,6 +124,9 @@
     <EmbeddedResource Include="Presentacion\FrmAltaPedido.resx">
       <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmConsultarFacturas.resx">
+      <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
