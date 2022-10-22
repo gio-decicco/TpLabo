@@ -32,7 +32,15 @@ namespace TpLaboAutomóviles.Presentacion
         {
             cargarTipoCliente();
             cargarTipoProducto();
-            
+            Clean(true);
+            btnEditar.Enabled = false;
+        }
+
+        private void Clean(bool valor)
+        {
+            gboPedido.Enabled = valor;
+            nudCantidad.Value = 1;
+            dgvPedidos.Rows.Clear();
         }
 
         private void cargarTipoProducto()
@@ -62,11 +70,16 @@ namespace TpLaboAutomóviles.Presentacion
                 producto.IdProducto = (int)cboProducto.SelectedValue;
                 producto.Descripcion = cboProducto.Text;
                 int cantidad = (int)nudCantidad.Value;
+                DataRowView item = (DataRowView)cboProducto.SelectedItem;
+                producto.Precio = Convert.ToDouble(item[4]);
 
                 Detalle_Pedido detalle = new Detalle_Pedido(producto, cantidad);
                 pedido.AgregarDetalle(detalle);
 
-                dgvPedidos.Rows.Add(new Object[] { producto.IdProducto, producto.Descripcion, cantidad});
+                dgvPedidos.Rows.Add(new Object[] { producto.IdProducto, producto.Descripcion, cantidad, producto.Precio * cantidad});
+                // evita cambiar datos
+                gboPedido.Enabled = false;
+                btnEditar.Enabled = true;
             }
         }
 
@@ -127,7 +140,7 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void dgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPedidos.CurrentCell.ColumnIndex == 3)
+            if (dgvPedidos.CurrentCell.ColumnIndex == 4)
             {
                 pedido.QuitarDetalle(dgvPedidos.CurrentRow.Index);
                 dgvPedidos.Rows.Remove(dgvPedidos.CurrentRow);
@@ -147,6 +160,7 @@ namespace TpLaboAutomóviles.Presentacion
                 {
                     DaoPedidos.Instancia().Create(pedido);
                     MessageBox.Show("Se inserto con exito !!", "Informacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                    Clean(true);
                 }
 
             }
@@ -160,6 +174,19 @@ namespace TpLaboAutomóviles.Presentacion
                 return false;
             }
             return true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Quiere cambiar los Datos ?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                gboPedido.Enabled = true;
+            }
         }
     }
 }

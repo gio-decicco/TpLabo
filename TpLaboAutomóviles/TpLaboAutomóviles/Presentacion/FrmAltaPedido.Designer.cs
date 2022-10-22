@@ -35,24 +35,26 @@
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.gboPedido = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpOrden = new System.Windows.Forms.DateTimePicker();
             this.cboTipoCliente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboCliente = new System.Windows.Forms.ComboBox();
             this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboTipoProducto = new System.Windows.Forms.ComboBox();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dtpOrden = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboTipoProducto = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.colIdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gboPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -63,7 +65,7 @@
             // 
             this.lblTituloPedido.AutoSize = true;
             this.lblTituloPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloPedido.Location = new System.Drawing.Point(47, 30);
+            this.lblTituloPedido.Location = new System.Drawing.Point(69, 28);
             this.lblTituloPedido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloPedido.Name = "lblTituloPedido";
             this.lblTituloPedido.Size = new System.Drawing.Size(139, 29);
@@ -93,7 +95,7 @@
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(30, 77);
+            this.lblProducto.Location = new System.Drawing.Point(39, 77);
             this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(61, 16);
@@ -103,7 +105,7 @@
             // cboProducto
             // 
             this.cboProducto.FormattingEnabled = true;
-            this.cboProducto.Location = new System.Drawing.Point(104, 74);
+            this.cboProducto.Location = new System.Drawing.Point(113, 74);
             this.cboProducto.Margin = new System.Windows.Forms.Padding(4);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(220, 24);
@@ -112,7 +114,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(348, 77);
+            this.lblCantidad.Location = new System.Drawing.Point(376, 77);
             this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(61, 16);
@@ -129,13 +131,31 @@
             this.gboPedido.Controls.Add(this.dtpFechaPedido);
             this.gboPedido.Controls.Add(this.lblFechaPedido);
             this.gboPedido.Controls.Add(this.lblCliente);
-            this.gboPedido.Location = new System.Drawing.Point(49, 91);
+            this.gboPedido.Location = new System.Drawing.Point(71, 91);
             this.gboPedido.Margin = new System.Windows.Forms.Padding(4);
             this.gboPedido.Name = "gboPedido";
             this.gboPedido.Padding = new System.Windows.Forms.Padding(4);
-            this.gboPedido.Size = new System.Drawing.Size(640, 203);
+            this.gboPedido.Size = new System.Drawing.Size(585, 203);
             this.gboPedido.TabIndex = 7;
             this.gboPedido.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Fecha de Orden";
+            // 
+            // dtpOrden
+            // 
+            this.dtpOrden.Location = new System.Drawing.Point(155, 68);
+            this.dtpOrden.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpOrden.Name = "dtpOrden";
+            this.dtpOrden.Size = new System.Drawing.Size(273, 22);
+            this.dtpOrden.TabIndex = 11;
             // 
             // cboTipoCliente
             // 
@@ -184,13 +204,33 @@
             this.groupBox1.Controls.Add(this.lblCantidad);
             this.groupBox1.Controls.Add(this.cboProducto);
             this.groupBox1.Controls.Add(this.lblProducto);
-            this.groupBox1.Location = new System.Drawing.Point(49, 311);
+            this.groupBox1.Location = new System.Drawing.Point(71, 311);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(640, 337);
+            this.groupBox1.Size = new System.Drawing.Size(714, 337);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Tipo Producto";
+            // 
+            // cboTipoProducto
+            // 
+            this.cboTipoProducto.FormattingEnabled = true;
+            this.cboTipoProducto.Location = new System.Drawing.Point(149, 25);
+            this.cboTipoProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTipoProducto.Name = "cboTipoProducto";
+            this.cboTipoProducto.Size = new System.Drawing.Size(220, 24);
+            this.cboTipoProducto.TabIndex = 13;
+            this.cboTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cboTipoProducto_SelectedIndexChanged);
             // 
             // dgvPedidos
             // 
@@ -201,22 +241,23 @@
             this.colIdProducto,
             this.colProducto,
             this.colCantidad,
+            this.colPrecio,
             this.colAcciones});
-            this.dgvPedidos.Location = new System.Drawing.Point(30, 138);
+            this.dgvPedidos.Location = new System.Drawing.Point(30, 134);
             this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersWidth = 51;
-            this.dgvPedidos.Size = new System.Drawing.Size(589, 177);
+            this.dgvPedidos.Size = new System.Drawing.Size(649, 177);
             this.dgvPedidos.TabIndex = 12;
             this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellContentClick);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(523, 71);
+            this.btnAgregar.Location = new System.Drawing.Point(577, 64);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(102, 42);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -224,7 +265,7 @@
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(422, 75);
+            this.nudCantidad.Location = new System.Drawing.Point(462, 75);
             this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.nudCantidad.Minimum = new decimal(new int[] {
             1,
@@ -232,7 +273,7 @@
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(65, 22);
+            this.nudCantidad.Size = new System.Drawing.Size(79, 22);
             this.nudCantidad.TabIndex = 10;
             this.nudCantidad.Value = new decimal(new int[] {
             1,
@@ -242,10 +283,10 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(171, 668);
+            this.btnAceptar.Location = new System.Drawing.Point(304, 666);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 42);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -253,51 +294,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(445, 668);
+            this.btnCancelar.Location = new System.Drawing.Point(485, 666);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 42);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // dtpOrden
-            // 
-            this.dtpOrden.Location = new System.Drawing.Point(155, 68);
-            this.dtpOrden.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpOrden.Name = "dtpOrden";
-            this.dtpOrden.Size = new System.Drawing.Size(273, 22);
-            this.dtpOrden.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 68);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Fecha de Orden";
-            // 
-            // cboTipoProducto
-            // 
-            this.cboTipoProducto.FormattingEnabled = true;
-            this.cboTipoProducto.Location = new System.Drawing.Point(140, 25);
-            this.cboTipoProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.cboTipoProducto.Name = "cboTipoProducto";
-            this.cboTipoProducto.Size = new System.Drawing.Size(220, 24);
-            this.cboTipoProducto.TabIndex = 13;
-            this.cboTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cboTipoProducto_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 16);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Tipo Producto";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // colIdProducto
             // 
@@ -306,7 +310,7 @@
             this.colIdProducto.Name = "colIdProducto";
             this.colIdProducto.ReadOnly = true;
             this.colIdProducto.Visible = false;
-            this.colIdProducto.Width = 125;
+            this.colIdProducto.Width = 75;
             // 
             // colProducto
             // 
@@ -322,7 +326,15 @@
             this.colCantidad.MinimumWidth = 6;
             this.colCantidad.Name = "colCantidad";
             this.colCantidad.ReadOnly = true;
-            this.colCantidad.Width = 125;
+            this.colCantidad.Width = 75;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.MinimumWidth = 6;
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            this.colPrecio.Width = 125;
             // 
             // colAcciones
             // 
@@ -332,13 +344,24 @@
             this.colAcciones.ReadOnly = true;
             this.colAcciones.Text = "Quitar";
             this.colAcciones.UseColumnTextForButtonValue = true;
-            this.colAcciones.Width = 125;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(683, 254);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(102, 40);
+            this.btnEditar.TabIndex = 15;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FrmAltaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 725);
+            this.ClientSize = new System.Drawing.Size(872, 725);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTituloPedido);
@@ -385,6 +408,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn colAcciones;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
