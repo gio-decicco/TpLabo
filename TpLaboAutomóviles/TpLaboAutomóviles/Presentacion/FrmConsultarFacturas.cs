@@ -23,12 +23,30 @@ namespace TpLaboAutomóviles.Presentacion
         private void FrmConsultarFacturas_Load(object sender, EventArgs e)
         {
             CargarLista();
-            CargarCombos();
+            CargarComboTipoCliente();
+            CargarComboClientes();
+        }
+
+        private void CargarComboTipoCliente()
+        {
+            CboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
+            CboTipoCliente.ValueMember = "idTipoCliente";
+            CboTipoCliente.DisplayMember = "descripcion";
+            CboTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void CargarComboClientes()
+        {
+            DataRowView row = (DataRowView)CboTipoCliente.SelectedItem;
+            CboClientes.DataSource = DaoClientes.Instancia().Read(Convert.ToInt32(row[0]));
+            CboClientes.ValueMember = "idCliente";
+            CboClientes.DisplayMember = "nomCliente";
+            CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void CargarCombos()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void CargarLista()
@@ -49,6 +67,16 @@ namespace TpLaboAutomóviles.Presentacion
                     Detalle_Facturas d = new Detalle_Facturas();
                 }
             }
+        }
+
+        private void LstFacturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CboTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarComboClientes();
         }
     }
 }

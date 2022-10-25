@@ -148,7 +148,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
         {
             DataTable tabla = new DataTable();
             Conectar();
-            cmd.CommandText = "spConsultarDetalles";
+            cmd.CommandText = "spConsultarDetalle";
             cmd.Parameters.AddWithValue("@idFactura", idFactura);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();

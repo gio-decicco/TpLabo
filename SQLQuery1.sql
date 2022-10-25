@@ -187,3 +187,13 @@ select * from Tipos_Productos
 create procedure spConsultarTipoCliente
 as
 select * from Tipos_Clientes
+
+create procedure spConsultarDetalle
+@idFactura int
+as
+select * from Detalles_Factura
+where nroFactura = @idFactura
+
+create procedure spConsultarFacturas
+as
+select * from Facturas
