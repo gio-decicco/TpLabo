@@ -35,6 +35,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 cmd.Parameters.AddWithValue("@fechaOrden", pedido.FechaOrden);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.FechaPedido);
                 cmd.Parameters.AddWithValue("@idCliente", pedido.IdCliente);
+                cmd.Parameters.AddWithValue("@Activo", 1);
                 SqlParameter param = new SqlParameter();
                 param.Direction = ParameterDirection.Output;
                 param.ParameterName = "@id";
