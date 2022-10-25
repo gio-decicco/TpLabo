@@ -19,8 +19,8 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.Forms
 
         private void FrmReporte1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dSListado.DTVista' Puede moverla o quitarla según sea necesario.
-            this.dTVistaTableAdapter.Fill(this.dSListado.DTVista);
+            // TODO: This line of code loads data into the 'dSPrimerConsulta.vis_cantidadytotal_x_cliente' table. You can move, or remove it, as needed.
+            this.vis_cantidadytotal_x_clienteTableAdapter.Fill(this.dSPrimerConsulta.vis_cantidadytotal_x_cliente);
 
             this.reportViewer1.RefreshReport();
         }

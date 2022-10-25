@@ -30,21 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.viscantidadytotalxclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSPrimerConsulta = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSPrimerConsulta();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSListadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSListado = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSListado();
-            this.dTVistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dTVistaTableAdapter = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSListadoTableAdapters.DTVistaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dSListadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSListado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dTVistaBindingSource)).BeginInit();
+            this.vis_cantidadytotal_x_clienteTableAdapter = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSPrimerConsultaTableAdapters.vis_cantidadytotal_x_clienteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.viscantidadytotalxclienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSPrimerConsulta)).BeginInit();
             this.SuspendLayout();
+            // 
+            // viscantidadytotalxclienteBindingSource
+            // 
+            this.viscantidadytotalxclienteBindingSource.DataMember = "vis_cantidadytotal_x_cliente";
+            this.viscantidadytotalxclienteBindingSource.DataSource = this.dSPrimerConsulta;
+            // 
+            // dSPrimerConsulta
+            // 
+            this.dSPrimerConsulta.DataSetName = "DSPrimerConsulta";
+            this.dSPrimerConsulta.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DSVista";
-            reportDataSource1.Value = this.dTVistaBindingSource;
+            reportDataSource1.Name = "DSPrimerConsulta";
+            reportDataSource1.Value = this.viscantidadytotalxclienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Presentacion.Reportes.RDLCs.ListadoConsulta1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -53,37 +61,21 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dSListadoBindingSource
+            // vis_cantidadytotal_x_clienteTableAdapter
             // 
-            this.dSListadoBindingSource.DataSource = this.dSListado;
-            this.dSListadoBindingSource.Position = 0;
-            // 
-            // dSListado
-            // 
-            this.dSListado.DataSetName = "DSListado";
-            this.dSListado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dTVistaBindingSource
-            // 
-            this.dTVistaBindingSource.DataMember = "DTVista";
-            this.dTVistaBindingSource.DataSource = this.dSListado;
-            // 
-            // dTVistaTableAdapter
-            // 
-            this.dTVistaTableAdapter.ClearBeforeFill = true;
+            this.vis_cantidadytotal_x_clienteTableAdapter.ClearBeforeFill = true;
             // 
             // FrmReporte1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporte1";
             this.Text = "FrmReporte1";
             this.Load += new System.EventHandler(this.FrmReporte1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSListadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dTVistaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viscantidadytotalxclienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSPrimerConsulta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,9 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource dSListadoBindingSource;
-        private DataSets.DSListado dSListado;
-        private System.Windows.Forms.BindingSource dTVistaBindingSource;
-        private DataSets.DSListadoTableAdapters.DTVistaTableAdapter dTVistaTableAdapter;
+        private DataSets.DSPrimerConsulta dSPrimerConsulta;
+        private System.Windows.Forms.BindingSource viscantidadytotalxclienteBindingSource;
+        private DataSets.DSPrimerConsultaTableAdapters.vis_cantidadytotal_x_clienteTableAdapter vis_cantidadytotal_x_clienteTableAdapter;
     }
 }

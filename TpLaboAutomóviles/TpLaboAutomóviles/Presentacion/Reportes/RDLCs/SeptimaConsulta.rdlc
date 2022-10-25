@@ -228,7 +228,7 @@
         <DataSetName>DSSeptimaConsulta</DataSetName>
         <Top>0.11333in</Top>
         <Height>0.5in</Height>
-        <Width>6.5in</Width>
+        <Width>6.50001in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -236,7 +236,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.99167in</Height>
+    <Height>0.73125in</Height>
     <Style />
   </Body>
   <Width>6.51333in</Width>
@@ -253,7 +253,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Mostrar los clientes que compraron desde el año pasado hasta la actualidad</Value>
+                  <Value>Clientes que compraron alguna vez desde el año pasado hasta la actualidad</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -288,7 +288,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.525in</Height>
+      <Height>0.33334in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -317,7 +317,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>0.24667in</Top>
+          <Top>0.08334in</Top>
           <Left>5.5in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>

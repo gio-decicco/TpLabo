@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.16667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.16667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.16667in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -226,9 +226,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSQuintaConsulta</DataSetName>
-        <Top>0.355in</Top>
+        <Top>0.12583in</Top>
         <Height>0.5in</Height>
-        <Width>3in</Width>
+        <Width>6.5in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -236,7 +236,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.78125in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -253,7 +253,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Clientes que no compraron este año y productos que tengan su precio mayor al precio promedio de todos los productos</Value>
+                  <Value>Clientes que no realizaron una compra este año y productos cuyo precio es mayor al promedio general de precios.</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -289,7 +289,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1in</Height>
+      <Height>0.32584in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -308,7 +308,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>0.75in</Top>
+          <Top>0.06944in</Top>
           <Left>5.5in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
@@ -322,6 +322,17 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line1">
+          <Top>0.04167in</Top>
+          <Height>0in</Height>
+          <Width>6.5in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>

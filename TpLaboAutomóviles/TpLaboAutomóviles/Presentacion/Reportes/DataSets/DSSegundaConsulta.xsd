@@ -2,30 +2,31 @@
 <xs:schema id="DSSegundaConsulta" targetNamespace="http://tempuri.org/DSSegundaConsulta.xsd" xmlns:mstns="http://tempuri.org/DSSegundaConsulta.xsd" xmlns="http://tempuri.org/DSSegundaConsulta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection ConnectionStringObject="Data Source=DESKTOP-CG0956K\SQLEXPRESS;Initial Catalog=automotriz;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-cg0956k\sqlexpress.automotriz.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="automotrizConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="automotrizConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TpLaboAutomóviles.Properties.Settings.GlobalReference.Default.automotrizConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTSegConsTableAdapter" GeneratorDataComponentClassName="DTSegConsTableAdapter" Name="DTSegCons" UserDataComponentName="DTSegConsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-cg0956k\sqlexpress.automotriz.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="automotrizConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT f.nroFactura AS 'Numero_factura', f.fecha, f2.total
-FROM     Facturas AS f INNER JOIN
-                      (SELECT nroFactura, SUM(cantidad * pre_unitario) AS total
-                       FROM      Detalles_Factura
-                       GROUP BY nroFactura) AS f2 ON f2.nroFactura = f.nroFactura
-WHERE  (YEAR(f.fecha) = YEAR(GETDATE()))</CommandText>
+                    <CommandText>SELECT        f.nroFactura AS 'Numero_Factura', f.fecha AS Fecha, f2.total
+FROM            Facturas AS f INNER JOIN
+                             (SELECT        nroFactura, SUM(cantidad * pre_unitario) AS total
+                               FROM            Detalles_Factura
+                               GROUP BY nroFactura) AS f2 ON f2.nroFactura = f.nroFactura
+WHERE        (YEAR(f.fecha) = YEAR(GETDATE()))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Numero_factura" DataSetColumn="Numero_factura" />
-              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="Numero_Factura" DataSetColumn="Numero_Factura" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
               <Mapping SourceColumn="total" DataSetColumn="total" />
             </Mappings>
             <Sources />
@@ -41,8 +42,8 @@ WHERE  (YEAR(f.fecha) = YEAR(GETDATE()))</CommandText>
         <xs:element name="DTSegCons" msprop:Generator_RowEvHandlerName="DTSegConsRowChangeEventHandler" msprop:Generator_RowDeletedName="DTSegConsRowDeleted" msprop:Generator_RowDeletingName="DTSegConsRowDeleting" msprop:Generator_RowEvArgName="DTSegConsRowChangeEvent" msprop:Generator_TablePropName="DTSegCons" msprop:Generator_RowChangedName="DTSegConsRowChanged" msprop:Generator_RowChangingName="DTSegConsRowChanging" msprop:Generator_TableClassName="DTSegConsDataTable" msprop:Generator_RowClassName="DTSegConsRow" msprop:Generator_TableVarName="tableDTSegCons" msprop:Generator_UserTableName="DTSegCons">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Numero_factura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Numero_factura" msprop:Generator_ColumnPropNameInTable="Numero_facturaColumn" msprop:Generator_ColumnVarNameInTable="columnNumero_factura" msprop:Generator_UserColumnName="Numero_factura" type="xs:int" />
-              <xs:element name="fecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Numero_Factura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Numero_Factura" msprop:Generator_ColumnPropNameInTable="Numero_FacturaColumn" msprop:Generator_ColumnVarNameInTable="columnNumero_Factura" msprop:Generator_UserColumnName="Numero_Factura" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -51,7 +52,7 @@ WHERE  (YEAR(f.fecha) = YEAR(GETDATE()))</CommandText>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DTSegCons" />
-      <xs:field xpath="mstns:Numero_factura" />
+      <xs:field xpath="mstns:Numero_Factura" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -71,7 +71,7 @@ namespace TpLaboAutomóviles
 
         private void consulta2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmConsulta2().ShowDialog();
+            new FrmReporte2().ShowDialog();
         }
 
         private void consulta3ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +97,11 @@ namespace TpLaboAutomóviles
         private void consulta7ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmReporte7().ShowDialog();
+        }
+
+        private void consulta8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConsulta8().ShowDialog();
         }
     }
 }

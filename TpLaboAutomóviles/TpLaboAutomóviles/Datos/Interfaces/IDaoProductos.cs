@@ -14,5 +14,7 @@ namespace TpLaboAutomóviles.Datos.Interfaces
         DataTable Read(int idTipoProducto);
         bool Delete(Producto producto);
         bool Update(Producto producto);
+        DataTable ReadProductosConsulta8(double min, double max);
+        DataTable ReadTiposProducto();
     }
 }

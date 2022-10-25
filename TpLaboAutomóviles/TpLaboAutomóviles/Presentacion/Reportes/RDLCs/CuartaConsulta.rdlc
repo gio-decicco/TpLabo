@@ -354,9 +354,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSCuartaConsulta1</DataSetName>
-        <Top>0.04167in</Top>
+        <Top>0.31944in</Top>
         <Height>0.5in</Height>
-        <Width>3.91667in</Width>
+        <Width>3.91666in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -651,7 +651,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSCuartaConsulta2</DataSetName>
-        <Top>0.06944in</Top>
+        <Top>0.31944in</Top>
         <Left>4.13333in</Left>
         <Height>0.5in</Height>
         <Width>3.6in</Width>
@@ -886,10 +886,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSCuartaConsulta3</DataSetName>
-        <Top>0.06944in</Top>
-        <Left>7.9in</Left>
+        <Top>0.31944in</Top>
+        <Left>7.92168in</Left>
         <Height>0.5in</Height>
-        <Width>3.15in</Width>
+        <Width>3.14999in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -897,11 +897,116 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Diario</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.04166in</Top>
+        <Left>1.51249in</Left>
+        <Height>0.25in</Height>
+        <Width>0.72917in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mensual</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.04167in</Top>
+        <Left>5.37499in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Anual</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.02778in</Top>
+        <Left>9.05501in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.48333in</Height>
+    <Height>1.025in</Height>
     <Style />
   </Body>
-  <Width>11.05in</Width>
+  <Width>11.07167in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -915,7 +1020,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Mostrar el total y el promedio diario, mensual y anual</Value>
+                  <Value>Promedio y total de ventas</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -951,9 +1056,51 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.8in</Height>
+      <Height>0.38333in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Line Name="Line1">
+          <Top>0.04167in</Top>
+          <Height>0in</Height>
+          <Width>11.07167in</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.11111in</Top>
+          <Left>10.07167in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

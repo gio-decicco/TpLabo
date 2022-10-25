@@ -370,7 +370,7 @@
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>1.12167in</Height>
+      <Height>1.05917in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -381,7 +381,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Número de factura, fecha, artículo, cantidad e importe para los casos que la cantidad total de unidades son mayores a 3</Value>
+                  <Value>Compras cuyas objetos comprados sean mayores a tres.</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -416,7 +416,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.69167in</Height>
+      <Height>0.37917in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -435,7 +435,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.4in</Top>
+          <Top>0.125in</Top>
           <Left>5.5in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>

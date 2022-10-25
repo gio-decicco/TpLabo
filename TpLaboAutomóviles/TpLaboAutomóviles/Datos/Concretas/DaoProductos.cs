@@ -103,6 +103,18 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
+        public DataTable ReadProductosConsulta8(double min, double max)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "precio_productos";
+            cmd.Parameters.AddWithValue("@precio1", min);
+            cmd.Parameters.AddWithValue("@precio2", max);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+
+        }
 
         public bool Update(Producto producto)
         {

@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSSextaConsulta = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSSextaConsulta();
             this.dT6taConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSSextaConsulta = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSSextaConsulta();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dT6taConsultaTableAdapter = new TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSSextaConsultaTableAdapters.DT6taConsultaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dSSextaConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT6taConsultaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSSextaConsulta)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dT6taConsultaBindingSource
+            // 
+            this.dT6taConsultaBindingSource.DataMember = "DT6taConsulta";
+            this.dT6taConsultaBindingSource.DataSource = this.dSSextaConsulta;
+            // 
+            // dSSextaConsulta
+            // 
+            this.dSSextaConsulta.DataSetName = "DSSextaConsulta";
+            this.dSSextaConsulta.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,20 +56,11 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Presentacion.Reportes.RDLCs.SextaConsulta.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(807, 366);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dSSextaConsulta
-            // 
-            this.dSSextaConsulta.DataSetName = "DSSextaConsulta";
-            this.dSSextaConsulta.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dT6taConsultaBindingSource
-            // 
-            this.dT6taConsultaBindingSource.DataMember = "DT6taConsulta";
-            this.dT6taConsultaBindingSource.DataSource = this.dSSextaConsulta;
             // 
             // dT6taConsultaTableAdapter
             // 
@@ -67,15 +68,16 @@
             // 
             // FrmReporte6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(807, 366);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmReporte6";
             this.Text = "FrmReporte6";
             this.Load += new System.EventHandler(this.FrmReporte6_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSSextaConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT6taConsultaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSSextaConsulta)).EndInit();
             this.ResumeLayout(false);
 
         }

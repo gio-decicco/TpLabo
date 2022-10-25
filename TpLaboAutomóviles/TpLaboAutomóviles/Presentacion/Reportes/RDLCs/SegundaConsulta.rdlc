@@ -31,40 +31,40 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix4">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.11222in</Width>
+              <Width>2.07639in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.11222in</Width>
+              <Width>2.07639in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.11222in</Width>
+              <Width>2.07639in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.49583in</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Numero factura</Value>
+                              <Value>Numero Factura</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -80,21 +80,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>fecha</Value>
+                              <Value>Fecha</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -110,7 +110,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox27">
+                    <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -124,7 +124,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox27</rd:DefaultName>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -141,25 +141,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.49583in</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Numero_factura">
+                    <Textbox Name="Numero_Factura">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Numero_factura.Value</Value>
+                              <Value>=Fields!Numero_Factura.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Numero_factura</rd:DefaultName>
+                      <rd:DefaultName>Numero_Factura</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -175,21 +175,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="fecha">
+                    <Textbox Name="Fecha">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!fecha.Value</Value>
+                              <Value>=Fields!Fecha.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>fecha</rd:DefaultName>
+                      <rd:DefaultName>Fecha</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -250,15 +250,15 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Detalles" />
+              <Group Name="Details" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSSegundaConsulta2</DataSetName>
-        <Top>0.57167in</Top>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.48833in</Top>
         <Left>0.16333in</Left>
-        <Height>0.99167in</Height>
-        <Width>6.33667in</Width>
+        <Height>0.5in</Height>
+        <Width>6.22917in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -267,13 +267,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.11458in</Height>
     <Style />
   </Body>
   <Width>6.505in</Width>
   <Page>
     <PageHeader>
-      <Height>1in</Height>
+      <Height>0.55208in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -285,7 +285,10 @@
               <TextRuns>
                 <TextRun>
                   <Value>Facturas del año en curso con el total sin detalles</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>18pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -294,14 +297,14 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.355in</Top>
+          <Left>0.0127cm</Left>
           <Height>0.50833in</Height>
           <Width>6.5in</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>Turquoise</BackgroundColor>
+            <BackgroundColor>LightBlue</BackgroundColor>
             <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -385,18 +388,18 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSSegundaConsulta2">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DSSegundaConsulta</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Numero_factura">
-          <DataField>Numero_factura</DataField>
+        <Field Name="Numero_Factura">
+          <DataField>Numero_Factura</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="fecha">
-          <DataField>fecha</DataField>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="total">
@@ -406,7 +409,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSSegundaConsulta</rd:DataSetName>
-        <rd:SchemaPath>C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\Presentacion\Reportes\DSSegundaConsulta.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\Presentacion\Reportes\DataSets\DSSegundaConsulta.xsd</rd:SchemaPath>
         <rd:TableName>DTSegCons</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
