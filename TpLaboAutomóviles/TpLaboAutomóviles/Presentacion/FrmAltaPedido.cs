@@ -41,7 +41,9 @@ namespace TpLaboAutomóviles.Presentacion
         {
             gboPedido.Enabled = valor;
             nudCantidad.Value = 1;
+            txtTotal.Text = "";
             dgvPedidos.Rows.Clear();
+            pedido.lDetallesPedido.Clear();
         }
 
         private void cargarTipoProducto()
@@ -174,6 +176,7 @@ namespace TpLaboAutomóviles.Presentacion
                     DaoPedidos.Instancia().Create(pedido);
                     MessageBox.Show("Se inserto con exito !!", "Informacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                     Clean(true);
+                    cargarIdPedido();
                 }
 
             }

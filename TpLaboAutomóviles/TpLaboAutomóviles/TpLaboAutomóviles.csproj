@@ -86,6 +86,12 @@
     <Compile Include="Presentacion\frmConsultarPedidos.Designer.cs">
       <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmEditarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmEditarPedido.Designer.cs">
+      <DependentUpon>frmEditarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmConsultarPedidos.resx">
       <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmEditarPedido.resx">
+      <DependentUpon>frmEditarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

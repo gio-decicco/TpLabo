@@ -14,6 +14,7 @@ namespace TpLaboAutomóviles.Presentacion
 {
     public partial class frmConsultarPedidos : Form
     {
+        List<Pedido> lPedidos = new List<Pedido>();
         public frmConsultarPedidos()
         {
             InitializeComponent();
@@ -55,10 +56,11 @@ namespace TpLaboAutomóviles.Presentacion
             {
                 dgvConsulta.Rows.Clear();
                 DataRowView valor = (DataRowView)cboCliente.SelectedItem;
-                List<Pedido> lst = DaoPedidos.Instancia().ConsultarPedidos((int)valor[0]);
-                foreach(Pedido p in lst)
+                lPedidos = DaoPedidos.Instancia().ConsultarPedidos((int)valor[0]);
+                foreach(Pedido p in lPedidos)
                 {
                     dgvConsulta.Rows.Add(new object[] { p.IdPedido, p.FechaOrden.ToString("dd/MM/yyyy"), p.FechaPedido.ToString("dd/MM/yyyy"), valor[1].ToString() + " " + valor[2].ToString() });
+                    dgvDetallesPedido.Rows.Clear();
                 }
                 
             }
@@ -89,26 +91,53 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro desea quitar el Pedido seleccionado?", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (dgvConsulta.SelectedRows.Count == 0)
             {
-                if (dgvConsulta.CurrentRow != null)
+                MessageBox.Show("Por favor seleccione un pedido !!");
+            }
+            else
+            {
+                if (MessageBox.Show("Seguro desea quitar el Pedido seleccionado?", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    int nro = (int)dgvConsulta.CurrentRow.Cells[0].Value;
-                    DaoPedidos.Instancia().Delete(nro);
-                    MessageBox.Show("El Pedido se quitó exitosamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.btnConsultar_Click(sender, e);
-                }
-                else
-                {
-                    MessageBox.Show("El Pedido NO se quitó exitosamente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dgvConsulta.CurrentRow != null)
+                    {
+                        int nro = (int)dgvConsulta.CurrentRow.Cells[0].Value;
+                        DaoPedidos.Instancia().Delete(nro);
+                        MessageBox.Show("El Pedido se quitó exitosamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.btnConsultar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Pedido NO se quitó exitosamente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    }
                 }
             }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            int nro = (int)dgvConsulta.CurrentRow.Cells[0].Value;
+            new frmEditarPedido(nro).ShowDialog();
 
         }
+
+        private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvConsulta.CurrentCell.ColumnIndex == 4)
+            {
+                dgvDetallesPedido.Rows.Clear();
+                int idPedido = (int)dgvConsulta.CurrentRow.Cells[0].Value;
+                Pedido pedido = DaoPedidos.Instancia().ConsultarPedidoPorNro(idPedido);
+                
+                foreach(Detalle_Pedido detalle in pedido.lDetallesPedido)
+                {
+                    dgvDetallesPedido.Rows.Add(new Object[] { detalle.Producto.IdProducto, detalle.Producto.Descripcion, detalle.Producto.Precio,detalle.Cantidad });
+                }
+
+            }
+        }
+
     }
 }

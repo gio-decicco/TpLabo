@@ -104,11 +104,6 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
-        public DataTable Read()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Update(Pedido pedido)
         {
             throw new NotImplementedException();
@@ -178,6 +173,28 @@ namespace TpLaboAutomóviles.Datos.Concretas
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
             return tabla;
+        }
+
+        public Pedido ConsultarPedidoPorNro(int idPedido)
+        {
+            Pedido pedido = new Pedido();
+            string sp = "SP_CONSULTAR_PEDIDO_DETALLES";
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@nroPedido", idPedido));
+
+            DataTable tabla = consultaSql(sp, lst);
+
+            foreach(DataRow fila in tabla.Rows)
+            {
+                Producto producto = new Producto();
+                producto.IdProducto = Convert.ToInt32(fila["idProducto"].ToString());
+                producto.Descripcion = fila["descripcion"].ToString();
+                producto.Precio = Convert.ToDouble(fila["precio"].ToString());
+                int cantidad = Convert.ToInt32(fila["cantidad"].ToString());
+                Detalle_Pedido detalle = new Detalle_Pedido(producto, cantidad);
+                pedido.AgregarDetalle(detalle);
+            }
+            return pedido;
         }
     }
 }

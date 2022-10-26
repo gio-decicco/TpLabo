@@ -64,6 +64,7 @@ namespace TpLaboAutomóviles
         {
             frmConsultarPedidos frm = new frmConsultarPedidos();
             frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }

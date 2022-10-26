@@ -60,3 +60,4 @@ D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Compu
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.exe
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.pdb
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmConsultarPedidos.resources
+D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmEditarPedido.resources
