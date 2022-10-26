@@ -117,6 +117,7 @@ namespace TpLaboAutomóviles.Presentacion
                 if (DaoFacturas.Instancia().Delete(lFacturas[Convert.ToInt32(LstFacturas.SelectedIndex)]))
                 {
                     MessageBox.Show("Se eliminó correctamente la factura");
+                    CargarLista();
                 }
                 else
                 {
