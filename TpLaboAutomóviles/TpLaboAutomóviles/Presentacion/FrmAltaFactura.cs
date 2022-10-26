@@ -15,6 +15,8 @@ namespace TpLaboAutomóviles.Presentacion
     public partial class FrmAltaFactura : Form
     {
         Factura nueva;
+        double subtotal = 0;
+        double total = 0;
         public FrmAltaFactura()
         {
             InitializeComponent();
@@ -23,7 +25,11 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (DtgDetalles.CurrentCell.ColumnIndex == 4)
+            {
+                nueva.QuitarDetalle(DtgDetalles.CurrentRow.Index);
+                DtgDetalles.Rows.Remove(DtgDetalles.CurrentRow);
+            }
         }
 
         private void FrmAltaFactura_Load(object sender, EventArgs e)
@@ -77,6 +83,23 @@ namespace TpLaboAutomóviles.Presentacion
         {
             DataRowView item = (DataRowView)CboTipoCliente.SelectedItem;
             cargarComboCliente(Convert.ToInt32(item[0]));
+            if (Convert.ToInt32(item[0]) == 1)
+            {
+                CboAutoPlan.Enabled = true;
+            }
+            else
+            {
+                CboAutoPlan.Enabled = false;
+                CboAutoPlan.SelectedIndex = 3;
+            }
+            if (Convert.ToInt32(item[0]) == 4)
+            {
+                TxtDescuento.Text = "10";
+            }
+            else
+            {
+                TxtDescuento.Text = "0";
+            }
         }
         private void cargarComboTipoProducto()
         {
@@ -102,6 +125,14 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach(Detalle_Facturas detalle in nueva.lDetalles)
+            {
+                if (CboProductos.Text == detalle.Producto.Descripcion)
+                {
+                    MessageBox.Show("El producto ya se encuentra como detalle!");
+                    return;
+                }
+            }
             if (!validar())
             {
                 return;
@@ -121,7 +152,12 @@ namespace TpLaboAutomóviles.Presentacion
             d.Cantidad = Convert.ToInt32(TxtCantidad.Text);
             d.PrecioUnitario = p.Precio;
             nueva.AgregarDetalle(d);
-            DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion, TxtCantidad.Text });
+            DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion,p.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
+            subtotal += p.Precio * Convert.ToInt32(TxtCantidad.Text);
+            TxtSubtotal.Text = Convert.ToString(subtotal);
+            total = ((Convert.ToInt32(TxtInteres.Text) * subtotal) / 100) + subtotal;
+            total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
+            TxtTotal.Text = Convert.ToString(total);
         }
 
         private bool validar()
@@ -233,6 +269,21 @@ namespace TpLaboAutomóviles.Presentacion
             nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
             DataRowView item3 = (DataRowView)CboAutoPlan.SelectedItem;
             nueva.IdAutoplan = Convert.ToInt32(item3[0]);
+        }
+
+        private void CboAutoPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView item = (DataRowView)CboAutoPlan.SelectedItem;
+            TxtCuotas.Text = Convert.ToString(item[1]);
+            TxtInteres.Text = Convert.ToString(item[2]);
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que desea cancelar la operacion?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
     }
 }

@@ -120,6 +120,8 @@ namespace TpLaboAutomóviles.Datos.Concretas
             try
             {
                 Conectar();
+                t = cnn.BeginTransaction();
+                cmd.Transaction = t;
                 cmd.CommandText = "spProximoPedido";
                 SqlParameter param = new SqlParameter();
                 param.Direction = ParameterDirection.Output;
@@ -128,10 +130,12 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 cmd.Parameters.Add(param);
                 cmd.ExecuteNonQuery();
                 nro = param.Value.GetType() == typeof(int) ? (int)param.Value : 1;
+                t.Commit();
             }
             catch (Exception)
             {
                 nro = 1;
+                t.Rollback();
             }
             finally
             {

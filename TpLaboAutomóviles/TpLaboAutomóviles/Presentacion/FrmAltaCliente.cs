@@ -32,7 +32,7 @@ namespace TpLaboAutomóviles.Presentacion
             c.IdBarrio = Convert.ToInt32(item1[0]);
             DataRowView item2 = (DataRowView)cboTipoCliente.SelectedItem;
             c.IdTipoCliente = Convert.ToInt32(item2[0]);
-            if (oDao.Create(c))
+            if (DaoClientes.Instancia().Create(c))
             {
                 MessageBox.Show("Su cliente ha sido cargado con exito");
             }
