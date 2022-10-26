@@ -231,3 +231,19 @@ as
 update Facturas
 set activo = 0
 where nroFactura = @id
+
+insert into Productos values ('Bujía', 50, 75, 5000, 2)
+insert into Productos values ('Kit de distrubición', 43, 58, 10000, 2)
+insert into Productos values ('Motor', 15,20 , 50000, 2)
+insert into Productos values ('Paragolpe delantero', 50, 80, 100000, 2)
+insert into Productos values ('Capot', 50, 75, 11000, 2)
+insert into Productos values ('Paragolpe trasero', 50, 75, 120000, 2)
+insert into Productos values ('Filtro de aceite', 75, 92, 40000, 2)
+insert into Productos values ('Filtro de aire', 75, 102, 45000, 2)
+insert into Productos values ('Chery QQ', 2, 2, 234743, 1)
+insert into Productos values ('VW Gol', 2, 3, 286039, 1)
+insert into Productos values ('Ford Ka', 2, 4,286300, 1)
+insert into Productos values ('Nissan March', 1, 2, 266000, 1)
+insert into Productos values ('Hilux', 2, 3, 5000000, 1)
+insert into Productos values ('Renault Sandero', 1, 2, 287500, 1)
+insert into Productos values ('Amarok', 1, 2, 20000000, 1)
