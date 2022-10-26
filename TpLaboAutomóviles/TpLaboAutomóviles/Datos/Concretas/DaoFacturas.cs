@@ -21,6 +21,27 @@ namespace TpLaboAutomóviles.Datos.Concretas
             }
             return instancia;
         }
+        public DataTable ReadAutoPlanConIndice(int id)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spReadAutoPlanConId";
+            cmd.Parameters.AddWithValue("@id", id);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+        public DataTable ReadFormasPagoConId(int id)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spReadFormasPagoConId";
+            cmd.Parameters.AddWithValue("@id", id);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            return tabla;
+        }
+
         public int ConsultarProximoId()
         {
             int nro = 0;
@@ -63,8 +84,8 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 cmd.Parameters.AddWithValue("@idCliente", factura.IdCliente);
                 cmd.Parameters.AddWithValue("@fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@descuento", factura.Descuento);
-                cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);
                 cmd.Parameters.AddWithValue("@idAutoPlan", factura.IdAutoplan);
+                cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);
                 SqlParameter param = new SqlParameter();
                 param.Direction = ParameterDirection.Output;
                 param.ParameterName = "@id";
@@ -115,7 +136,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarFactura";
-                cmd.Parameters.AddWithValue("@nroFactura", factura.IdFactura);
+                cmd.Parameters.AddWithValue("@id", factura.IdFactura);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -134,11 +155,12 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
-        public DataTable Read()
+        public DataTable Read(int idCliente)
         {
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarFacturas";
+            cmd.Parameters.AddWithValue("@idCliente", idCliente);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
             return tabla;

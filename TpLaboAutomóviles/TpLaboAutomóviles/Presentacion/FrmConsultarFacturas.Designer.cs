@@ -43,7 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CboClientes = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DtgDetalles = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@
             this.GroupFacturas.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDetalles)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupFacturas
@@ -100,6 +100,7 @@
             // 
             // TxtDescuento
             // 
+            this.TxtDescuento.Enabled = false;
             this.TxtDescuento.Location = new System.Drawing.Point(104, 177);
             this.TxtDescuento.Name = "TxtDescuento";
             this.TxtDescuento.Size = new System.Drawing.Size(250, 20);
@@ -107,6 +108,7 @@
             // 
             // CboAutoPlan
             // 
+            this.CboAutoPlan.Enabled = false;
             this.CboAutoPlan.FormattingEnabled = true;
             this.CboAutoPlan.Location = new System.Drawing.Point(95, 222);
             this.CboAutoPlan.Name = "CboAutoPlan";
@@ -115,6 +117,7 @@
             // 
             // CboFormasPago
             // 
+            this.CboFormasPago.Enabled = false;
             this.CboFormasPago.FormattingEnabled = true;
             this.CboFormasPago.Location = new System.Drawing.Point(124, 132);
             this.CboFormasPago.Name = "CboFormasPago";
@@ -123,6 +126,7 @@
             // 
             // TxtFecha
             // 
+            this.TxtFecha.Enabled = false;
             this.TxtFecha.Location = new System.Drawing.Point(82, 87);
             this.TxtFecha.Name = "TxtFecha";
             this.TxtFecha.Size = new System.Drawing.Size(272, 20);
@@ -193,7 +197,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.DtgDetalles);
             this.groupBox3.Location = new System.Drawing.Point(12, 373);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(800, 275);
@@ -201,22 +205,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles";
             // 
-            // dataGridView1
+            // DtgDetalles
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DtgDetalles.AllowUserToAddRows = false;
+            this.DtgDetalles.AllowUserToDeleteRows = false;
+            this.DtgDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColProducto,
             this.ColCantidad,
             this.ColPrecio,
             this.ColAcciones});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(788, 250);
-            this.dataGridView1.TabIndex = 0;
+            this.DtgDetalles.Location = new System.Drawing.Point(6, 19);
+            this.DtgDetalles.Name = "DtgDetalles";
+            this.DtgDetalles.ReadOnly = true;
+            this.DtgDetalles.Size = new System.Drawing.Size(788, 250);
+            this.DtgDetalles.TabIndex = 0;
             // 
             // ColID
             // 
@@ -258,24 +262,29 @@
             this.BtnSalir.TabIndex = 2;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnEliminar
             // 
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.Location = new System.Drawing.Point(18, 656);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 3;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnModificar
             // 
+            this.BtnModificar.Enabled = false;
             this.BtnModificar.Location = new System.Drawing.Point(114, 656);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(75, 23);
             this.BtnModificar.TabIndex = 4;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // label7
             // 
@@ -303,6 +312,7 @@
             this.BtnCargar.TabIndex = 8;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
+            this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
             // FrmConsultarFacturas
             // 
@@ -321,13 +331,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboClientes);
             this.Name = "FrmConsultarFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultarFacturas";
             this.Load += new System.EventHandler(this.FrmConsultarFacturas_Load);
             this.GroupFacturas.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDetalles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +362,7 @@
         private System.Windows.Forms.ComboBox CboAutoPlan;
         private System.Windows.Forms.ComboBox CboFormasPago;
         private System.Windows.Forms.TextBox TxtFecha;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DtgDetalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;

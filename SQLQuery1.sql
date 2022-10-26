@@ -124,7 +124,7 @@ insert into Tipos_Clientes values ('Empresa')
 insert into Tipos_Clientes values ('Concesionario')
 insert into Tipos_Clientes values ('Casa de Repuestos')
 
-create procedure spInsertarFacturaMaestro
+alter procedure spInsertarFacturaMaestro
 @idCliente int,
 @fecha datetime,
 @descuento int,
@@ -132,8 +132,10 @@ create procedure spInsertarFacturaMaestro
 @idAutoPlan int,
 @id int output
 as
-insert into Facturas values (@idCliente, @fecha, @descuento, @idFormaPago, @idAutoPlan)
+insert into Facturas values (@idCliente, @fecha, @descuento, @idAutoPlan, @idFormaPago, 1)
 set @id = SCOPE_IDENTITY();
+
+select * from Facturas
 
 create procedure spInsertarFacturaDetalle
 @nroFactura int,
@@ -194,6 +196,38 @@ as
 select * from Detalles_Factura
 where nroFactura = @idFactura
 
-create procedure spConsultarFacturas
+alter procedure spConsultarFacturas
+@idCliente int
 as
 select * from Facturas
+where idCliente = @idCliente and activo = 1
+
+create procedure spConsultarConIndice
+@idProducto int
+as
+select * from Productos where idProducto = @idProducto
+
+alter table Facturas
+add activo bit
+
+create procedure spReadAutoPlanConId
+@id int
+as
+select * from Auto_Planes where idAutoPlan = @id
+
+create procedure spReadFormasPagoConId
+@id int
+as
+select * from Formas_Pago where idFormaPago = @id
+
+select * from Facturas
+
+update Facturas
+set activo = 1
+
+create procedure spBorrarFactura
+@id int
+as
+update Facturas
+set activo = 0
+where nroFactura = @id
