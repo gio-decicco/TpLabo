@@ -79,7 +79,6 @@ namespace TpLaboAutomóviles.Presentacion
             CargarCombos();
             CargarDetalles(lFacturas[Convert.ToInt32(LstFacturas.SelectedIndex)]);
             BtnEliminar.Enabled = true;
-            BtnModificar.Enabled = true;
         }
 
         private void CargarDetalles(Factura factura)
@@ -124,11 +123,6 @@ namespace TpLaboAutomóviles.Presentacion
                     MessageBox.Show("No se pudo eliminar la factura");
                 }
             }
-        }
-
-        private void BtnModificar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

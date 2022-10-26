@@ -51,7 +51,6 @@
             this.ColAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.CboTipoCliente = new System.Windows.Forms.ComboBox();
             this.BtnCargar = new System.Windows.Forms.Button();
@@ -275,17 +274,6 @@
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Enabled = false;
-            this.BtnModificar.Location = new System.Drawing.Point(114, 656);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(75, 23);
-            this.BtnModificar.TabIndex = 4;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -322,7 +310,6 @@
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.CboTipoCliente);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.groupBox3);
@@ -369,7 +356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn ColAcciones;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CboTipoCliente;
         private System.Windows.Forms.Button BtnCargar;
