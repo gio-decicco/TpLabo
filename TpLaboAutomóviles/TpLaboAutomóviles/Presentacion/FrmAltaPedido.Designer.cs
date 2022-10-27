@@ -55,6 +55,8 @@
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.gboPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -196,6 +198,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboTipoProducto);
             this.groupBox1.Controls.Add(this.dgvPedidos);
@@ -208,7 +212,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(714, 337);
+            this.groupBox1.Size = new System.Drawing.Size(714, 379);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -283,7 +287,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(304, 666);
+            this.btnAceptar.Location = new System.Drawing.Point(298, 707);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 42);
@@ -294,7 +298,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(485, 666);
+            this.btnCancelar.Location = new System.Drawing.Point(479, 707);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 42);
@@ -356,11 +360,28 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(497, 330);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(180, 22);
+            this.txtTotal.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(375, 330);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 22);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "$ TOTAL:";
+            // 
             // FrmAltaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 725);
+            this.ClientSize = new System.Drawing.Size(872, 768);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -411,5 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn colAcciones;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

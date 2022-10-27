@@ -13,6 +13,10 @@ namespace TpLaboAutomóviles.Dominio
             Producto = producto;
             Cantidad = cantidad;
         }
+        public double CalcularSubtotal()
+        {
+            return Producto.Precio * Cantidad;
+        }
 
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }

@@ -34,13 +34,16 @@ namespace TpLaboAutomóviles.Presentacion
             cargarTipoProducto();
             Clean(true);
             btnEditar.Enabled = false;
+            txtTotal.Enabled = false;
         }
 
         private void Clean(bool valor)
         {
             gboPedido.Enabled = valor;
             nudCantidad.Value = 1;
+            txtTotal.Text = "";
             dgvPedidos.Rows.Clear();
+            pedido.lDetallesPedido.Clear();
         }
 
         private void cargarTipoProducto()
@@ -78,9 +81,20 @@ namespace TpLaboAutomóviles.Presentacion
 
                 dgvPedidos.Rows.Add(new Object[] { producto.IdProducto, producto.Descripcion, cantidad, producto.Precio * cantidad});
                 // evita cambiar datos
+                CalcularTotal();
                 gboPedido.Enabled = false;
                 btnEditar.Enabled = true;
             }
+        }
+
+        private void CalcularTotal()
+        {
+            double total = 0;
+            foreach(Detalle_Pedido detalle in pedido.lDetallesPedido)
+            {
+                total += detalle.CalcularSubtotal();
+            }
+            txtTotal.Text = total.ToString();
         }
 
         private bool validarGrilla()
@@ -145,6 +159,7 @@ namespace TpLaboAutomóviles.Presentacion
                 pedido.QuitarDetalle(dgvPedidos.CurrentRow.Index);
                 dgvPedidos.Rows.Remove(dgvPedidos.CurrentRow);
             }
+            CalcularTotal();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -161,6 +176,7 @@ namespace TpLaboAutomóviles.Presentacion
                     DaoPedidos.Instancia().Create(pedido);
                     MessageBox.Show("Se inserto con exito !!", "Informacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                     Clean(true);
+                    cargarIdPedido();
                 }
 
             }
