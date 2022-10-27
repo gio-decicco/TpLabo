@@ -77,6 +77,7 @@
     <Compile Include="Dominio\Detalle Facturas.cs" />
     <Compile Include="Dominio\Detalle_Pedido.cs" />
     <Compile Include="Dominio\Factura.cs" />
+    <Compile Include="Dominio\Parametro.cs" />
     <Compile Include="Dominio\Pedido.cs" />
     <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Presentacion\FrmAltaFactura.cs">
@@ -96,6 +97,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmConsulta8.Designer.cs">
       <DependentUpon>FrmConsulta8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarFacturas.Designer.cs">
+      <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -238,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmConsulta8.resx">
       <DependentUpon>FrmConsulta8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmConsultarFacturas.resx">
+      <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
