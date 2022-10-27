@@ -228,3 +228,5 @@ C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAu
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte7.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.CopyComplete
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsultarFacturas.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmConsultarPedido.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmEditarPedido.resources
