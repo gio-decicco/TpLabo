@@ -285,5 +285,11 @@ namespace TpLaboAutomóviles.Presentacion
                 this.Dispose();
             }
         }
+
+        private void CboProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView item = (DataRowView)CboProductos.SelectedItem;
+            TxtStock.Text = Convert.ToString(item[3]);
+        }
     }
 }

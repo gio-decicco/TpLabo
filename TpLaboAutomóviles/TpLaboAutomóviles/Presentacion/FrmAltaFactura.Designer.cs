@@ -34,6 +34,8 @@
             this.CboFormaPago = new System.Windows.Forms.ComboBox();
             this.CboAutoPlan = new System.Windows.Forms.ComboBox();
             this.GroupFactura = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtInteres = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.TxtCuotas = new System.Windows.Forms.TextBox();
             this.BtnListo = new System.Windows.Forms.Button();
@@ -47,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GroupDetalles = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TxtStock = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,8 +65,6 @@
             this.CboTipoProducto = new System.Windows.Forms.ComboBox();
             this.CboProductos = new System.Windows.Forms.ComboBox();
             this.DtgDetalles = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TxtInteres = new System.Windows.Forms.TextBox();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,6 +152,26 @@
             this.GroupFactura.TabIndex = 5;
             this.GroupFactura.TabStop = false;
             this.GroupFactura.Text = "Factura";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(712, 238);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 16);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Interés";
+            // 
+            // TxtInteres
+            // 
+            this.TxtInteres.Enabled = false;
+            this.TxtInteres.Location = new System.Drawing.Point(767, 235);
+            this.TxtInteres.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtInteres.MaxLength = 2;
+            this.TxtInteres.Name = "TxtInteres";
+            this.TxtInteres.Size = new System.Drawing.Size(82, 22);
+            this.TxtInteres.TabIndex = 17;
             // 
             // label12
             // 
@@ -275,6 +297,8 @@
             // 
             // GroupDetalles
             // 
+            this.GroupDetalles.Controls.Add(this.label14);
+            this.GroupDetalles.Controls.Add(this.TxtStock);
             this.GroupDetalles.Controls.Add(this.label11);
             this.GroupDetalles.Controls.Add(this.TxtTotal);
             this.GroupDetalles.Controls.Add(this.label10);
@@ -297,6 +321,26 @@
             this.GroupDetalles.TabIndex = 6;
             this.GroupDetalles.TabStop = false;
             this.GroupDetalles.Text = "Detalles";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(598, 38);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 16);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Stock Actual";
+            // 
+            // TxtStock
+            // 
+            this.TxtStock.Enabled = false;
+            this.TxtStock.Location = new System.Drawing.Point(687, 35);
+            this.TxtStock.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.Size = new System.Drawing.Size(72, 22);
+            this.TxtStock.TabIndex = 19;
+            this.TxtStock.Text = "1";
             // 
             // label11
             // 
@@ -374,7 +418,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(665, 39);
+            this.label8.Location = new System.Drawing.Point(777, 38);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 16);
@@ -384,7 +428,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(380, 38);
+            this.label7.Location = new System.Drawing.Point(335, 38);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
@@ -393,10 +437,10 @@
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(739, 36);
+            this.TxtCantidad.Location = new System.Drawing.Point(851, 35);
             this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(132, 22);
+            this.TxtCantidad.Size = new System.Drawing.Size(37, 22);
             this.TxtCantidad.TabIndex = 3;
             this.TxtCantidad.Text = "1";
             // 
@@ -423,11 +467,12 @@
             // CboProductos
             // 
             this.CboProductos.FormattingEnabled = true;
-            this.CboProductos.Location = new System.Drawing.Point(455, 34);
+            this.CboProductos.Location = new System.Drawing.Point(410, 34);
             this.CboProductos.Margin = new System.Windows.Forms.Padding(4);
             this.CboProductos.Name = "CboProductos";
             this.CboProductos.Size = new System.Drawing.Size(160, 24);
             this.CboProductos.TabIndex = 1;
+            this.CboProductos.SelectedIndexChanged += new System.EventHandler(this.CboProductos_SelectedIndexChanged);
             // 
             // DtgDetalles
             // 
@@ -448,26 +493,6 @@
             this.DtgDetalles.Size = new System.Drawing.Size(1019, 273);
             this.DtgDetalles.TabIndex = 0;
             this.DtgDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(712, 238);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 16);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Interés";
-            // 
-            // TxtInteres
-            // 
-            this.TxtInteres.Enabled = false;
-            this.TxtInteres.Location = new System.Drawing.Point(767, 235);
-            this.TxtInteres.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtInteres.MaxLength = 2;
-            this.TxtInteres.Name = "TxtInteres";
-            this.TxtInteres.Size = new System.Drawing.Size(82, 22);
-            this.TxtInteres.TabIndex = 17;
             // 
             // ColId
             // 
@@ -577,5 +602,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn ColQuitar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox TxtStock;
     }
 }
