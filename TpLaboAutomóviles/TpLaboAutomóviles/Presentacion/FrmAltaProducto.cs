@@ -60,8 +60,5 @@ namespace TpLaboAutomóviles.Presentacion
             cboTipoProd.ValueMember= "idTipoProducto";
             cboTipoProd.DisplayMember = "descripcion";
         }
-
-
-        
     }
 }

@@ -32,7 +32,7 @@ namespace TpLaboAutomóviles.Presentacion
             c.IdBarrio = Convert.ToInt32(item1[0]);
             DataRowView item2 = (DataRowView)cboTipoCliente.SelectedItem;
             c.IdTipoCliente = Convert.ToInt32(item2[0]);
-            if (oDao.Create(c))
+            if (DaoClientes.Instancia().Create(c))
             {
                 MessageBox.Show("Su cliente ha sido cargado con exito");
             }
@@ -62,6 +62,11 @@ namespace TpLaboAutomóviles.Presentacion
             cboBarrio.ValueMember = "idBarrio";
             cboBarrio.DisplayMember = "barrio";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

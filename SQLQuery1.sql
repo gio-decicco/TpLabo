@@ -124,7 +124,7 @@ insert into Tipos_Clientes values ('Empresa')
 insert into Tipos_Clientes values ('Concesionario')
 insert into Tipos_Clientes values ('Casa de Repuestos')
 
-create procedure spInsertarFacturaMaestro
+alter procedure spInsertarFacturaMaestro
 @idCliente int,
 @fecha datetime,
 @descuento int,
@@ -132,8 +132,10 @@ create procedure spInsertarFacturaMaestro
 @idAutoPlan int,
 @id int output
 as
-insert into Facturas values (@idCliente, @fecha, @descuento, @idFormaPago, @idAutoPlan)
+insert into Facturas values (@idCliente, @fecha, @descuento, @idAutoPlan, @idFormaPago, 1)
 set @id = SCOPE_IDENTITY();
+
+select * from Facturas
 
 create procedure spInsertarFacturaDetalle
 @nroFactura int,
@@ -187,3 +189,61 @@ select * from Tipos_Productos
 create procedure spConsultarTipoCliente
 as
 select * from Tipos_Clientes
+
+create procedure spConsultarDetalle
+@idFactura int
+as
+select * from Detalles_Factura
+where nroFactura = @idFactura
+
+alter procedure spConsultarFacturas
+@idCliente int
+as
+select * from Facturas
+where idCliente = @idCliente and activo = 1
+
+create procedure spConsultarConIndice
+@idProducto int
+as
+select * from Productos where idProducto = @idProducto
+
+alter table Facturas
+add activo bit
+
+create procedure spReadAutoPlanConId
+@id int
+as
+select * from Auto_Planes where idAutoPlan = @id
+
+create procedure spReadFormasPagoConId
+@id int
+as
+select * from Formas_Pago where idFormaPago = @id
+
+select * from Facturas
+
+update Facturas
+set activo = 1
+
+create procedure spBorrarFactura
+@id int
+as
+update Facturas
+set activo = 0
+where nroFactura = @id
+
+insert into Productos values ('Bujía', 50, 75, 5000, 2)
+insert into Productos values ('Kit de distrubición', 43, 58, 10000, 2)
+insert into Productos values ('Motor', 15,20 , 50000, 2)
+insert into Productos values ('Paragolpe delantero', 50, 80, 100000, 2)
+insert into Productos values ('Capot', 50, 75, 11000, 2)
+insert into Productos values ('Paragolpe trasero', 50, 75, 120000, 2)
+insert into Productos values ('Filtro de aceite', 75, 92, 40000, 2)
+insert into Productos values ('Filtro de aire', 75, 102, 45000, 2)
+insert into Productos values ('Chery QQ', 2, 2, 234743, 1)
+insert into Productos values ('VW Gol', 2, 3, 286039, 1)
+insert into Productos values ('Ford Ka', 2, 4,286300, 1)
+insert into Productos values ('Nissan March', 1, 2, 266000, 1)
+insert into Productos values ('Hilux', 2, 3, 5000000, 1)
+insert into Productos values ('Renault Sandero', 1, 2, 287500, 1)
+insert into Productos values ('Amarok', 1, 2, 20000000, 1)

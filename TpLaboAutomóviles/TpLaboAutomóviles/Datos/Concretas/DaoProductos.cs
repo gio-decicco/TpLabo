@@ -55,6 +55,27 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
+        public Producto ReadConIndice(int i)
+        {
+            DataTable tabla = new DataTable();
+            Producto p = new Producto();
+            Conectar();
+            cmd.CommandText = "spConsultarConIndice";
+            cmd.Parameters.AddWithValue("@idProducto", i);
+            tabla.Load(cmd.ExecuteReader());
+            Desconectar();
+            foreach(DataRow item in tabla.Rows)
+            {
+                p.IdProducto = Convert.ToInt32(item[0]);
+                p.Descripcion = Convert.ToString(item[1]);
+                p.Stock_Min = Convert.ToInt32(item[2]);
+                p.Stock_Actual = Convert.ToInt32(item[3]);
+                p.Precio = Convert.ToDouble(item[4]);
+                p.IdTipoProducto = Convert.ToInt32(item[5]);
+            }
+            return p;
+        }
+
         public bool Delete(Producto producto)
         {
             bool ok = true;
