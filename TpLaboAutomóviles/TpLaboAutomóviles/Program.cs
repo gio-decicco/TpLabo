@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpLaboAutomóviles.Presentacion;
 
 namespace TpLaboAutomóviles
 {
@@ -22,6 +23,7 @@ namespace TpLaboAutomóviles
             if (form.login)
             {
                 form.Dispose();
+                Application.Run(new frmBienvenido());
                 Application.Run(new FrmPrincipal());
             }
         }
