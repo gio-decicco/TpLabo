@@ -95,6 +95,15 @@ namespace TpLaboAutomóviles.Presentacion
         private void CboTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarComboClientes();
+            DataRowView item = (DataRowView)CboTipoCliente.SelectedItem;
+            if (Convert.ToInt32(item[0]) == 4)
+            {
+                TxtDescuento.Text = "10";
+            }
+            else
+            {
+                TxtDescuento.Text = "0";
+            }
         }
 
         private void BtnCargar_Click(object sender, EventArgs e)

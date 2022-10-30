@@ -9,10 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="automotrizConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="automotrizConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT SUM(d.cantidad * d.pre_unitario) AS 'Importe_Diario', AVG(d.cantidad * d.pre_unitario) AS 'Promedio', DAY(f.fecha) AS Dia, MONTH(f.fecha) AS Mes, YEAR(f.fecha) AS 'Año'
+                    <CommandText>SELECT SUM(d.cantidad * d.pre_unitario) AS 'Importe_Diario', AVG(d.cantidad * d.pre_unitario) AS 'Promedio', DAY(f.fecha) AS Dia, dbo.f_fecha_mes(MONTH(f.fecha)) AS Mes, YEAR(f.fecha) AS 'Año'
 FROM     Facturas AS f INNER JOIN
                   Detalles_Factura AS d ON d.nroFactura = f.nroFactura
 GROUP BY DAY(f.fecha), MONTH(f.fecha), YEAR(f.fecha)
@@ -26,8 +26,8 @@ ORDER BY 'Año' DESC, Mes, Dia</CommandText>
               <Mapping SourceColumn="Importe_Diario" DataSetColumn="Importe_Diario" />
               <Mapping SourceColumn="Promedio" DataSetColumn="Promedio" />
               <Mapping SourceColumn="Dia" DataSetColumn="Dia" />
-              <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
               <Mapping SourceColumn="Año" DataSetColumn="Año" />
+              <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -36,17 +36,23 @@ ORDER BY 'Año' DESC, Mes, Dia</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DSCuartaConsulta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DSCuartaConsulta" msprop:Generator_DataSetName="DSCuartaConsulta">
+  <xs:element name="DSCuartaConsulta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSCuartaConsulta" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCuartaConsulta">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="DataTable1" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Importe_Diario" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Importe_Diario" msprop:Generator_ColumnPropNameInTable="Importe_DiarioColumn" msprop:Generator_ColumnVarNameInTable="columnImporte_Diario" msprop:Generator_UserColumnName="Importe_Diario" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Promedio" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Promedio" msprop:Generator_ColumnPropNameInTable="PromedioColumn" msprop:Generator_ColumnVarNameInTable="columnPromedio" msprop:Generator_UserColumnName="Promedio" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Dia" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_ColumnVarNameInTable="columnDia" msprop:Generator_UserColumnName="Dia" type="xs:int" minOccurs="0" />
-              <xs:element name="Mes" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
-              <xs:element name="Año" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_ColumnVarNameInTable="columnAño" msprop:Generator_UserColumnName="Año" type="xs:int" minOccurs="0" />
+              <xs:element name="Importe_Diario" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Importe_Diario" msprop:Generator_ColumnPropNameInTable="Importe_DiarioColumn" msprop:Generator_ColumnPropNameInRow="Importe_Diario" msprop:Generator_ColumnVarNameInTable="columnImporte_Diario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Promedio" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Promedio" msprop:Generator_ColumnPropNameInTable="PromedioColumn" msprop:Generator_ColumnPropNameInRow="Promedio" msprop:Generator_ColumnVarNameInTable="columnPromedio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dia" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnVarNameInTable="columnDia" type="xs:int" minOccurs="0" />
+              <xs:element name="Año" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnVarNameInTable="columnAño" type="xs:int" minOccurs="0" />
+              <xs:element name="Mes" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_UserColumnName="Mes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

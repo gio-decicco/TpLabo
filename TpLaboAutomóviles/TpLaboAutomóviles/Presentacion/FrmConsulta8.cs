@@ -55,7 +55,7 @@ namespace TpLaboAutomóviles.Presentacion
         public void CargarDgv()
         {
             DataTable tabla = new DataTable();
-            tabla = DaoProductos.Instancia().ReadProductosConsulta8(Convert.ToDouble(nudMin.Value), Convert.ToDouble(nudMin.Value));
+            tabla = DaoProductos.Instancia().ReadProductosConsulta8(Convert.ToInt32(nudMin.Value), Convert.ToInt32(nudMax.Value));
             foreach (DataRow item in tabla.Rows)
             {
                 dgvProductos.Rows.Add(new object[] { item[0], item[1], item[2] });

@@ -154,10 +154,10 @@ namespace TpLaboAutomóviles.Presentacion
             nueva.AgregarDetalle(d);
             DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion,p.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
             subtotal += p.Precio * Convert.ToInt32(TxtCantidad.Text);
-            TxtSubtotal.Text = Convert.ToString(subtotal);
+            TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
             total = ((Convert.ToInt32(TxtInteres.Text) * subtotal) / 100) + subtotal;
             total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
-            TxtTotal.Text = Convert.ToString(total);
+            TxtTotal.Text = "$ " + Convert.ToString(total);
         }
 
         private bool validar()
@@ -290,6 +290,11 @@ namespace TpLaboAutomóviles.Presentacion
         {
             DataRowView item = (DataRowView)CboProductos.SelectedItem;
             TxtStock.Text = Convert.ToString(item[3]);
+        }
+
+        private void BtnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            new FrmAltaCliente().ShowDialog();
         }
     }
 }

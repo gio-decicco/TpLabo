@@ -124,7 +124,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
-        public DataTable ReadProductosConsulta8(double min, double max)
+        public DataTable ReadProductosConsulta8(int min, int max)
         {
             DataTable tabla = new DataTable();
             Conectar();

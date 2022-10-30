@@ -233,6 +233,7 @@
             this.BtnNuevoCliente.TabIndex = 11;
             this.BtnNuevoCliente.Text = "Nuevo";
             this.BtnNuevoCliente.UseVisualStyleBackColor = true;
+            this.BtnNuevoCliente.Click += new System.EventHandler(this.BtnNuevoCliente_Click);
             // 
             // LblNroFactura
             // 

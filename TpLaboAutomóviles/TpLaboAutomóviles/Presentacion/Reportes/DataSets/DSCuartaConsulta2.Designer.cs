@@ -283,9 +283,9 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             
             private global::System.Data.DataColumn columnPromedio;
             
-            private global::System.Data.DataColumn columnMes;
-            
             private global::System.Data.DataColumn columnAño;
+            
+            private global::System.Data.DataColumn columnMes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -338,17 +338,17 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MesColumn {
+            public global::System.Data.DataColumn AñoColumn {
                 get {
-                    return this.columnMes;
+                    return this.columnAño;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AñoColumn {
+            public global::System.Data.DataColumn MesColumn {
                 get {
-                    return this.columnAño;
+                    return this.columnMes;
                 }
             }
             
@@ -389,13 +389,13 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DTImporteMensualRow AddDTImporteMensualRow(decimal Importe_Mensual, decimal Promedio, int Mes, int Año) {
+            public DTImporteMensualRow AddDTImporteMensualRow(decimal Importe_Mensual, decimal Promedio, int Año, string Mes) {
                 DTImporteMensualRow rowDTImporteMensualRow = ((DTImporteMensualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Importe_Mensual,
                         Promedio,
-                        Mes,
-                        Año};
+                        Año,
+                        Mes};
                 rowDTImporteMensualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDTImporteMensualRow);
                 return rowDTImporteMensualRow;
@@ -420,8 +420,8 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             internal void InitVars() {
                 this.columnImporte_Mensual = base.Columns["Importe_Mensual"];
                 this.columnPromedio = base.Columns["Promedio"];
-                this.columnMes = base.Columns["Mes"];
                 this.columnAño = base.Columns["Año"];
+                this.columnMes = base.Columns["Mes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -431,14 +431,15 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
                 base.Columns.Add(this.columnImporte_Mensual);
                 this.columnPromedio = new global::System.Data.DataColumn("Promedio", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPromedio);
-                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMes);
                 this.columnAño = new global::System.Data.DataColumn("Año", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAño);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
                 this.columnImporte_Mensual.ReadOnly = true;
                 this.columnPromedio.ReadOnly = true;
-                this.columnMes.ReadOnly = true;
                 this.columnAño.ReadOnly = true;
+                this.columnMes.ReadOnly = true;
+                this.columnMes.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -614,22 +615,6 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Mes {
-                get {
-                    try {
-                        return ((int)(this[this.tableDTImporteMensual.MesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'DTImporteMensual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDTImporteMensual.MesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Año {
                 get {
                     try {
@@ -641,6 +626,22 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
                 }
                 set {
                     this[this.tableDTImporteMensual.AñoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Mes {
+                get {
+                    try {
+                        return ((string)(this[this.tableDTImporteMensual.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'DTImporteMensual\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDTImporteMensual.MesColumn] = value;
                 }
             }
             
@@ -670,18 +671,6 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMesNull() {
-                return this.IsNull(this.tableDTImporteMensual.MesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMesNull() {
-                this[this.tableDTImporteMensual.MesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsAñoNull() {
                 return this.IsNull(this.tableDTImporteMensual.AñoColumn);
             }
@@ -690,6 +679,18 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAñoNull() {
                 this[this.tableDTImporteMensual.AñoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableDTImporteMensual.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableDTImporteMensual.MesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -854,8 +855,8 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSCuartaConsulta2Tab
             tableMapping.DataSetTable = "DTImporteMensual";
             tableMapping.ColumnMappings.Add("Importe_Mensual", "Importe_Mensual");
             tableMapping.ColumnMappings.Add("Promedio", "Promedio");
-            tableMapping.ColumnMappings.Add("Mes", "Mes");
             tableMapping.ColumnMappings.Add("Año", "Año");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -872,7 +873,7 @@ namespace TpLaboAutomóviles.Presentacion.Reportes.DataSets.DSCuartaConsulta2Tab
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT SUM(d.cantidad * d.pre_unitario) AS 'Importe_Mensual', AVG(d.cantidad * d.pre_unitario) AS 'Promedio', MONTH(f.fecha) AS Mes, YEAR(f.fecha) AS 'Año'
+            this._commandCollection[0].CommandText = @"SELECT SUM(d.cantidad * d.pre_unitario) AS 'Importe_Mensual', AVG(d.cantidad * d.pre_unitario) AS 'Promedio', dbo.f_fecha_mes(MONTH(f.fecha)) AS Mes, YEAR(f.fecha) AS 'Año'
 FROM     Facturas AS f INNER JOIN
                   Detalles_Factura AS d ON d.nroFactura = f.nroFactura
 GROUP BY MONTH(f.fecha), YEAR(f.fecha)
