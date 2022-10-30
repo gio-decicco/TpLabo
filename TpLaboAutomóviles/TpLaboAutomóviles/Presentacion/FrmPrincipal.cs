@@ -108,5 +108,73 @@ namespace TpLaboAutomóviles
         {
             new frmConsultarPedidos().ShowDialog();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está a punto de salir del programa", "SALIENDO", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
+        }
+
+        private void nuevaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new FrmAltaFactura().ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new FrmConsultarFacturas().ShowDialog();
+        }
+
+        private void nuevoToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            new FrmAltaPedido().ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            new frmConsultarPedidos().ShowDialog();
+        }
+
+        private void reporte1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte1().ShowDialog();
+        }
+
+        private void reporte2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte2().ShowDialog();
+        }
+
+        private void reporte3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte3().ShowDialog();
+        }
+
+        private void reporte4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte4().ShowDialog();
+        }
+
+        private void reporte5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte5().ShowDialog();
+        }
+
+        private void reporte6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte6().ShowDialog();
+        }
+
+        private void reporte7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte7().ShowDialog();
+        }
+
+        private void reporte8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConsulta8().ShowDialog();
+        }
     }
 }
