@@ -106,7 +106,7 @@ namespace TpLaboAutomóviles
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new frmConsultarPedido().ShowDialog();
+            new frmConsultarPedidos().ShowDialog();
         }
     }
 }
