@@ -24,6 +24,7 @@ namespace TpLaboAutomóviles
             {
                 form.Dispose();
                 Application.Run(new frmBienvenido());
+                //Application.Run(new frmPrincipal2());
                 Application.Run(new FrmPrincipal());
             }
         }

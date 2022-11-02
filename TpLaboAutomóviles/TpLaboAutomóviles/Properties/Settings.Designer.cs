@@ -25,8 +25,8 @@ namespace TpLaboAutomóviles.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-AIP6C37C\\SQLEXPRESS;Initial Catalog=automotriz;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EH3B4VN\\SQLEXPRESS01;Initial Catalog=automotriz;Integrated Se" +
+            "curity=True")]
         public string CadenaConexion {
             get {
                 return ((string)(this["CadenaConexion"]));
@@ -39,8 +39,8 @@ namespace TpLaboAutomóviles.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-AIP6C37C\\SQLEXPRESS;Initial Catalog=automotriz;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EH3B4VN\\SQLEXPRESS01;Initial Catalog=automotriz;Integrated Se" +
+            "curity=True")]
         public string automotrizConnectionString {
             get {
                 return ((string)(this["automotrizConnectionString"]));

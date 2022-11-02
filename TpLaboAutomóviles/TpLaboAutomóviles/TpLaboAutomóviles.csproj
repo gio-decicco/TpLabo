@@ -122,6 +122,12 @@
     <Compile Include="Presentacion\frmConsultarPedidos.designer.cs">
       <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmDesarrolladores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDesarrolladores.Designer.cs">
+      <DependentUpon>frmDesarrolladores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmEditarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmActualizacionProducto.Designer.cs">
       <DependentUpon>FrmActualizacionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPrincipal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPrincipal2.Designer.cs">
+      <DependentUpon>frmPrincipal2.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\DataSets\DSCuartaConsulta.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -279,6 +291,9 @@
     <EmbeddedResource Include="Presentacion\frmConsultarPedidos.resx">
       <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDesarrolladores.resx">
+      <DependentUpon>frmDesarrolladores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmEditarPedido.resx">
       <DependentUpon>frmEditarPedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAltaProducto.resx">
       <DependentUpon>FrmAltaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPrincipal2.resx">
+      <DependentUpon>frmPrincipal2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Forms\FrmReporte1.resx">
       <DependentUpon>FrmReporte1.cs</DependentUpon>
