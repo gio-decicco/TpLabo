@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpLaboAutomóviles.Presentacion.Reportes.Forms;
 
 namespace TpLaboAutomóviles.Presentacion
 {
@@ -63,23 +64,26 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            new FrmAltaProducto().ShowDialog();
             
             HideSubMenu();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            new FrmAltaCliente().ShowDialog();
             HideSubMenu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            new FrmAltaFactura().ShowDialog();
             HideSubMenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            new FrmConsultarFacturas().ShowDialog();
             HideSubMenu();
         }
 
@@ -90,46 +94,55 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button7_Click(object sender, EventArgs e)
         {
+            new FrmConsultarFacturas().ShowDialog();
             HideSubMenu();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            new FrmReporte1().ShowDialog();
             HideSubMenu();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            new FrmReporte2().ShowDialog();
             HideSubMenu();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+            new FrmReporte3().ShowDialog();
             HideSubMenu();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+            new FrmReporte4().ShowDialog();
             HideSubMenu();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
+            new FrmReporte5().ShowDialog();
             HideSubMenu();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
+            new FrmReporte6().ShowDialog();
             HideSubMenu();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            new FrmReporte7().ShowDialog();
             HideSubMenu();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
+            new FrmConsulta8().ShowDialog();
             HideSubMenu();
         }
 
