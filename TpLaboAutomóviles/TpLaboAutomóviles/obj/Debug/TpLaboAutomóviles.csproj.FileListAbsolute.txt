@@ -313,3 +313,5 @@ D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Compu
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmDesarrolladores.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmDesarrolladores.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmPrincipal2.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\System.Data.SqlClient.xml
