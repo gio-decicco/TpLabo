@@ -9,25 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Datos.Concretas;
 using TpLaboAutomóviles.Dominio;
+using TpLaboAutomóviles.Servicios;
+using TpLaboAutomóviles.Servicios.Concreta;
+using TpLaboAutomóviles.Servicios.Factory;
+using TpLaboAutomóviles.Servicios.Interfaces;
 
 namespace TpLaboAutomóviles.Presentacion
 {
     public partial class FrmAltaFactura : Form
     {
-        Factura nueva;
+
+        private IServiceFactura servicio;
+        private ServiceFactory fabrica;
+        private Factura nueva;
         double subtotal = 0;
         double total = 0;
-        public FrmAltaFactura()
+        public FrmAltaFactura(ServiceFactory fabrica)
         {
             InitializeComponent();
-            nueva = new Factura();
+            this.fabrica = fabrica;
+            servicio = fabrica.CrearService();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DtgDetalles.CurrentCell.ColumnIndex == 4)
             {
-                nueva.QuitarDetalle(DtgDetalles.CurrentRow.Index);
+                nueva.QuitarDetalle(DtgDetalles.CurrentRow.Index); 
                 DtgDetalles.Rows.Remove(DtgDetalles.CurrentRow);
             }
         }
@@ -38,21 +46,12 @@ namespace TpLaboAutomóviles.Presentacion
             cargarComboTipoCliente();
             cargarComboTipoProducto();
             cargarComboFormasPago();
-            cargarComboAutoPlan();
             GroupDetalles.Enabled = false;
         }
 
         private void cargarProximoId()
         {
             LblNroFactura.Text = "Factura N°" + DaoFacturas.Instancia().ConsultarProximoId();
-        }
-
-        private void cargarComboAutoPlan()
-        {
-            CboAutoPlan.DataSource = DaoFacturas.Instancia().ReadAutoPlan();
-            CboAutoPlan.ValueMember = "idAutoPlan";
-            CboAutoPlan.DisplayMember = "descripcion";
-            CboAutoPlan.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cargarComboFormasPago()
@@ -83,23 +82,6 @@ namespace TpLaboAutomóviles.Presentacion
         {
             DataRowView item = (DataRowView)CboTipoCliente.SelectedItem;
             cargarComboCliente(Convert.ToInt32(item[0]));
-            if (Convert.ToInt32(item[0]) == 1)
-            {
-                CboAutoPlan.Enabled = true;
-            }
-            else
-            {
-                CboAutoPlan.Enabled = false;
-                CboAutoPlan.SelectedIndex = 3;
-            }
-            if (Convert.ToInt32(item[0]) == 4)
-            {
-                TxtDescuento.Text = "10";
-            }
-            else
-            {
-                TxtDescuento.Text = "0";
-            }
         }
         private void cargarComboTipoProducto()
         {
@@ -155,7 +137,6 @@ namespace TpLaboAutomóviles.Presentacion
             DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion,p.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
             subtotal += p.Precio * Convert.ToInt32(TxtCantidad.Text);
             TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
-            total = ((Convert.ToInt32(TxtInteres.Text) * subtotal) / 100) + subtotal;
             total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
             TxtTotal.Text = "$ " + Convert.ToString(total);
         }
@@ -175,11 +156,6 @@ namespace TpLaboAutomóviles.Presentacion
             if (CboFormaPago.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione una forma de pago");
-                return false;
-            }
-            if (CboAutoPlan.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un autoplan");
                 return false;
             }
             if (TxtDescuento.Text == "")
@@ -267,15 +243,6 @@ namespace TpLaboAutomóviles.Presentacion
             DataRowView item2 = (DataRowView)CboFormaPago.SelectedItem;
             nueva.FormaPago = Convert.ToInt32(item2[0]);
             nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
-            DataRowView item3 = (DataRowView)CboAutoPlan.SelectedItem;
-            nueva.IdAutoplan = Convert.ToInt32(item3[0]);
-        }
-
-        private void CboAutoPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView item = (DataRowView)CboAutoPlan.SelectedItem;
-            TxtCuotas.Text = Convert.ToString(item[1]);
-            TxtInteres.Text = Convert.ToString(item[2]);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

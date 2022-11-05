@@ -129,7 +129,6 @@ alter procedure spInsertarFacturaMaestro
 @fecha datetime,
 @descuento int,
 @idFormaPago int,
-@idAutoPlan int,
 @id int output
 as
 insert into Facturas values (@idCliente, @fecha, @descuento, @idAutoPlan, @idFormaPago, 1)
@@ -232,6 +231,8 @@ update Facturas
 set activo = 0
 where nroFactura = @id
 
+
+
 insert into Productos values ('Bujía', 50, 75, 5000, 2)
 insert into Productos values ('Kit de distrubición', 43, 58, 10000, 2)
 insert into Productos values ('Motor', 15,20 , 50000, 2)
@@ -247,3 +248,41 @@ insert into Productos values ('Nissan March', 1, 2, 266000, 1)
 insert into Productos values ('Hilux', 2, 3, 5000000, 1)
 insert into Productos values ('Renault Sandero', 1, 2, 287500, 1)
 insert into Productos values ('Amarok', 1, 2, 20000000, 1)
+
+delete from Detalles_Factura
+delete from Facturas
+delete from Auto_Planes
+drop table Auto_Planes
+alter table Facturas
+drop column idAutoPlan
+select * from Facturas
+delete from Detalles_Pedidos
+delete from Pedidos
+
+delete from Productos
+delete from Tipos_Productos
+delete from Tipos_Clientes
+delete from clientes
+alter table clientes
+drop constraint fk_tipo_cliente
+alter table clientes
+drop column idTipoCliente
+
+drop table Tipos_Clientes
+alter table productos
+drop constraint fk_tipo_prod
+drop table Tipos_Productos
+
+alter table pedidos
+drop constraint fk_cliente_pedido
+
+drop table pedidos
+alter table Detalles_pedidos
+drop constraint fk_detalle_producto
+
+alter table Detalles_pedidos
+drop constraint fk_pedido_detalle
+
+drop table Detalles_Pedidos
+drop table Pedidos
+drop table Auto_planes

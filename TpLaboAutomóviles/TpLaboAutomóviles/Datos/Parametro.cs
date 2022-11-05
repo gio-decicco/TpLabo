@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TpLaboAutomóviles.Datos
+namespace TpLaboAutomóviles.Dominio
 {
-    internal class Parametro
+    public class Parametro
     {
         public string Clave { get; set; }
         public object Valor { get; set; }

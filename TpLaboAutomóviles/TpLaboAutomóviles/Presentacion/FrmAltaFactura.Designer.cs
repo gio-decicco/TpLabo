@@ -32,18 +32,12 @@
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtDescuento = new System.Windows.Forms.TextBox();
             this.CboFormaPago = new System.Windows.Forms.ComboBox();
-            this.CboAutoPlan = new System.Windows.Forms.ComboBox();
             this.GroupFactura = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TxtInteres = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TxtCuotas = new System.Windows.Forms.TextBox();
             this.BtnListo = new System.Windows.Forms.Button();
             this.CboTipoCliente = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnNuevoCliente = new System.Windows.Forms.Button();
             this.LblNroFactura = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -112,34 +106,17 @@
             this.CboFormaPago.Size = new System.Drawing.Size(160, 24);
             this.CboFormaPago.TabIndex = 3;
             // 
-            // CboAutoPlan
-            // 
-            this.CboAutoPlan.Enabled = false;
-            this.CboAutoPlan.FormattingEnabled = true;
-            this.CboAutoPlan.Location = new System.Drawing.Point(616, 199);
-            this.CboAutoPlan.Margin = new System.Windows.Forms.Padding(4);
-            this.CboAutoPlan.Name = "CboAutoPlan";
-            this.CboAutoPlan.Size = new System.Drawing.Size(160, 24);
-            this.CboAutoPlan.TabIndex = 4;
-            this.CboAutoPlan.SelectedIndexChanged += new System.EventHandler(this.CboAutoPlan_SelectedIndexChanged);
-            // 
             // GroupFactura
             // 
-            this.GroupFactura.Controls.Add(this.label13);
-            this.GroupFactura.Controls.Add(this.TxtInteres);
-            this.GroupFactura.Controls.Add(this.label12);
-            this.GroupFactura.Controls.Add(this.TxtCuotas);
             this.GroupFactura.Controls.Add(this.BtnListo);
             this.GroupFactura.Controls.Add(this.CboTipoCliente);
             this.GroupFactura.Controls.Add(this.label9);
             this.GroupFactura.Controls.Add(this.BtnNuevoCliente);
             this.GroupFactura.Controls.Add(this.LblNroFactura);
-            this.GroupFactura.Controls.Add(this.label5);
             this.GroupFactura.Controls.Add(this.label4);
             this.GroupFactura.Controls.Add(this.label3);
             this.GroupFactura.Controls.Add(this.label2);
             this.GroupFactura.Controls.Add(this.label1);
-            this.GroupFactura.Controls.Add(this.CboAutoPlan);
             this.GroupFactura.Controls.Add(this.CboFormaPago);
             this.GroupFactura.Controls.Add(this.TxtDescuento);
             this.GroupFactura.Controls.Add(this.DtpFecha);
@@ -152,46 +129,6 @@
             this.GroupFactura.TabIndex = 5;
             this.GroupFactura.TabStop = false;
             this.GroupFactura.Text = "Factura";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(712, 238);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 16);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Interés";
-            // 
-            // TxtInteres
-            // 
-            this.TxtInteres.Enabled = false;
-            this.TxtInteres.Location = new System.Drawing.Point(767, 235);
-            this.TxtInteres.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtInteres.MaxLength = 2;
-            this.TxtInteres.Name = "TxtInteres";
-            this.TxtInteres.Size = new System.Drawing.Size(82, 22);
-            this.TxtInteres.TabIndex = 17;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(555, 238);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Cuotas";
-            // 
-            // TxtCuotas
-            // 
-            this.TxtCuotas.Enabled = false;
-            this.TxtCuotas.Location = new System.Drawing.Point(616, 235);
-            this.TxtCuotas.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtCuotas.MaxLength = 2;
-            this.TxtCuotas.Name = "TxtCuotas";
-            this.TxtCuotas.Size = new System.Drawing.Size(82, 22);
-            this.TxtCuotas.TabIndex = 15;
             // 
             // BtnListo
             // 
@@ -245,16 +182,6 @@
             this.LblNroFactura.Size = new System.Drawing.Size(115, 25);
             this.LblNroFactura.TabIndex = 10;
             this.LblNroFactura.Text = "Factura N°";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(540, 203);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Auto Plan";
             // 
             // label4
             // 
@@ -567,7 +494,6 @@
         private System.Windows.Forms.DateTimePicker DtpFecha;
         private System.Windows.Forms.TextBox TxtDescuento;
         private System.Windows.Forms.ComboBox CboFormaPago;
-        private System.Windows.Forms.ComboBox CboAutoPlan;
         private System.Windows.Forms.GroupBox GroupFactura;
         private System.Windows.Forms.GroupBox GroupDetalles;
         private System.Windows.Forms.DataGridView DtgDetalles;
@@ -575,7 +501,6 @@
         private System.Windows.Forms.ComboBox CboTipoProducto;
         private System.Windows.Forms.ComboBox CboProductos;
         private System.Windows.Forms.Label LblNroFactura;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -594,10 +519,6 @@
         private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtSubtotal;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TxtCuotas;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox TxtInteres;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,16 +22,6 @@ namespace TpLaboAutomóviles.Datos.Concretas
             }
             return instancia;
         }
-        public DataTable ReadAutoPlanConIndice(int id)
-        {
-            DataTable tabla = new DataTable();
-            Conectar();
-            cmd.CommandText = "spReadAutoPlanConId";
-            cmd.Parameters.AddWithValue("@id", id);
-            tabla.Load(cmd.ExecuteReader());
-            Desconectar();
-            return tabla;
-        }
         public DataTable ReadFormasPagoConId(int id)
         {
             DataTable tabla = new DataTable();
@@ -41,7 +32,6 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
-
         public int ConsultarProximoId()
         {
             int nro = 0;
@@ -64,7 +54,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
             }
             finally
             {
-                if(cnn.State == ConnectionState.Open)
+                if (cnn.State == ConnectionState.Open)
                 {
                     Desconectar();
                 }
@@ -81,10 +71,9 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spInsertarFacturaMaestro";
-                cmd.Parameters.AddWithValue("@idCliente", factura.IdCliente);
+                cmd.Parameters.AddWithValue("@idCliente", factura.Cliente.IdCliente);
                 cmd.Parameters.AddWithValue("@fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@descuento", factura.Descuento);
-                cmd.Parameters.AddWithValue("@idAutoPlan", factura.IdAutoplan);
                 cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);
                 SqlParameter param = new SqlParameter();
                 param.Direction = ParameterDirection.Output;
@@ -155,26 +144,39 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
-        public DataTable Read(int idCliente)
+        public List<Factura> Read(int idCliente)
         {
+            List<Factura> facturas = new List<Factura>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarFacturas";
             cmd.Parameters.AddWithValue("@idCliente", idCliente);
             tabla.Load(cmd.ExecuteReader());
+            foreach (DataRow dr in tabla.Rows)
+            {
+                Factura f = new Factura();
+                f.IdFactura = Convert.ToInt32(dr[0]);
+                f.Cliente = DaoClientes.Instancia().ReadConId(Convert.ToInt32(dr[1]));
+                f.Fecha = Convert.ToDateTime(dr[2]);
+                f.Descuento = Convert.ToInt32(dr[3]);
+                f.FormaPago = Convert.ToInt32(dr[4]);
+                cmd.Parameters.Clear();
+                cmd.CommandText = "spConsultarDetalle";
+                cmd.Parameters.AddWithValue("@idFactura", f.IdFactura);
+                DataTable tablaDetalle = new DataTable();
+                tablaDetalle.Load(cmd.ExecuteReader());
+                foreach (DataRow dr2 in tablaDetalle.Rows)
+                {
+                    Detalle_Facturas d = new Detalle_Facturas();
+                    d.Producto = DaoProductos.Instancia().ReadConIndice(Convert.ToInt32(dr[2]));
+                    d.Cantidad = Convert.ToInt32(dr2[3]);
+                    d.PrecioUnitario = Convert.ToDouble(dr[4]);
+                    f.AgregarDetalle(d);
+                }
+                facturas.Add(f);
+            }
             Desconectar();
-            return tabla;
-        }
-
-        public DataTable ReadDetalle(int idFactura)
-        {
-            DataTable tabla = new DataTable();
-            Conectar();
-            cmd.CommandText = "spConsultarDetalle";
-            cmd.Parameters.AddWithValue("@idFactura", idFactura);
-            tabla.Load(cmd.ExecuteReader());
-            Desconectar();
-            return tabla;
+            return facturas;
         }
 
         public bool Update(Factura factura)
@@ -188,11 +190,10 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 cmd.Transaction = t;
                 cmd.CommandText = "spActualizarFacturaMaestro";
                 cmd.Parameters.AddWithValue("@nroFactura", factura.IdFactura);
-                cmd.Parameters.AddWithValue("@idCliente", factura.IdCliente);
+                cmd.Parameters.AddWithValue("@idCliente", factura.Cliente.IdCliente);
                 cmd.Parameters.AddWithValue("@fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@descuento", factura.Descuento);
                 cmd.Parameters.AddWithValue("@idFormaPago", factura.FormaPago);
-                cmd.Parameters.AddWithValue("@idAutoPlan", factura.IdAutoplan);
                 cmd.ExecuteNonQuery();
                 int idDetalle = 1;
                 foreach (Detalle_Facturas detalle in factura.lDetalles)
@@ -230,15 +231,6 @@ namespace TpLaboAutomóviles.Datos.Concretas
             DataTable dt = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarFormasPago";
-            dt.Load(cmd.ExecuteReader());
-            Desconectar();
-            return dt;
-        }
-        public DataTable ReadAutoPlan()
-        {
-            DataTable dt = new DataTable();
-            Conectar();
-            cmd.CommandText = "spConsultarAutoPlan";
             dt.Load(cmd.ExecuteReader());
             Desconectar();
             return dt;

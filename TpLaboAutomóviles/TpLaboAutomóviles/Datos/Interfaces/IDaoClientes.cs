@@ -12,7 +12,7 @@ namespace TpLaboAutomóviles.Datos.Interfaces
     internal interface IDaoClientes
     {
         bool Create(Cliente cliente);
-        DataTable Read(int idTipoCliente);
+        List<Cliente> Read(int idTipoCliente);
         bool Delete(Cliente cliente);
         bool Update(Cliente cliente);
     }

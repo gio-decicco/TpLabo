@@ -8,22 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Presentacion.Reportes.Forms;
+using TpLaboAutomóviles.Servicios.Factory;
 
 namespace TpLaboAutomóviles.Presentacion
 {
     public partial class frmPrincipal2 : Form
     {
-        public frmPrincipal2()
+        private ServiceFactory factory;
+        public frmPrincipal2(ServiceFactory factory)
         {
             InitializeComponent();
             CustomizeDesign();
+            this.factory = factory;
         }
         private void CustomizeDesign()
         {
             panelSoporteSubMenu.Visible = false;
             panelAcercade.Visible = false;
             panelFactura.Visible = false;
-            panelPedido.Visible = false;
             panelReportes.Visible = false;
         }
         private void HideSubMenu()
@@ -34,8 +36,6 @@ namespace TpLaboAutomóviles.Presentacion
                 panelAcercade.Visible = false;
             if (panelFactura.Visible == true)
                 panelFactura.Visible = false;
-            if (panelPedido.Visible == true)
-                panelPedido.Visible = false;
             if (panelReportes.Visible == true)
                 panelReportes.Visible = false;
         }
@@ -77,7 +77,7 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button5_Click(object sender, EventArgs e)
         {
-            new FrmAltaFactura().ShowDialog();
+            new FrmAltaFactura(this.factory).ShowDialog();
             HideSubMenu();
         }
 
@@ -174,11 +174,6 @@ namespace TpLaboAutomóviles.Presentacion
         private void button3_Click(object sender, EventArgs e)
         {
             showSubMenu(panelFactura);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelPedido);
         }
 
         private void button9_Click(object sender, EventArgs e)

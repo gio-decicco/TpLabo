@@ -5,10 +5,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TpLaboAutomóviles.Dominio;
+using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
 
 namespace TpLaboAutomóviles.Datos
 {
-    internal class accesoDatos
+    public class accesoDatos
     {
         protected SqlConnection cnn = new SqlConnection(Properties.Resources.CadenaConexion);
         protected SqlCommand cmd = new SqlCommand();

@@ -76,7 +76,6 @@
     <Compile Include="Datos\Base\accesoDatos.cs" />
     <Compile Include="Datos\Concretas\DaoClientes.cs" />
     <Compile Include="Datos\Concretas\DaoFacturas.cs" />
-    <Compile Include="Datos\Concretas\DaoPedidos.cs" />
     <Compile Include="Datos\Concretas\DaoProductos.cs" />
     <Compile Include="Datos\Interfaces\IDaoClientes.cs" />
     <Compile Include="Datos\Interfaces\IDaoFacturas.cs" />
@@ -84,22 +83,14 @@
     <Compile Include="Datos\Interfaces\IDaoProductos.cs" />
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Detalle Facturas.cs" />
-    <Compile Include="Dominio\Detalle_Pedido.cs" />
     <Compile Include="Dominio\Factura.cs" />
-    <Compile Include="Dominio\Parametro.cs" />
-    <Compile Include="Dominio\Pedido.cs" />
+    <Compile Include="Datos\Parametro.cs" />
     <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Presentacion\FrmAltaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmAltaFactura.Designer.cs">
       <DependentUpon>FrmAltaFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FrmAltaPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FrmAltaPedido.Designer.cs">
-      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmBienvenido.cs">
       <SubType>Form</SubType>
@@ -119,36 +110,17 @@
     <Compile Include="Presentacion\FrmConsultarFacturas.Designer.cs">
       <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmConsultarPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmConsultarPedidos.designer.cs">
-      <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\frmDesarrolladores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmDesarrolladores.Designer.cs">
       <DependentUpon>frmDesarrolladores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmEditarPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmEditarPedido.designer.cs">
-      <DependentUpon>frmEditarPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FrmPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\.Designer.cs">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmAltaCliente.cs">
       <SubType>Form</SubType>
@@ -275,12 +247,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\Factory\Concreta\ServiceFactoryImp.cs" />
+    <Compile Include="Servicios\Factory\ServiceFactory.cs" />
+    <Compile Include="Servicios\ServiciosConcretos\ClienteService.cs" />
+    <Compile Include="Servicios\ServiciosConcretos\FacturaService.cs" />
+    <Compile Include="Servicios\Interfaces\IServiceCliente.cs" />
+    <Compile Include="Servicios\Interfaces\IServiceFactura.cs" />
+    <Compile Include="Servicios\Interfaces\IServiceProducto.cs" />
+    <Compile Include="Servicios\ServiciosConcretos\ProductoService.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Presentacion\FrmAltaFactura.resx">
       <DependentUpon>FrmAltaFactura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FrmAltaPedido.resx">
-      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmBienvenido.resx">
       <DependentUpon>frmBienvenido.cs</DependentUpon>
@@ -291,20 +268,11 @@
     <EmbeddedResource Include="Presentacion\FrmConsultarFacturas.resx">
       <DependentUpon>FrmConsultarFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmConsultarPedidos.resx">
-      <DependentUpon>frmConsultarPedidos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmDesarrolladores.resx">
       <DependentUpon>frmDesarrolladores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmEditarPedido.resx">
-      <DependentUpon>frmEditarPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAltaCliente.resx">
       <DependentUpon>FrmAltaCliente.cs</DependentUpon>
