@@ -162,24 +162,31 @@ create procedure SpInsertarPedidoDetalle
 as
 insert into Detalles_Pedidos values (@idDetallePedido, @nroPedido, @idProducto, @cantidad)
 
-create procedure SpInsertarCliente
+alter procedure SpInsertarCliente
 @nomCliente varchar (50),
 @apeCliente varchar (50),
 @calle varchar(50),
 @altura int,
-@idBarrio int,
-@idTipoCliente int
+@idBarrio int
 as
-insert into Clientes values (@nomCliente,@apeCliente,@calle,@altura,@idBarrio,@idTipoCliente)
+insert into Clientes values (@nomCliente,@apeCliente,@calle,@altura,@idBarrio)
 
-create procedure spInsertarProducto
+alter procedure spInsertarProducto
 @descripcion varchar (50),
-@stock_min int,
-@stock_actual int,
-@precio money,
-@idTipoProducto int
+@precio money
 as
-insert into Productos values (@descripcion,@stock_min,@stock_actual,@precio,@idTipoProducto)
+insert into Productos values (@descripcion,@precio)
+
+select * from Productos
+
+alter table Productos
+drop column stock_actual
+
+alter table Productos
+drop column stock_min
+
+alter table Productos
+drop column idTipoProducto
 
 create procedure spConsultarTipoProducto
 as
@@ -194,6 +201,8 @@ create procedure spConsultarDetalle
 as
 select * from Detalles_Factura
 where nroFactura = @idFactura
+
+select * from Productos
 
 alter procedure spConsultarFacturas
 @idCliente int
@@ -231,7 +240,12 @@ update Facturas
 set activo = 0
 where nroFactura = @id
 
+create procedure spConsultarClientesConId
+@id int
+as
+select * from Clientes where idCliente = @id
 
+select * from Clientes
 
 insert into Productos values ('Bujía', 50, 75, 5000, 2)
 insert into Productos values ('Kit de distrubición', 43, 58, 10000, 2)
@@ -258,6 +272,8 @@ drop column idAutoPlan
 select * from Facturas
 delete from Detalles_Pedidos
 delete from Pedidos
+
+drop table historial
 
 delete from Productos
 delete from Tipos_Productos
@@ -286,3 +302,28 @@ drop constraint fk_pedido_detalle
 drop table Detalles_Pedidos
 drop table Pedidos
 drop table Auto_planes
+
+select * from clientes
+
+exec spConsultarProductos
+
+create procedure spBorrarCliente
+@idCliente int
+as
+delete Clientes where idCliente = @idCliente
+
+create procedure spActualizarProducto
+@idProducto int,
+@precio money,
+@descripcion varchar(50)
+as
+update productos
+set precio = @precio,
+descripcion = @descripcion
+where idProducto = @idProducto
+
+create procedure spBorrarProducto
+@id int
+as
+delete Productos
+where idProducto=@id
