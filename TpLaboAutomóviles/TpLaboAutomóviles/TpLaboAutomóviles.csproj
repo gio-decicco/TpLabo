@@ -255,6 +255,12 @@
     <Compile Include="Servicios\Interfaces\IServiceProducto.cs" />
     <Compile Include="Servicios\ServiciosConcretos\ProductoService.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Presentacion\FrmActualizacionCliente.resx">
+      <DependentUpon>FrmActualizacionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmActualizacionProducto.resx">
+      <DependentUpon>FrmActualizacionProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmAltaFactura.resx">
       <DependentUpon>FrmAltaFactura.cs</DependentUpon>
     </EmbeddedResource>

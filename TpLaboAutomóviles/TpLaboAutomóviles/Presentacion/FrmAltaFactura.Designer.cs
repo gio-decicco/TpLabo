@@ -108,7 +108,7 @@
             this.GroupFactura.Controls.Add(this.CboClientes);
             this.GroupFactura.Location = new System.Drawing.Point(12, 12);
             this.GroupFactura.Name = "GroupFactura";
-            this.GroupFactura.Size = new System.Drawing.Size(776, 229);
+            this.GroupFactura.Size = new System.Drawing.Size(776, 182);
             this.GroupFactura.TabIndex = 5;
             this.GroupFactura.TabStop = false;
             this.GroupFactura.Text = "Factura";
@@ -183,7 +183,7 @@
             this.GroupDetalles.Controls.Add(this.TxtCantidad);
             this.GroupDetalles.Controls.Add(this.CboProductos);
             this.GroupDetalles.Controls.Add(this.DtgDetalles);
-            this.GroupDetalles.Location = new System.Drawing.Point(12, 247);
+            this.GroupDetalles.Location = new System.Drawing.Point(12, 200);
             this.GroupDetalles.Name = "GroupDetalles";
             this.GroupDetalles.Size = new System.Drawing.Size(776, 363);
             this.GroupDetalles.TabIndex = 6;
@@ -358,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.GroupDetalles);
             this.Controls.Add(this.GroupFactura);
             this.Name = "FrmAltaFactura";

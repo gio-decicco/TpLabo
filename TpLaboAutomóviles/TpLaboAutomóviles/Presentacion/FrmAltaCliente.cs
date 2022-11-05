@@ -60,5 +60,10 @@ namespace TpLaboAutomóviles.Presentacion
         {
             this.Close();
         }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            new FrmActualizacionCliente(servicio).ShowDialog(); //mete este en el principal
+        }
     }
 }

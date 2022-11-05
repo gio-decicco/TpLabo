@@ -80,7 +80,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarProducto";
-                cmd.Parameters.AddWithValue("@idProducto", producto.IdProducto);
+                cmd.Parameters.AddWithValue("@id", producto.IdProducto);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }

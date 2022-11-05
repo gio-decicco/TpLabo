@@ -41,6 +41,7 @@
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblTituloAltaCliente = new System.Windows.Forms.Label();
+            this.BtnConsultar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboBarrio
@@ -53,7 +54,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(195, 282);
+            this.btnCancelar.Location = new System.Drawing.Point(228, 301);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 25;
@@ -63,7 +64,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(36, 282);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 301);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 24;
@@ -154,11 +155,22 @@
             this.lblTituloAltaCliente.TabIndex = 14;
             this.lblTituloAltaCliente.Text = "Nuevo Cliente";
             // 
+            // BtnConsultar
+            // 
+            this.BtnConsultar.Location = new System.Drawing.Point(120, 301);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.BtnConsultar.TabIndex = 27;
+            this.BtnConsultar.Text = "Consultar";
+            this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            // 
             // FrmAltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 336);
+            this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.cboBarrio);
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.lblNombre);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblTituloAltaCliente;
+        private System.Windows.Forms.Button BtnConsultar;
     }
 }

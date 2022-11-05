@@ -47,5 +47,10 @@ namespace TpLaboAutomóviles.Presentacion
             txtDescrpicion.Text = "";
             txtPrecio.Text = "";
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            new FrmActualizacionProducto(servicio).ShowDialog();
+        }
     }
 }
