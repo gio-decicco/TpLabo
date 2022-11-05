@@ -1,0 +1,5 @@
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.csproj.AssemblyReference.cache
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.AssemblyInfoInputs.cache
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.AssemblyInfo.cs
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.csproj.CoreCompileInputs.cache
