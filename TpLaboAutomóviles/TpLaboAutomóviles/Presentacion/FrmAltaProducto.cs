@@ -52,5 +52,10 @@ namespace TpLaboAutomóviles.Presentacion
         {
             new FrmActualizacionProducto(servicio).ShowDialog();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }
