@@ -9,6 +9,8 @@ namespace TpLaboAutomóviles.Servicios.Factory
 {
     public abstract class ServiceFactory
     {
-        public abstract IServiceFactura CrearService();
+        public abstract IServiceFactura CrearServiceFactura();
+        public abstract IServiceCliente CrearServiceCliente();
+        public abstract IServiceProducto CrearServiceProducto();
     }
 }

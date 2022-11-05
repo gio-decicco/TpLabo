@@ -19,7 +19,9 @@ namespace TpLaboAutomóviles.Presentacion
     public partial class FrmAltaFactura : Form
     {
 
-        private IServiceFactura servicio;
+        private IServiceFactura servicioFactura;
+        private IServiceProducto servicioProducto;
+        private IServiceCliente servicioCliente;
         private ServiceFactory fabrica;
         private Factura nueva;
         double subtotal = 0;
@@ -27,8 +29,11 @@ namespace TpLaboAutomóviles.Presentacion
         public FrmAltaFactura(ServiceFactory fabrica)
         {
             InitializeComponent();
+            nueva = new Factura();
             this.fabrica = fabrica;
-            servicio = fabrica.CrearService();
+            servicioFactura = fabrica.CrearServiceFactura();
+            servicioCliente = fabrica.CrearServiceCliente();
+            servicioProducto = fabrica.CrearServiceProducto();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,65 +48,37 @@ namespace TpLaboAutomóviles.Presentacion
         private void FrmAltaFactura_Load(object sender, EventArgs e)
         {
             cargarProximoId();
-            cargarComboTipoCliente();
-            cargarComboTipoProducto();
             cargarComboFormasPago();
-            GroupDetalles.Enabled = false;
+            GroupDetalles.Enabled = true;
+            cargarComboCliente();
+            cargarComboProducto();
+            TxtDescuento.Text = "0";
         }
 
         private void cargarProximoId()
         {
-            LblNroFactura.Text = "Factura N°" + DaoFacturas.Instancia().ConsultarProximoId();
+            LblNroFactura.Text = "Factura N°" + servicioFactura.CargarProxId();
         }
 
         private void cargarComboFormasPago()
         {
-            CboFormaPago.DataSource = DaoFacturas.Instancia().ReadFormasPago();
+            CboFormaPago.DataSource = servicioFactura.ReadFormaPago();
             CboFormaPago.ValueMember = "idFormaPago";
             CboFormaPago.DisplayMember = "formaPago";
             CboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarComboTipoCliente()
+        private void cargarComboCliente()
         {
-            CboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
-            CboTipoCliente.ValueMember = "idTipoCliente";
-            CboTipoCliente.DisplayMember = "descripcion";
-            CboTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void cargarComboCliente(int id)
-        {
-            CboClientes.DataSource = DaoClientes.Instancia().Read(id);
-            CboClientes.ValueMember = "idCliente";
-            CboClientes.DisplayMember = "nomCliente";
+            CboClientes.DataSource = servicioCliente.ReadClientes();
+            CboClientes.DisplayMember = "c.ToString()";
             CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void CboTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        private void cargarComboProducto()
         {
-            DataRowView item = (DataRowView)CboTipoCliente.SelectedItem;
-            cargarComboCliente(Convert.ToInt32(item[0]));
-        }
-        private void cargarComboTipoProducto()
-        {
-            CboTipoProducto.DataSource = DaoProductos.Instancia().ReadTiposProducto();
-            CboTipoProducto.ValueMember = "idTipoProducto";
-            CboTipoProducto.DisplayMember = "descripcion";
-            CboTipoProducto.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void CboTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView item = (DataRowView)CboTipoProducto.SelectedItem;
-            cargarComboProducto(Convert.ToInt32(item[0]));
-        }
-
-        private void cargarComboProducto(int v)
-        {
-            CboProductos.DataSource = DaoProductos.Instancia().Read(v);
-            CboProductos.ValueMember = "idProducto";
-            CboProductos.DisplayMember = "descripcion";
+            CboProductos.DataSource = servicioProducto.ReadProductos();
+            CboProductos.DisplayMember = "p.ToString()";
             CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -119,23 +96,15 @@ namespace TpLaboAutomóviles.Presentacion
             {
                 return;
             }
-            DataRowView item = (DataRowView)CboProductos.SelectedItem;
-
-            Producto p = new Producto();
-            p.IdProducto = Convert.ToInt32(item[0]);
-            p.Descripcion = Convert.ToString(item[1]);
-            p.Stock_Min = Convert.ToInt32(item[2]);
-            p.Stock_Actual = Convert.ToInt32(item[3]);
-            p.Precio = Convert.ToDouble(item[4]);
-            p.IdTipoProducto = Convert.ToInt32(item[5]);
+            Producto producto = (Producto)CboProductos.SelectedItem;
 
             Detalle_Facturas d = new Detalle_Facturas();
-            d.Producto = p;
+            d.Producto = producto;
             d.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-            d.PrecioUnitario = p.Precio;
+            d.PrecioUnitario = producto.Precio;
             nueva.AgregarDetalle(d);
-            DtgDetalles.Rows.Add(new object[] { p.IdProducto, p.Descripcion,p.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
-            subtotal += p.Precio * Convert.ToInt32(TxtCantidad.Text);
+            DtgDetalles.Rows.Add(new object[] { producto.IdProducto, producto.Descripcion,producto.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
+            subtotal += producto.Precio * Convert.ToInt32(TxtCantidad.Text);
             TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
             total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
             TxtTotal.Text = "$ " + Convert.ToString(total);
@@ -143,11 +112,6 @@ namespace TpLaboAutomóviles.Presentacion
 
         private bool validar()
         {
-            if (CboTipoCliente.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un tipo de Cliente");
-                return false;
-            }
             if (CboClientes.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un cliente");
@@ -178,11 +142,6 @@ namespace TpLaboAutomóviles.Presentacion
             if (Convert.ToInt32(TxtDescuento.Text) > 100 || Convert.ToInt32(TxtDescuento.Text) < 0)
             {
                 MessageBox.Show("Ingrese un valor entre 0 y 100 para descuento");
-                return false;
-            }
-            if (CboTipoProducto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Ingrese un tipo de producto");
                 return false;
             }
             if (CboProductos.SelectedIndex == -1)
@@ -217,6 +176,14 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
+
+            Cliente cliente = (Cliente)CboClientes.SelectedItem;
+            nueva.Cliente = cliente;
+            nueva.Fecha = DtpFecha.Value;
+            DataRowView item2 = (DataRowView)CboFormaPago.SelectedItem;
+            nueva.FormaPago = Convert.ToInt32(item2[0]);
+            nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
+
             if (DaoFacturas.Instancia().Create(nueva))
             {
                 MessageBox.Show("La factura se ingreso correctamente");
@@ -228,23 +195,6 @@ namespace TpLaboAutomóviles.Presentacion
             }
         }
 
-        private void BtnListo_Click(object sender, EventArgs e)
-        {
-            if (!validar())
-            {
-                return;
-            }
-            GroupFactura.Enabled = false;
-            GroupDetalles.Enabled = true;
-
-            DataRowView item = (DataRowView)CboClientes.SelectedItem;
-            nueva.IdCliente = Convert.ToInt32(item[0]);
-            nueva.Fecha = DtpFecha.Value;
-            DataRowView item2 = (DataRowView)CboFormaPago.SelectedItem;
-            nueva.FormaPago = Convert.ToInt32(item2[0]);
-            nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
-        }
-
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea cancelar la operacion?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -253,15 +203,9 @@ namespace TpLaboAutomóviles.Presentacion
             }
         }
 
-        private void CboProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView item = (DataRowView)CboProductos.SelectedItem;
-            TxtStock.Text = Convert.ToString(item[3]);
-        }
-
         private void BtnNuevoCliente_Click(object sender, EventArgs e)
         {
-            new FrmAltaCliente().ShowDialog();
+            new FrmAltaCliente(this.fabrica).ShowDialog();
         }
     }
 }

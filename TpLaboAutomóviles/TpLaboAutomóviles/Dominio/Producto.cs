@@ -11,5 +11,10 @@ namespace TpLaboAutomóviles.Dominio
         public int IdProducto { get; set; }
         public string Descripcion { get; set; }
         public double Precio { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

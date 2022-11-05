@@ -92,15 +92,25 @@ namespace TpLaboAutomóviles.Datos.Concretas
             Desconectar();
             return tabla;
         }
-        public List<Cliente> Read(int idTipoCliente)
+        public List<Cliente> Read()
         {
             List<Cliente> lista = new List<Cliente>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarClientes";
-            cmd.Parameters.AddWithValue("@id", idTipoCliente);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
+            foreach (DataRow dr in tabla.Rows)
+            {
+                Cliente c = new Cliente();
+                c.IdCliente = Convert.ToInt32(dr[0]);
+                c.Nombre = Convert.ToString(dr[1]);
+                c.Apellido = Convert.ToString(dr[2]);
+                c.Calle = Convert.ToString(dr[3]);
+                c.Altura = Convert.ToInt32(dr[4]);
+                c.IdBarrio = Convert.ToInt32(dr[5]);
+                lista.Add(c);
+            }
             return lista;
         }
         public bool Update(Cliente cliente)

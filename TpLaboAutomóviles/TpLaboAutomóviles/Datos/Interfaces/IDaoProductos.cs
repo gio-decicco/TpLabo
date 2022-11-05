@@ -11,7 +11,7 @@ namespace TpLaboAutomóviles.Datos.Interfaces
     internal interface IDaoProductos
     {
         bool Create(Producto producto);
-        List<Producto> Read(int idTipoProducto);
+        List<Producto> Read();
         bool Delete(Producto producto);
         bool Update(Producto producto);
         List<Producto> ReadProductosConsulta8(int min, int max);

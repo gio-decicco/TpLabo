@@ -64,14 +64,14 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new FrmAltaProducto().ShowDialog();
+            new FrmAltaProducto(this.factory).ShowDialog();
             
             HideSubMenu();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new FrmAltaCliente().ShowDialog();
+            new FrmAltaCliente(this.factory).ShowDialog();
             HideSubMenu();
         }
 
@@ -83,7 +83,7 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new FrmConsultarFacturas().ShowDialog();
+            new FrmConsultarFacturas(this.factory).ShowDialog();
             HideSubMenu();
         }
 
@@ -94,7 +94,7 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new FrmConsultarFacturas().ShowDialog();
+            new FrmConsultarFacturas(this.factory).ShowDialog();
             HideSubMenu();
         }
 
@@ -142,7 +142,7 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void button17_Click(object sender, EventArgs e)
         {
-            new FrmConsulta8().ShowDialog();
+            new FrmConsulta8(this.factory).ShowDialog();
             HideSubMenu();
         }
 

@@ -99,13 +99,12 @@ namespace TpLaboAutomóviles.Datos.Concretas
             return ok;
         }
 
-        public List<Producto> Read(int idTipoProducto)
+        public List<Producto> Read()
         {
             List<Producto> list = new List<Producto>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarProductos";
-            cmd.Parameters.AddWithValue("@id", idTipoProducto);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
             foreach (DataRow dr in tabla.Rows)
@@ -113,7 +112,7 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 Producto p = new Producto();
                 p.IdProducto = Convert.ToInt32(dr[0]);
                 p.Descripcion = Convert.ToString(dr[1]);
-                p.Precio = Convert.ToDouble(dr[3]);
+                p.Precio = Convert.ToDouble(dr[2]);
                 list.Add(p);
             }
             return list;

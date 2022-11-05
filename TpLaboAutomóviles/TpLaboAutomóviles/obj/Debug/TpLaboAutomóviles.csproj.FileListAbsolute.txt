@@ -20,7 +20,6 @@ C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóvile
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.exe
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.pdb
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaPedido.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaProducto.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaFactura.resources
@@ -41,7 +40,6 @@ C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\TpLaboAuto
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\TpLaboAutomóviles.pdb
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.FrmPrincipal.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\AppConcesionaria.Presentacion.frmLogin.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.FrmPrincipal.resources
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -228,8 +226,6 @@ C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAu
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte7.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.CopyComplete
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsultarFacturas.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmEditarPedido.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmConsultarPedidos.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmBienvenido.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\CircularProgressBar.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\WinFormAnimation.dll

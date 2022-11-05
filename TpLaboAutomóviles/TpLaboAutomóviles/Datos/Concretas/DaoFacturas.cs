@@ -168,9 +168,9 @@ namespace TpLaboAutomóviles.Datos.Concretas
                 foreach (DataRow dr2 in tablaDetalle.Rows)
                 {
                     Detalle_Facturas d = new Detalle_Facturas();
-                    d.Producto = DaoProductos.Instancia().ReadConIndice(Convert.ToInt32(dr[2]));
+                    d.Producto = DaoProductos.Instancia().ReadConIndice(Convert.ToInt32(dr2[2]));
                     d.Cantidad = Convert.ToInt32(dr2[3]);
-                    d.PrecioUnitario = Convert.ToDouble(dr[4]);
+                    d.PrecioUnitario = Convert.ToDouble(dr2[4]);
                     f.AgregarDetalle(d);
                 }
                 facturas.Add(f);

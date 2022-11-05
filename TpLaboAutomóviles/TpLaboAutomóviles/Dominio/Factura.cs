@@ -30,5 +30,9 @@ namespace TpLaboAutomóviles.Dominio
         {
             lDetalles.RemoveAt(indice);
         }
+        public override string ToString()
+        {
+            return "Factura N°" + IdFactura + " - " + "Fecha: " + Fecha;
+        }
     }
 }

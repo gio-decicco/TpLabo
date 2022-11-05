@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,25 @@ namespace TpLaboAutomóviles.Servicios
         public bool AltaFactura(Factura factura)
         {
             return DaoFacturas.Instancia().Create(factura);
+        }
+
+        public List<Factura> GetFacturaList(int idCliente)
+        {
+            return DaoFacturas.Instancia().Read(idCliente);
+        }
+        public DataTable ReadFormaDePagoConId(int id)
+        {
+            return DaoFacturas.Instancia().ReadFormasPagoConId(id);
+        }
+
+        public int CargarProxId()
+        {
+            return DaoFacturas.Instancia().ConsultarProximoId();
+        }
+
+        public DataTable ReadFormaPago()
+        {
+            return DaoFacturas.Instancia().ReadFormasPago();
         }
     }
 }

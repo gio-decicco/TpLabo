@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Datos.Concretas;
+using TpLaboAutomóviles.Dominio;
+using TpLaboAutomóviles.Servicios.Factory;
+using TpLaboAutomóviles.Servicios.Interfaces;
 
 namespace TpLaboAutomóviles.Presentacion
 {
     public partial class FrmConsulta8 : Form
     {
-        public FrmConsulta8()
+        IServiceProducto service;
+        public FrmConsulta8(ServiceFactory fabrica)
         {
             InitializeComponent();
+            service = fabrica.CrearServiceProducto();
         }
-
-        
-        
         private void FrmConsulta8_Load(object sender, EventArgs e)
         {
             limpiar();
@@ -29,8 +31,6 @@ namespace TpLaboAutomóviles.Presentacion
         {
             nudMax.Value = 1;
             nudMin.Value = 0;
-            
-
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,11 +54,10 @@ namespace TpLaboAutomóviles.Presentacion
         }
         public void CargarDgv()
         {
-            DataTable tabla = new DataTable();
-            tabla = DaoProductos.Instancia().ReadProductosConsulta8(Convert.ToInt32(nudMin.Value), Convert.ToInt32(nudMax.Value));
-            foreach (DataRow item in tabla.Rows)
+            List<Producto> list = service.ReadProductosPorPrecio(Convert.ToInt32(nudMin.Value), Convert.ToInt32(nudMax.Value));
+            foreach (Producto producto in list)
             {
-                dgvProductos.Rows.Add(new object[] { item[0], item[1], item[2] });
+                dgvProductos.Rows.Add(new object[] { producto.IdProducto, producto.Descripcion, producto.Precio});
             }
         }
     }

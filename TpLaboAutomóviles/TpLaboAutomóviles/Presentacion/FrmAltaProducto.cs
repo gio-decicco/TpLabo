@@ -10,34 +10,31 @@ using System.Windows.Forms;
 using TpLaboAutomóviles.Dominio;
 using TpLaboAutomóviles.Datos;
 using TpLaboAutomóviles.Datos.Concretas;
+using TpLaboAutomóviles.Servicios.Factory;
+using TpLaboAutomóviles.Servicios.Interfaces;
 
 namespace TpLaboAutomóviles.Presentacion
 {
     public partial class FrmAltaProducto : Form
     {
-        Producto p;
-        public FrmAltaProducto()
+        IServiceProducto servicio;
+        public FrmAltaProducto(ServiceFactory fabrica)
         {
             InitializeComponent();
-            p= new Producto();
-            
+            servicio = fabrica.CrearServiceProducto();
         }
         
         private void FrmAltaProducto_Load(object sender, EventArgs e)
         {
-            CargarCombo();
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            Producto p = new Producto();
             p.Descripcion = txtDescrpicion.Text;
             p.Precio = Convert.ToInt32(txtPrecio.Text);
-            DataRowView item = (DataRowView)cboTipoProd.SelectedItem;
-            p.IdTipoProducto = Convert.ToInt32(item[0]);
-            p.Stock_Min = Convert.ToInt32(txtStockMinimo.Text);
-            p.Stock_Actual=Convert.ToInt32(txtStockActual.Text);
-
-            if (DaoProductos.Instancia().Create(p))
+            if (servicio.AltaProducto(p))
             {
                 MessageBox.Show("Su producto ha sido cargado con exito");
                 LimpiarCampos();
@@ -49,16 +46,6 @@ namespace TpLaboAutomóviles.Presentacion
         {
             txtDescrpicion.Text = "";
             txtPrecio.Text = "";
-            txtStockActual.Text = "";
-            txtStockMinimo.Text = "";
-            cboTipoProd.SelectedValue = -1;
-        }
-         
-        private void CargarCombo()
-        {
-            cboTipoProd.DataSource = DaoProductos.Instancia().ReadTiposProducto();
-            cboTipoProd.ValueMember= "idTipoProducto";
-            cboTipoProd.DisplayMember = "descripcion";
         }
     }
 }

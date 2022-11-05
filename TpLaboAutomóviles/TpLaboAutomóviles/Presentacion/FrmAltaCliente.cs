@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLaboAutomóviles.Datos.Concretas;
 using TpLaboAutomóviles.Dominio;
+using TpLaboAutomóviles.Servicios.Factory;
+using TpLaboAutomóviles.Servicios.Interfaces;
 
 namespace TpLaboAutomóviles.Presentacion
 {
     public partial class FrmAltaCliente : Form
     {
-        DaoClientes oDao;
+        IServiceCliente servicio;
         
-        public FrmAltaCliente()
+        public FrmAltaCliente(ServiceFactory fabrica)
         {
             InitializeComponent();
+            servicio = fabrica.CrearServiceCliente();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -30,9 +33,7 @@ namespace TpLaboAutomóviles.Presentacion
             c.Apellido=txtApellido.Text;
             DataRowView item1 = (DataRowView)cboBarrio.SelectedItem;
             c.IdBarrio = Convert.ToInt32(item1[0]);
-            DataRowView item2 = (DataRowView)cboTipoCliente.SelectedItem;
-            c.IdTipoCliente = Convert.ToInt32(item2[0]);
-            if (DaoClientes.Instancia().Create(c))
+            if (servicio.AltaCliente(c))
             {
                 MessageBox.Show("Su cliente ha sido cargado con exito");
             }
@@ -44,21 +45,12 @@ namespace TpLaboAutomóviles.Presentacion
 
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
-            CargarComboTipoClientes();
-           
             CargarComboBarrio();
-        }
-        private void CargarComboTipoClientes()
-        {
-            cboTipoCliente.DataSource = DaoClientes.Instancia().ReadTipoCliente();
-            cboTipoCliente.ValueMember = "idTipoCliente";
-            cboTipoCliente.DisplayMember = "descripcion";
-            cboTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         
         private void CargarComboBarrio()
         {
-            cboBarrio.DataSource = DaoClientes.Instancia().ReadBarrios();
+            cboBarrio.DataSource = servicio.CargarBarrios();
             cboBarrio.ValueMember = "idBarrio";
             cboBarrio.DisplayMember = "barrio";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
