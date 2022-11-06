@@ -151,101 +151,41 @@
     <Compile Include="Presentacion\frmPrincipal2.Designer.cs">
       <DependentUpon>frmPrincipal2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\DataSets\DSCuartaConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSCuartaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSCuartaConsulta2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSCuartaConsulta2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSCuartaConsulta3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSCuartaConsulta3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSPrimerConsulta.cs">
-      <DependentUpon>DSPrimerConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSPrimerConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSPrimerConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSQuintaConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSQuintaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSSegundaConsulta.cs">
-      <DependentUpon>DSSegundaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSSegundaConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSSegundaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSSeptimaConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSSeptimaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSSextaConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSSextaConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSets\DSTerceraConsulta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSTerceraConsulta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte1.Designer.cs">
-      <DependentUpon>FrmReporte1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte2.Designer.cs">
-      <DependentUpon>FrmReporte2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte3.Designer.cs">
-      <DependentUpon>FrmReporte3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte4.Designer.cs">
-      <DependentUpon>FrmReporte4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte5.Designer.cs">
-      <DependentUpon>FrmReporte5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte6.Designer.cs">
-      <DependentUpon>FrmReporte6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte7.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Forms\FrmReporte7.Designer.cs">
-      <DependentUpon>FrmReporte7.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DataSet\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSet\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSet\DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\Factory\Concreta\ServiceFactoryImp.cs" />
     <Compile Include="Servicios\Factory\ServiceFactory.cs" />
     <Compile Include="Servicios\ServiciosConcretos\ClienteService.cs" />
@@ -288,34 +228,6 @@
     <EmbeddedResource Include="Presentacion\frmPrincipal2.resx">
       <DependentUpon>frmPrincipal2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte1.resx">
-      <DependentUpon>FrmReporte1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte2.resx">
-      <DependentUpon>FrmReporte2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte3.resx">
-      <DependentUpon>FrmReporte3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte4.resx">
-      <DependentUpon>FrmReporte4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte5.resx">
-      <DependentUpon>FrmReporte5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte6.resx">
-      <DependentUpon>FrmReporte6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Forms\FrmReporte7.resx">
-      <DependentUpon>FrmReporte7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RDLCs\CuartaConsulta.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\ListadoConsulta1.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\QuintaConsulta.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\SegundaConsulta.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\SeptimaConsulta.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\SextaConsulta.rdlc" />
-    <EmbeddedResource Include="Reportes\RDLCs\TercerConsulta.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -326,106 +238,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Diseño\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Reportes\DataSets\DSCuartaConsulta.xsc">
-      <DependentUpon>DSCuartaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSCuartaConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta.xss">
-      <DependentUpon>DSCuartaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta2.xsc">
-      <DependentUpon>DSCuartaConsulta2.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSCuartaConsulta2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta2.xss">
-      <DependentUpon>DSCuartaConsulta2.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta3.xsc">
-      <DependentUpon>DSCuartaConsulta3.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta3.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSCuartaConsulta3.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSCuartaConsulta3.xss">
-      <DependentUpon>DSCuartaConsulta3.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSPrimerConsulta.xsc">
-      <DependentUpon>DSPrimerConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSPrimerConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSPrimerConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSPrimerConsulta.xss">
-      <DependentUpon>DSPrimerConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSQuintaConsulta.xsc">
-      <DependentUpon>DSQuintaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSQuintaConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSQuintaConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSQuintaConsulta.xss">
-      <DependentUpon>DSQuintaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSegundaConsulta.xsc">
-      <DependentUpon>DSSegundaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSegundaConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSSegundaConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSSegundaConsulta.xss">
-      <DependentUpon>DSSegundaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSeptimaConsulta.xsc">
-      <DependentUpon>DSSeptimaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSeptimaConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSSeptimaConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSSeptimaConsulta.xss">
-      <DependentUpon>DSSeptimaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSextaConsulta.xsc">
-      <DependentUpon>DSSextaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSSextaConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSSextaConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSSextaConsulta.xss">
-      <DependentUpon>DSSextaConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSTerceraConsulta.xsc">
-      <DependentUpon>DSTerceraConsulta.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSets\DSTerceraConsulta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSTerceraConsulta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSets\DSTerceraConsulta.xss">
-      <DependentUpon>DSTerceraConsulta.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -435,6 +260,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\DataSet\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

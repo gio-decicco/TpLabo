@@ -4,6 +4,7 @@ use automotriz
 go
 
 
+
 create table Barrios
 (idBarrio int identity (1,1),
 barrio varchar(50),

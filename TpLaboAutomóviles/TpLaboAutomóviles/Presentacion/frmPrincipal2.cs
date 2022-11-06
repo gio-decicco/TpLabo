@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TpLaboAutomóviles.Presentacion.Reportes.Forms;
+using TpLaboAutomóviles.Reportes.Forms;
 using TpLaboAutomóviles.Servicios.Factory;
 
 namespace TpLaboAutomóviles.Presentacion
@@ -65,7 +65,7 @@ namespace TpLaboAutomóviles.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             new FrmAltaProducto(this.factory).ShowDialog();
-            
+
             HideSubMenu();
         }
 
@@ -98,47 +98,6 @@ namespace TpLaboAutomóviles.Presentacion
             HideSubMenu();
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            new FrmReporte1().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            new FrmReporte2().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            new FrmReporte3().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            new FrmReporte4().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            new FrmReporte5().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            new FrmReporte6().ShowDialog();
-            HideSubMenu();
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            new FrmReporte7().ShowDialog();
-            HideSubMenu();
-        }
 
         private void button17_Click(object sender, EventArgs e)
         {
@@ -168,7 +127,7 @@ namespace TpLaboAutomóviles.Presentacion
                 formBG.Dispose();
                 HideSubMenu();
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -197,6 +156,21 @@ namespace TpLaboAutomóviles.Presentacion
             {
                 this.Close();
             }
+        }
+
+        private void btnReporte3_Click(object sender, EventArgs e)
+        {
+            new Form3().ShowDialog();
+        }
+
+        private void btnReporte2_Click(object sender, EventArgs e)
+        {
+            new Form2().ShowDialog();
+        }
+
+        private void btnReporte1_Click(object sender, EventArgs e)
+        {
+            new Form1().ShowDialog();
         }
     }
 }

@@ -200,7 +200,6 @@
             this.btnReporte7.Text = "Reporte 7";
             this.btnReporte7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte7.UseVisualStyleBackColor = true;
-            this.btnReporte7.Click += new System.EventHandler(this.button16_Click);
             // 
             // btnReporte6
             // 
@@ -217,7 +216,6 @@
             this.btnReporte6.Text = "Reporte 6";
             this.btnReporte6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte6.UseVisualStyleBackColor = true;
-            this.btnReporte6.Click += new System.EventHandler(this.button15_Click);
             // 
             // btnReporte5
             // 
@@ -234,7 +232,6 @@
             this.btnReporte5.Text = "Reporte 5";
             this.btnReporte5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte5.UseVisualStyleBackColor = true;
-            this.btnReporte5.Click += new System.EventHandler(this.button14_Click);
             // 
             // btnReporte4
             // 
@@ -251,7 +248,6 @@
             this.btnReporte4.Text = "Reporte 4";
             this.btnReporte4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte4.UseVisualStyleBackColor = true;
-            this.btnReporte4.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnReporte3
             // 
@@ -268,7 +264,7 @@
             this.btnReporte3.Text = "Reporte 3";
             this.btnReporte3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte3.UseVisualStyleBackColor = true;
-            this.btnReporte3.Click += new System.EventHandler(this.button12_Click);
+            this.btnReporte3.Click += new System.EventHandler(this.btnReporte3_Click);
             // 
             // btnReporte2
             // 
@@ -285,7 +281,7 @@
             this.btnReporte2.Text = "Reporte 2";
             this.btnReporte2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte2.UseVisualStyleBackColor = true;
-            this.btnReporte2.Click += new System.EventHandler(this.button10_Click);
+            this.btnReporte2.Click += new System.EventHandler(this.btnReporte2_Click);
             // 
             // btnReporte1
             // 
@@ -302,7 +298,7 @@
             this.btnReporte1.Text = "Reporte 1";
             this.btnReporte1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte1.UseVisualStyleBackColor = true;
-            this.btnReporte1.Click += new System.EventHandler(this.button11_Click);
+            this.btnReporte1.Click += new System.EventHandler(this.btnReporte1_Click);
             // 
             // button9
             // 
