@@ -168,6 +168,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DataSet\DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSet\DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +195,18 @@
     </Compile>
     <Compile Include="Reportes\Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
     <Compile Include="Servicios\Factory\Concreta\ServiceFactoryImp.cs" />
     <Compile Include="Servicios\Factory\ServiceFactory.cs" />
@@ -241,6 +263,8 @@
     <EmbeddedResource Include="Reportes\Diseño\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Diseño\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\Diseño\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\Report5.rdlc" />
     <EmbeddedResource Include="Reportes\Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Forms\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -292,6 +322,28 @@
     </None>
     <None Include="Reportes\DataSet\DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet5.xsc">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet\DataSet5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet5.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet\DataSet5.xss">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

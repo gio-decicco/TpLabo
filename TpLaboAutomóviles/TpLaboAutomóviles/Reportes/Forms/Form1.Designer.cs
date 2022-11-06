@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet1 = new TpLaboAutomóviles.Reportes.DataSet.DataSet1();
-            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.visclientebarrioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new TpLaboAutomóviles.Reportes.DataSet.DataSet1();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.vis_cliente_barrioTableAdapter = new TpLaboAutomóviles.Reportes.DataSet.DataSet1TableAdapters.vis_cliente_barrioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visclientebarrioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // visclientebarrioBindingSource
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.visclientebarrioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Reportes.Diseño.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, -2);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(801, 459);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.visclientebarrioBindingSource.DataMember = "vis_cliente_barrio";
+            this.visclientebarrioBindingSource.DataSource = this.dataSet1BindingSource;
             // 
             // dataSet1BindingSource
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             this.dataSet1BindingSource.Position = 0;
             // 
-            // visclientebarrioBindingSource
+            // dataSet1
             // 
-            this.visclientebarrioBindingSource.DataMember = "vis_cliente_barrio";
-            this.visclientebarrioBindingSource.DataSource = this.dataSet1BindingSource;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.visclientebarrioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Reportes.Diseño.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, -2);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(801, 459);
+            this.reportViewer1.TabIndex = 0;
             // 
             // vis_cliente_barrioTableAdapter
             // 
@@ -78,11 +78,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visclientebarrioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

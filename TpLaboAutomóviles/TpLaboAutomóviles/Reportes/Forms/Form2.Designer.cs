@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet2 = new TpLaboAutomóviles.Reportes.DataSet.DataSet2();
             this.visfacturastotalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new TpLaboAutomóviles.Reportes.DataSet.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.vis_facturas_totalTableAdapter = new TpLaboAutomóviles.Reportes.DataSet.DataSet2TableAdapters.vis_facturas_totalTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visfacturastotalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // visfacturastotalBindingSource
+            // 
+            this.visfacturastotalBindingSource.DataMember = "vis_facturas_total";
+            this.visfacturastotalBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,16 +60,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(804, 449);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // visfacturastotalBindingSource
-            // 
-            this.visfacturastotalBindingSource.DataMember = "vis_facturas_total";
-            this.visfacturastotalBindingSource.DataSource = this.dataSet2;
-            // 
             // vis_facturas_totalTableAdapter
             // 
             this.vis_facturas_totalTableAdapter.ClearBeforeFill = true;
@@ -71,10 +71,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Facturas";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visfacturastotalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -172,5 +172,20 @@ namespace TpLaboAutomóviles.Presentacion
         {
             new Form1().ShowDialog();
         }
+
+        private void btnReporte5_Click(object sender, EventArgs e)
+        {
+            new Form5().ShowDialog();
+        }
+
+        private void panelReportes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnReporte4_Click(object sender, EventArgs e)
+        {
+            new Form4().ShowDialog();
+        }
     }
 }

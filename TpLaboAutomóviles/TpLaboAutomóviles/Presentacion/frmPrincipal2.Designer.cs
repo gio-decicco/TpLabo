@@ -36,9 +36,6 @@
             this.btnDesarrolladores = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.panelReportes = new System.Windows.Forms.Panel();
-            this.btnReporte8 = new System.Windows.Forms.Button();
-            this.btnReporte7 = new System.Windows.Forms.Button();
-            this.btnReporte6 = new System.Windows.Forms.Button();
             this.btnReporte5 = new System.Windows.Forms.Button();
             this.btnReporte4 = new System.Windows.Forms.Button();
             this.btnReporte3 = new System.Windows.Forms.Button();
@@ -111,7 +108,7 @@
             this.panelAcercade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(162)))), ((int)(((byte)(78)))));
             this.panelAcercade.Controls.Add(this.btnDesarrolladores);
             this.panelAcercade.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAcercade.Location = new System.Drawing.Point(0, 885);
+            this.panelAcercade.Location = new System.Drawing.Point(0, 750);
             this.panelAcercade.Name = "panelAcercade";
             this.panelAcercade.Size = new System.Drawing.Size(250, 55);
             this.panelAcercade.TabIndex = 10;
@@ -142,7 +139,7 @@
             this.button18.ForeColor = System.Drawing.Color.White;
             this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(0, 835);
+            this.button18.Location = new System.Drawing.Point(0, 700);
             this.button18.Name = "button18";
             this.button18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button18.Size = new System.Drawing.Size(250, 50);
@@ -154,9 +151,6 @@
             // panelReportes
             // 
             this.panelReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(162)))), ((int)(((byte)(78)))));
-            this.panelReportes.Controls.Add(this.btnReporte8);
-            this.panelReportes.Controls.Add(this.btnReporte7);
-            this.panelReportes.Controls.Add(this.btnReporte6);
             this.panelReportes.Controls.Add(this.btnReporte5);
             this.panelReportes.Controls.Add(this.btnReporte4);
             this.panelReportes.Controls.Add(this.btnReporte3);
@@ -165,57 +159,9 @@
             this.panelReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReportes.Location = new System.Drawing.Point(0, 467);
             this.panelReportes.Name = "panelReportes";
-            this.panelReportes.Size = new System.Drawing.Size(250, 368);
+            this.panelReportes.Size = new System.Drawing.Size(250, 233);
             this.panelReportes.TabIndex = 8;
-            // 
-            // btnReporte8
-            // 
-            this.btnReporte8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporte8.FlatAppearance.BorderSize = 0;
-            this.btnReporte8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte8.ForeColor = System.Drawing.Color.Black;
-            this.btnReporte8.Location = new System.Drawing.Point(0, 315);
-            this.btnReporte8.Name = "btnReporte8";
-            this.btnReporte8.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.btnReporte8.Size = new System.Drawing.Size(250, 45);
-            this.btnReporte8.TabIndex = 7;
-            this.btnReporte8.Text = "Reporte 8";
-            this.btnReporte8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte8.UseVisualStyleBackColor = true;
-            this.btnReporte8.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // btnReporte7
-            // 
-            this.btnReporte7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporte7.FlatAppearance.BorderSize = 0;
-            this.btnReporte7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte7.ForeColor = System.Drawing.Color.Black;
-            this.btnReporte7.Location = new System.Drawing.Point(0, 270);
-            this.btnReporte7.Name = "btnReporte7";
-            this.btnReporte7.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.btnReporte7.Size = new System.Drawing.Size(250, 45);
-            this.btnReporte7.TabIndex = 6;
-            this.btnReporte7.Text = "Reporte 7";
-            this.btnReporte7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte7.UseVisualStyleBackColor = true;
-            // 
-            // btnReporte6
-            // 
-            this.btnReporte6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporte6.FlatAppearance.BorderSize = 0;
-            this.btnReporte6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte6.ForeColor = System.Drawing.Color.Black;
-            this.btnReporte6.Location = new System.Drawing.Point(0, 225);
-            this.btnReporte6.Name = "btnReporte6";
-            this.btnReporte6.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.btnReporte6.Size = new System.Drawing.Size(250, 45);
-            this.btnReporte6.TabIndex = 5;
-            this.btnReporte6.Text = "Reporte 6";
-            this.btnReporte6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte6.UseVisualStyleBackColor = true;
+            this.panelReportes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelReportes_Paint);
             // 
             // btnReporte5
             // 
@@ -232,6 +178,7 @@
             this.btnReporte5.Text = "Reporte 5";
             this.btnReporte5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte5.UseVisualStyleBackColor = true;
+            this.btnReporte5.Click += new System.EventHandler(this.btnReporte5_Click);
             // 
             // btnReporte4
             // 
@@ -248,6 +195,7 @@
             this.btnReporte4.Text = "Reporte 4";
             this.btnReporte4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte4.UseVisualStyleBackColor = true;
+            this.btnReporte4.Click += new System.EventHandler(this.btnReporte4_Click);
             // 
             // btnReporte3
             // 
@@ -532,9 +480,6 @@
         private System.Windows.Forms.Button btnNuevaFactura;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Panel panelReportes;
-        private System.Windows.Forms.Button btnReporte8;
-        private System.Windows.Forms.Button btnReporte7;
-        private System.Windows.Forms.Button btnReporte6;
         private System.Windows.Forms.Button btnReporte5;
         private System.Windows.Forms.Button btnReporte4;
         private System.Windows.Forms.Button btnReporte3;

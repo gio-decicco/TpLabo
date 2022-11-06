@@ -395,3 +395,5 @@ C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLabo
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form1.resources
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form2.resources
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form3.resources
+C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form4.resources
+C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form5.resources
