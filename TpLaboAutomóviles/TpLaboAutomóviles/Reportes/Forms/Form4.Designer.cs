@@ -30,19 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet4 = new TpLaboAutomóviles.Reportes.DataSet.DataSet4();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.txtBarrio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataSet4 = new TpLaboAutomóviles.Reportes.DataSet.DataSet4();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new TpLaboAutomóviles.Reportes.DataSet.DataSet4TableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dataSet4;
+            // 
+            // dataSet4
+            // 
+            this.dataSet4.DataSetName = "DataSet4";
+            this.dataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.dataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -51,7 +64,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(802, 334);
-            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.TabIndex = 2;
             // 
             // button1
             // 
@@ -68,7 +81,7 @@
             this.txtBarrio.Location = new System.Drawing.Point(365, 24);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(155, 22);
-            this.txtBarrio.TabIndex = 2;
+            this.txtBarrio.TabIndex = 0;
             // 
             // label1
             // 
@@ -79,16 +92,6 @@
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Barrio";
-            // 
-            // dataSet4
-            // 
-            this.dataSet4.DataSetName = "DataSet4";
-            this.dataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.dataSet4;
             // 
             // dataTable1TableAdapter
             // 
@@ -104,10 +107,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes por barrios";
             this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

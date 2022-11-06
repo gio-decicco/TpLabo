@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
@@ -45,29 +45,32 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.dataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.dataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Reportes.Diseño.Report5.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-1, 105);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 346);
-            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.TabIndex = 3;
             // 
             // dtpInicio
             // 
             this.dtpInicio.Location = new System.Drawing.Point(267, 12);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(200, 22);
-            this.dtpInicio.TabIndex = 1;
+            this.dtpInicio.TabIndex = 0;
             // 
             // dtpFinal
             // 
             this.dtpFinal.Location = new System.Drawing.Point(267, 63);
             this.dtpFinal.Name = "dtpFinal";
             this.dtpFinal.Size = new System.Drawing.Size(200, 22);
-            this.dtpFinal.TabIndex = 2;
+            this.dtpFinal.TabIndex = 1;
             // 
             // label1
             // 
@@ -92,7 +95,7 @@
             this.button1.Location = new System.Drawing.Point(597, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 40);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -123,7 +126,8 @@
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturas por fechas";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();

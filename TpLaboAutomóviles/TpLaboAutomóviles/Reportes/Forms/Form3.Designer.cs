@@ -29,46 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet3 = new TpLaboAutomóviles.Reportes.DataSet.DataSet3();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet3 = new TpLaboAutomóviles.Reportes.DataSet.DataSet3();
             this.productosTableAdapter = new TpLaboAutomóviles.Reportes.DataSet.DataSet3TableAdapters.ProductosTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.productosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Reportes.Diseño.Report3.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1, 104);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 349);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(548, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(318, 37);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(154, 22);
-            this.txtPrecio.TabIndex = 2;
             // 
             // productosBindingSource
             // 
@@ -79,6 +50,38 @@
             // 
             this.dataSet3.DataSetName = "DataSet3";
             this.dataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.productosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TpLaboAutomóviles.Reportes.Diseño.Report3.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(1, 104);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 349);
+            this.reportViewer1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(548, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 43);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(318, 37);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(154, 22);
+            this.txtPrecio.TabIndex = 1;
             // 
             // productosTableAdapter
             // 
@@ -91,7 +94,7 @@
             this.label1.Location = new System.Drawing.Point(226, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 25);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Precio";
             // 
             // Form3
@@ -104,6 +107,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
