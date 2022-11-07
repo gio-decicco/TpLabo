@@ -5,12 +5,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackEnd.Dominio;
 
-namespace CityCarLib.Datos
+namespace CityCarBackEnd.Datos
 {
-    internal class accesoDatos
+    public class accesoDatos
     {
-        protected SqlConnection cnn = new SqlConnection("");
+        protected SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-AIP6C37C\SQLEXPRESS;Initial Catalog=automotriz;Integrated Security=True");
         protected SqlCommand cmd = new SqlCommand();
         protected SqlParameter param = new SqlParameter();
 

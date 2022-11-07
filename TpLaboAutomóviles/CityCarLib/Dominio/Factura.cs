@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CityCarLib.Dominio
+namespace CityCarBackEnd.Dominio
 {
-    internal class Factura
+    public class Factura
     {
         public List<Detalle_Facturas> lDetalles;
         public int IdFactura { get; set; }
-        public int IdCliente { get; set; }
+        public Cliente Cliente { get; set; }
         public DateTime Fecha { get; set; }
         public int Descuento { get; set; }
         public int FormaPago { get; set; }
-        public int IdAutoplan { get; set; }
 
         public Factura()
         {
@@ -22,7 +21,6 @@ namespace CityCarLib.Dominio
             Fecha = DateTime.Today;
             Descuento = 0;
             FormaPago = 0;
-            IdAutoplan = 0;
         }
         public void AgregarDetalle(Detalle_Facturas detalle)
         {
@@ -31,6 +29,10 @@ namespace CityCarLib.Dominio
         public void QuitarDetalle(int indice)
         {
             lDetalles.RemoveAt(indice);
+        }
+        public override string ToString()
+        {
+            return "Factura N°" + IdFactura + " - " + "Fecha: " + Fecha;
         }
     }
 }

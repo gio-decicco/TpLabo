@@ -2,6 +2,31 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "CircularProgressBar/2.8.0.16": {
+        "type": "package",
+        "dependencies": {
+          "WinFormAnimation": "1.6.0.4"
+        },
+        "compile": {
+          "lib/net40/CircularProgressBar.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CircularProgressBar.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Guna.UI2.WinForms/2.0.3.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Guna.UI2.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -146,10 +171,48 @@
             "rid": "win"
           }
         }
+      },
+      "WinFormAnimation/1.6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net40/WinFormAnimation.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WinFormAnimation.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "CircularProgressBar/2.8.0.16": {
+      "sha512": "P31wJxwTcQ2mA7wB4X+tnc9QlfSNyPzEOyt3qjf2/6cLLi8mERAfEwNcgt3Qv38/Xiyreo/nVYDe2zIVEv4SQw==",
+      "type": "package",
+      "path": "circularprogressbar/2.8.0.16",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "circularprogressbar.2.8.0.16.nupkg.sha512",
+        "circularprogressbar.nuspec",
+        "lib/net40/CircularProgressBar.dll",
+        "lib/net40/CircularProgressBar.xml",
+        "readme.txt"
+      ]
+    },
+    "Guna.UI2.WinForms/2.0.3.5": {
+      "sha512": "nd6IAGX4u+sCx9i6PeBfkb6Y+xoayIsoMhndlJoN1L5kE6QbYjDMSHiF+9/nkFhcKx+eNaXzemyKbCY4W7lBEA==",
+      "type": "package",
+      "path": "guna.ui2.winforms/2.0.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "guna.ui2.winforms.2.0.3.5.nupkg.sha512",
+        "guna.ui2.winforms.nuspec",
+        "icon.png",
+        "lib/net40/Guna.UI2.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -462,11 +525,28 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WinFormAnimation/1.6.0.4": {
+      "sha512": "YSic50luSCgFq+JejHBq5DKwxpNP1VH7uOyBXC+8v6dd+CuUYGlKSOL4EbwT1WeWJQvFBoDMqHnq7HsF95kxrw==",
+      "type": "package",
+      "path": "winformanimation/1.6.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net40/WinFormAnimation.dll",
+        "readme.txt",
+        "winformanimation.1.6.0.4.nupkg.sha512",
+        "winformanimation.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "System.Data.SqlClient >= 4.8.4"
+      "CircularProgressBar >= 2.8.0.16",
+      "Guna.UI2.WinForms >= 2.0.3.5",
+      "System.Data.SqlClient >= 4.8.4",
+      "WinFormAnimation >= 1.6.0.4"
     ]
   },
   "packageFolders": {
@@ -513,9 +593,21 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "CircularProgressBar": {
+            "target": "Package",
+            "version": "[2.8.0.16, )"
+          },
+          "Guna.UI2.WinForms": {
+            "target": "Package",
+            "version": "[2.0.3.5, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.4, )"
+          },
+          "WinFormAnimation": {
+            "target": "Package",
+            "version": "[1.6.0.4, )"
           }
         },
         "imports": [
@@ -537,5 +629,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CircularProgressBar 2.8.0.16\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CircularProgressBar",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Guna.UI2.WinForms 2.0.3.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Guna.UI2.WinForms",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"WinFormAnimation 1.6.0.4\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "WinFormAnimation",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

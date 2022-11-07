@@ -6,10 +6,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using CityCarLib.Datos.Interfaces;
-using CityCarLib.Dominio;
+using CityCarBackEnd.Datos.Interfaces;
+using CityCarBackEnd.Dominio;
 
-namespace CityCarLib.Datos.Concretas
+namespace CityCarBackEnd.Datos.Concretas
 {
     internal class DaoProductos : accesoDatos, IDaoProductos
     {
@@ -33,10 +33,7 @@ namespace CityCarLib.Datos.Concretas
                 cmd.Transaction = t;
                 cmd.CommandText = "spInsertarProducto";
                 cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
-                cmd.Parameters.AddWithValue("@stock_min", producto.Stock_Min);
-                cmd.Parameters.AddWithValue("@stock_actual", producto.Stock_Actual);
                 cmd.Parameters.AddWithValue("@precio", producto.Precio);
-                cmd.Parameters.AddWithValue("@idTipoProducto", producto.IdTipoProducto);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -68,10 +65,7 @@ namespace CityCarLib.Datos.Concretas
             {
                 p.IdProducto = Convert.ToInt32(item[0]);
                 p.Descripcion = Convert.ToString(item[1]);
-                p.Stock_Min = Convert.ToInt32(item[2]);
-                p.Stock_Actual = Convert.ToInt32(item[3]);
-                p.Precio = Convert.ToDouble(item[4]);
-                p.IdTipoProducto = Convert.ToInt32(item[5]);
+                p.Precio = Convert.ToInt32(item[2]);
             }
             return p;
         }
@@ -86,7 +80,7 @@ namespace CityCarLib.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarProducto";
-                cmd.Parameters.AddWithValue("@idProducto", producto.IdProducto);
+                cmd.Parameters.AddWithValue("@id", producto.IdProducto);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -105,27 +99,27 @@ namespace CityCarLib.Datos.Concretas
             return ok;
         }
 
-        public DataTable Read(int idTipoProducto)
+        public List<Producto> Read()
         {
+            List<Producto> list = new List<Producto>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarProductos";
-            cmd.Parameters.AddWithValue("@id", idTipoProducto);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
-            return tabla;
+            foreach (DataRow dr in tabla.Rows)
+            {
+                Producto p = new Producto();
+                p.IdProducto = Convert.ToInt32(dr[0]);
+                p.Descripcion = Convert.ToString(dr[1]);
+                p.Precio = Convert.ToDouble(dr[2]);
+                list.Add(p);
+            }
+            return list;
         }
-        public DataTable ReadTiposProducto()
+        public List<Producto> ReadProductosConsulta8(int min, int max)
         {
-            DataTable tabla = new DataTable();
-            Conectar();
-            cmd.CommandText = "spConsultarTipoProducto";
-            tabla.Load(cmd.ExecuteReader());
-            Desconectar();
-            return tabla;
-        }
-        public DataTable ReadProductosConsulta8(int min, int max)
-        {
+            List<Producto> list = new List<Producto>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "precio_productos";
@@ -133,7 +127,15 @@ namespace CityCarLib.Datos.Concretas
             cmd.Parameters.AddWithValue("@precio2", max);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
-            return tabla;
+            foreach (DataRow dr in tabla.Rows)
+            {
+                Producto p = new Producto();
+                p.IdProducto = Convert.ToInt32(dr[0]);
+                p.Descripcion = Convert.ToString(dr[1]);
+                p.Precio = Convert.ToDouble(dr[3]);
+                list.Add(p);
+            }
+            return list;
 
         }
 
@@ -149,10 +151,7 @@ namespace CityCarLib.Datos.Concretas
                 cmd.CommandText = "spActualizarProducto";
                 cmd.Parameters.AddWithValue("@idProducto", producto.IdProducto);
                 cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
-                cmd.Parameters.AddWithValue("@stock_min", producto.Stock_Min);
-                cmd.Parameters.AddWithValue("@stock_actual", producto.Stock_Actual);
                 cmd.Parameters.AddWithValue("@precio", producto.Precio);
-                cmd.Parameters.AddWithValue("@idTipoProducto", producto.IdTipoProducto);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }

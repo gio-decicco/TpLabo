@@ -6,10 +6,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using CityCarLib.Datos.Interfaces;
-using CityCarLib.Dominio;
+using CityCarBackEnd.Datos.Interfaces;
+using CityCarBackEnd.Dominio;
 
-namespace CityCarLib.Datos.Concretas
+namespace CityCarBackEnd.Datos.Concretas
 {
     internal class DaoClientes : accesoDatos,IDaoClientes
     {
@@ -37,7 +37,6 @@ namespace CityCarLib.Datos.Concretas
                 cmd.Parameters.AddWithValue("@calle", cliente.Calle);
                 cmd.Parameters.AddWithValue("@altura", cliente.Altura);
                 cmd.Parameters.AddWithValue("@idBarrio", cliente.IdBarrio);
-                cmd.Parameters.AddWithValue("@idTipoCliente", cliente.IdTipoCliente);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -93,25 +92,26 @@ namespace CityCarLib.Datos.Concretas
             Desconectar();
             return tabla;
         }
-        public DataTable Read(int idTipoCliente)
+        public List<Cliente> Read()
         {
+            List<Cliente> lista = new List<Cliente>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarClientes";
-            cmd.Parameters.AddWithValue("@id", idTipoCliente);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
-            return tabla;
-        }
-        public DataTable ReadTipoCliente()
-        {
-            DataTable tabla = new DataTable();
-            Conectar();
-            cmd.CommandText = "spConsultarTipoCliente";
-            tabla.Load(cmd.ExecuteReader());
-            Desconectar();
-            return tabla;
-
+            foreach (DataRow dr in tabla.Rows)
+            {
+                Cliente c = new Cliente();
+                c.IdCliente = Convert.ToInt32(dr[0]);
+                c.Nombre = Convert.ToString(dr[1]);
+                c.Apellido = Convert.ToString(dr[2]);
+                c.Calle = Convert.ToString(dr[3]);
+                c.Altura = Convert.ToInt32(dr[4]);
+                c.IdBarrio = Convert.ToInt32(dr[5]);
+                lista.Add(c);
+            }
+            return lista;
         }
         public bool Update(Cliente cliente)
         {
@@ -129,7 +129,6 @@ namespace CityCarLib.Datos.Concretas
                 cmd.Parameters.AddWithValue("@calle", cliente.Calle);
                 cmd.Parameters.AddWithValue("@altura", cliente.Altura);
                 cmd.Parameters.AddWithValue("@idBarrio", cliente.IdBarrio);
-                cmd.Parameters.AddWithValue("@idTipoCliente", cliente.IdTipoCliente);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -146,6 +145,25 @@ namespace CityCarLib.Datos.Concretas
                 }
             }
             return ok;
+        }
+        public Cliente ReadConId(int idCliente)
+        {
+            DataTable tabla = new DataTable();
+            Conectar();
+            cmd.CommandText = "spConsultarClientesConId";
+            cmd.Parameters.AddWithValue("@id", idCliente);
+            tabla.Load(cmd.ExecuteReader());
+            Cliente c = new Cliente();
+            foreach (DataRow dr in tabla.Rows)
+            {
+                c.IdCliente = Convert.ToInt32(dr[0]);
+                c.Nombre = Convert.ToString(dr[1]);
+                c.Apellido = Convert.ToString(dr[2]);
+                c.Calle = Convert.ToString(dr[3]);
+                c.Altura = Convert.ToInt32(dr[4]);
+                c.IdBarrio = Convert.ToInt32(dr[5]);
+            }
+            return c;
         }
     }
 }

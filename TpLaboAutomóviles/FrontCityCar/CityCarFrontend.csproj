@@ -9,7 +9,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.3.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+    <PackageReference Include="WinFormAnimation" Version="1.6.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CityCarLib\CityCarBackend.csproj" />
+    <ProjectReference Include="..\TpLaboAutomóviles\TpLaboAutomóviles.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Presentacion\FrmActualizacionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmActualizacionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmAltaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmAltaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\frmBienvenido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmConsulta8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmConsultarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\frmDesarrolladores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\frmPrincipal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

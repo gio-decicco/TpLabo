@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CityCarLib.Dominio
+namespace CityCarBackEnd.Dominio
 {
-    internal class Detalle_Facturas
+    public class Detalle_Facturas
     {
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using CityCarLib.Dominio;
+using CityCarBackEnd.Dominio;
 
-namespace CityCarLib.Datos.Interfaces
+namespace CityCarBackEnd.Datos.Interfaces
 {
     internal interface IDaoClientes
     {
         bool Create(Cliente cliente);
-        DataTable Read(int idTipoCliente);
+        List<Cliente> Read();
         bool Delete(Cliente cliente);
         bool Update(Cliente cliente);
     }

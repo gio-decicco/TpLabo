@@ -4,17 +4,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CityCarLib.Dominio;
+using CityCarBackEnd.Dominio;
 
-namespace CityCarLib.Datos.Interfaces
+namespace CityCarBackEnd.Datos.Interfaces
 {
     internal interface IDaoProductos
     {
         bool Create(Producto producto);
-        DataTable Read(int idTipoProducto);
+        List<Producto> Read();
         bool Delete(Producto producto);
         bool Update(Producto producto);
-        DataTable ReadProductosConsulta8(int min, int max);
-        DataTable ReadTiposProducto();
+        List<Producto> ReadProductosConsulta8(int min, int max);
     }
 }
