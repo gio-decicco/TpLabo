@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using CityCarFrontend.Cliente;
+using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
 
 namespace CityCarFrontEnd.Presentacion
 {
@@ -23,15 +26,17 @@ namespace CityCarFrontEnd.Presentacion
             serviceProducto = servicio;
         }
 
-        private void FrmActualizacionProducto_Load(object sender, EventArgs e)
+        private async void FrmActualizacionProducto_Load(object sender, EventArgs e)
         {
-            cargarLista();
+            await cargarLista();
         }
 
-        private void cargarLista()
+        private async Task cargarLista()
         {
-            LstProductos.DataSource = null;
-            LstProductos.DataSource = serviceProducto.ReadProductos();
+            List<Producto> lst;
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProductos");
+            lst = JsonConvert.DeserializeObject<List<Producto>>(data);
+            LstProductos.DataSource = lst;
         }
 
         private void LstProductos_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,7 +49,7 @@ namespace CityCarFrontEnd.Presentacion
             }
         }
 
-        private void BtnConfirmar_Click(object sender, EventArgs e)
+        private async void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (TxtDescripcion.Text == "")
             {
@@ -66,9 +71,11 @@ namespace CityCarFrontEnd.Presentacion
             Producto producto = (Producto)LstProductos.SelectedItem;
             producto.Descripcion = TxtDescripcion.Text;
             producto.Precio = Convert.ToDouble(TxtPrecio.Text);
+            var saveOk = await ModificarProductoAsync(producto);
+            
             if (MessageBox.Show("¿Desea modificar el producto?", "Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                if (serviceProducto.ModificacionProducto(producto))
+                if (saveOk)
                 {
                     MessageBox.Show("Se modificó con éxito el producto");
                     cargarLista();
@@ -79,12 +86,14 @@ namespace CityCarFrontEnd.Presentacion
                 }
             }
         }
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private async void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea eliminar el producto?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 Producto producto = (Producto)LstProductos.SelectedItem;
-                if (serviceProducto.BajaProducto(producto))
+                var saveOk = await BorrarProducto(producto);
+
+                if (saveOk)
                 {
                     MessageBox.Show("Se eliminó con éxito el producto");
                     cargarLista();
@@ -94,6 +103,23 @@ namespace CityCarFrontEnd.Presentacion
                     MessageBox.Show("No pudo eliminarse el producto");
                 }
             }
+        }
+
+        private async Task<bool> BorrarProducto(Producto oProducto)
+        {
+            string url = "http://localhost:5106/BorrarProductos";
+            string productoJson= JsonConvert.SerializeObject(oProducto);
+
+            var result = await ClienteSingleton.Instancia().DeleteAsync(url, productoJson);
+            return result.Equals("true");
+        }
+        private async Task<bool> ModificarProductoAsync(Producto producto)
+        {
+            string url = "http://localhost:5106/ModificarProductos";
+            string productoJson = JsonConvert.SerializeObject(producto);
+            var result = await ClienteSingleton.Instancia().PutAsync(url, productoJson);
+
+            return result.Equals("true");
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

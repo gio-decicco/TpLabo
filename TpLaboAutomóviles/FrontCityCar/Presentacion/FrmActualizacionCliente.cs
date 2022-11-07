@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using CityCarFrontend.Cliente;
+using Newtonsoft.Json;
 
 namespace CityCarFrontEnd.Presentacion
 {
     public partial class FrmActualizacionCliente : Form
     {
         IServiceCliente servicio;
+        
         //teoricamente no va así, hay que ponerlo en el principal
         public FrmActualizacionCliente(IServiceCliente servicio/*ServiceFactory fabrica*/)
         {
@@ -30,18 +34,24 @@ namespace CityCarFrontEnd.Presentacion
             cargarComboBarrios();
         }
 
-        private void cargarComboBarrios()
+        private async void cargarComboBarrios()
         {
-            CboBarrios.DataSource = servicio.CargarBarrios();
-            CboBarrios.DisplayMember = "barrio";
-            CboBarrios.ValueMember = "idBarrio";
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getBarrios");
+            List<Barrio> lst = JsonConvert.DeserializeObject<List<Barrio>>(data);
+            CboBarrios.DataSource = lst;
+            CboBarrios.DisplayMember = "Nombre";
+            CboBarrios.ValueMember = "Id";
             CboBarrios.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarLista()
+        private async void cargarLista()
         {
-            LstClientes.DataSource = null;
-            LstClientes.DataSource = servicio.ReadClientes();
+           
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getClientes");
+            List<Cliente> lst= JsonConvert.DeserializeObject<List<Cliente>>(data);
+            LstClientes.DataSource = lst; ;
+            
+               
         }
 
         private void LstClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,19 +98,21 @@ namespace CityCarFrontEnd.Presentacion
             this.Dispose();
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private async void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¡Está a punto de eliminar este cliente!", "Borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)  == DialogResult.Yes)
             {
                 Cliente c = (Cliente)LstClientes.SelectedItem;
+                string clienteJson = JsonConvert.SerializeObject(c);
                 if (c != null)
                 {
-                    if (servicio.BajaCliente(c))
+                    try
                     {
+                        await ClienteSingleton.Instancia().DeleteAsync("http://localhost:5106/EliminarClientes/",c.IdCliente.ToString());
                         MessageBox.Show("Se eliminó el cliente.");
                         cargarLista();
                     }
-                    else
+                    catch (Exception ex)
                     {
                         MessageBox.Show("No se pudo eliminar el cliente");
                     }
@@ -108,7 +120,7 @@ namespace CityCarFrontEnd.Presentacion
             }
         }
 
-        private void BtnConfirmar_Click(object sender, EventArgs e)
+        private async void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (validar())
             {
@@ -122,12 +134,15 @@ namespace CityCarFrontEnd.Presentacion
                     c.Calle = TxtCalle.Text;
                     c.Altura = Convert.ToInt32(TxtAltura.Text);
                     c.IdBarrio = Convert.ToInt32(CboBarrios.SelectedValue);
-                    if (servicio.ModificacionCliente(c))
+                    string url = "http://localhost:5106/ModificarClientes";
+                    string clienteJson = JsonConvert.SerializeObject(c);
+                    try 
                     {
+                        await ClienteSingleton.Instancia().PutAsync(url, clienteJson);                    
                         MessageBox.Show("Se actualizo el cliente con éxito");
                         cargarLista();
                     }
-                    else
+                    catch (Exception ex)
                     {
                         MessageBox.Show("No se pudo actualizar el cliente");
                     }

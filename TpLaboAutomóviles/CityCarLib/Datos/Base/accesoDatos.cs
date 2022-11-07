@@ -11,7 +11,7 @@ namespace CityCarBackEnd.Datos
 {
     public class accesoDatos
     {
-        protected SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-AIP6C37C\SQLEXPRESS;Initial Catalog=automotriz;Integrated Security=True");
+        protected SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-921LSJK\SQLEXPRESS01;Initial Catalog=automotriz;Integrated Security=True");
         protected SqlCommand cmd = new SqlCommand();
         protected SqlParameter param = new SqlParameter();
 

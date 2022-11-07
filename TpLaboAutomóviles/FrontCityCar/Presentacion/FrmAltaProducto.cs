@@ -12,6 +12,9 @@ using CityCarBackEnd.Datos;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using Newtonsoft.Json;
+using System.Linq.Expressions;
+using CityCarFrontend.Cliente;
 
 namespace CityCarFrontEnd.Presentacion
 {
@@ -29,18 +32,24 @@ namespace CityCarFrontEnd.Presentacion
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private async void btnAceptar_Click(object sender, EventArgs e)
         {
             Producto p = new Producto();
             p.Descripcion = txtDescrpicion.Text;
             p.Precio = Convert.ToInt32(txtPrecio.Text);
-            if (servicio.AltaProducto(p))
+            var productoJson = JsonConvert.SerializeObject(p);
+            string url = "http://localhost:5106/CargarProductos";
+
+            try
             {
+                await ClienteSingleton.Instancia().PostAsync(url, productoJson);
                 MessageBox.Show("Su producto ha sido cargado con exito");
                 LimpiarCampos();
             }
-            else
+            catch (Exception ex)
+            {
                 MessageBox.Show("ha habido un problema al cargar su producto");
+            }
         }
         private void LimpiarCampos()
         {

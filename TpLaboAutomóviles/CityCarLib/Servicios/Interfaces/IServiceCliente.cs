@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Dominio;
 
 namespace CityCarBackEnd.Servicios.Interfaces
@@ -14,6 +15,6 @@ namespace CityCarBackEnd.Servicios.Interfaces
         bool BajaCliente(Cliente cliente);
         bool ModificacionCliente(Cliente cliente);
         List<Cliente> ReadClientes();
-        DataTable CargarBarrios();
+        List<Barrio> CargarBarrios();
     }
 }

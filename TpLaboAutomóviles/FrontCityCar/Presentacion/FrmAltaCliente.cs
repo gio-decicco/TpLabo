@@ -7,10 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using CityCarFrontend.Cliente;
+using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
 
 namespace CityCarFrontEnd.Presentacion
 {
@@ -18,26 +22,31 @@ namespace CityCarFrontEnd.Presentacion
     {
         IServiceCliente servicio;
         
+        
         public FrmAltaCliente(ServiceFactory fabrica)
         {
             InitializeComponent();
             servicio = fabrica.CrearServiceCliente();
+           
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private async void btnAceptar_Click(object sender, EventArgs e)
         {
             Cliente c = new Cliente();
             c.Calle = txtCalle.Text;
             c.Altura = Convert.ToInt32(txtAltura.Text);
             c.Nombre = txtNombre.Text;
             c.Apellido=txtApellido.Text;
-            DataRowView item1 = (DataRowView)cboBarrio.SelectedItem;
-            c.IdBarrio = Convert.ToInt32(item1[0]);
-            if (servicio.AltaCliente(c))
+            Barrio b = (Barrio)cboBarrio.SelectedItem;
+            c.IdBarrio = b.Id;
+            string url = "http://localhost:5106/altaClientes";
+            string clienteJson = JsonConvert.SerializeObject(c);
+            try
             {
+                await ClienteSingleton.Instancia().PostAsync(url, clienteJson);
                 MessageBox.Show("Su cliente ha sido cargado con exito");
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Error en la carga de cliente");
             }
@@ -45,14 +54,17 @@ namespace CityCarFrontEnd.Presentacion
 
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
-            CargarComboBarrio();
+            CargarComboBarrioAsync();
         }
         
-        private void CargarComboBarrio()
+        private async void CargarComboBarrioAsync()
         {
-            cboBarrio.DataSource = servicio.CargarBarrios();
-            cboBarrio.ValueMember = "idBarrio";
-            cboBarrio.DisplayMember = "barrio";
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getBarrios");
+            List<Barrio>lst= JsonConvert.DeserializeObject<List<Barrio>>(data);
+
+            cboBarrio.DataSource = lst;
+            cboBarrio.ValueMember = "Id";
+            cboBarrio.DisplayMember = "Nombre";
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 

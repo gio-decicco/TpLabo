@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {}
+    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {
+    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
+        "projectUniqueName": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
         "projectName": "CityCarAPI",
-        "projectPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
-        "packagesPath": "C:\\Users\\Gio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\obj\\",
+        "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
+        "packagesPath": "C:\\Users\\Juan Carreggio\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Gio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Juan Carreggio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,7 +27,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
+                "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -55,6 +55,10 @@
             "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
               "target": "Package",
               "version": "[150.1537.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -88,7 +92,80 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "projectName": "CityCarBackend",
+        "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "packagesPath": "C:\\Users\\Juan Carreggio\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Juan Carreggio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CircularProgressBar": {
+              "target": "Package",
+              "version": "[2.8.0.16, )"
+            },
+            "Guna.UI2.WinForms": {
+              "target": "Package",
+              "version": "[2.0.3.5, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.4, )"
+            },
+            "WinFormAnimation": {
+              "target": "Package",
+              "version": "[1.6.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

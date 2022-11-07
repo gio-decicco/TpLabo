@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Interfaces;
 using CityCarBackEnd.Dominio;
 
@@ -83,14 +84,27 @@ namespace CityCarBackEnd.Datos.Concretas
             }
             return ok;
         }
-        public DataTable ReadBarrios()
+        public List<Barrio> ReadBarrios()
         {
+            List<Barrio> lista = new List<Barrio>();
+
             DataTable tabla = new DataTable();
+
             Conectar();
             cmd.CommandText = "spConsultarBarrios";
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
-            return tabla;
+
+             foreach (DataRow dr in tabla.Rows)
+            {
+                Barrio b = new Barrio();
+                b.Id=Convert.ToInt32(dr["idBarrio"]);
+                b.Nombre = Convert.ToString(dr["barrio"]);
+                lista.Add(b);
+            }
+            
+            return lista;
+
         }
         public List<Cliente> Read()
         {

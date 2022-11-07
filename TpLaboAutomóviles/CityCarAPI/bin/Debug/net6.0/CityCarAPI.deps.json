@@ -9,8 +9,10 @@
       "CityCarAPI/1.0.0": {
         "dependencies": {
           "CircularProgressBar": "2.8.0.16",
+          "CityCarBackend": "1.0.0",
           "Guna.UI2.WinForms": "2.0.3.5",
           "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1537.0",
+          "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Data.SqlClient": "4.8.4",
           "WinFormAnimation": "1.6.0.4"
@@ -211,6 +213,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -324,6 +334,17 @@
             "fileVersion": "1.6.0.4"
           }
         }
+      },
+      "CityCarBackend/1.0.0": {
+        "dependencies": {
+          "CircularProgressBar": "2.8.0.16",
+          "Guna.UI2.WinForms": "2.0.3.5",
+          "System.Data.SqlClient": "4.8.4",
+          "WinFormAnimation": "1.6.0.4"
+        },
+        "runtime": {
+          "CityCarBackend.dll": {}
+        }
       }
     }
   },
@@ -388,6 +409,13 @@
       "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",
@@ -472,6 +500,11 @@
       "sha512": "sha512-YSic50luSCgFq+JejHBq5DKwxpNP1VH7uOyBXC+8v6dd+CuUYGlKSOL4EbwT1WeWJQvFBoDMqHnq7HsF95kxrw==",
       "path": "winformanimation/1.6.0.4",
       "hashPath": "winformanimation.1.6.0.4.nupkg.sha512"
+    },
+    "CityCarBackend/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

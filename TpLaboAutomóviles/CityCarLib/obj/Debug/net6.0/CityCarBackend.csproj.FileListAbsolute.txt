@@ -10,3 +10,15 @@ C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarL
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\refint\CityCarBackend.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.pdb
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\ref\CityCarBackend.dll
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\bin\Debug\net6.0\CityCarBackend.deps.json
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\bin\Debug\net6.0\CityCarBackend.dll
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\bin\Debug\net6.0\CityCarBackend.pdb
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.csproj.AssemblyReference.cache
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.AssemblyInfoInputs.cache
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.AssemblyInfo.cs
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.csproj.CoreCompileInputs.cache
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.dll
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\refint\CityCarBackend.dll
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\CityCarBackend.pdb
+C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarLib\obj\Debug\net6.0\ref\CityCarBackend.dll

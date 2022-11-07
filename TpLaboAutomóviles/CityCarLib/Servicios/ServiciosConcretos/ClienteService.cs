@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Interfaces;
@@ -22,7 +23,7 @@ namespace CityCarBackEnd.Servicios.ServiciosConcretos
             return DaoClientes.Instancia().Delete(cliente);
         }
 
-        public DataTable CargarBarrios()
+        public List<Barrio> CargarBarrios()
         {
             return DaoClientes.Instancia().ReadBarrios();
         }
