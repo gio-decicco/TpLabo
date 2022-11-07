@@ -115,12 +115,14 @@ namespace TpLaboAutomóviles.Presentacion
                 if (MessageBox.Show("Confirme la modificacion del cliente", "Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     Cliente c = new Cliente();
+                    Cliente cliente = (Cliente)LstClientes.SelectedItem;
+                    c.IdCliente = cliente.IdCliente;
                     c.Nombre = TxtNombre.Text;
                     c.Apellido = TxtApellido.Text;
                     c.Calle = TxtCalle.Text;
                     c.Altura = Convert.ToInt32(TxtAltura.Text);
                     c.IdBarrio = Convert.ToInt32(CboBarrios.SelectedValue);
-                    if (servicio.AltaCliente(c))
+                    if (servicio.ModificacionCliente(c))
                     {
                         MessageBox.Show("Se actualizo el cliente con éxito");
                         cargarLista();

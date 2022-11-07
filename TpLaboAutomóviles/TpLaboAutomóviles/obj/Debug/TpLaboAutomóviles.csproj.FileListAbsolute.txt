@@ -217,13 +217,6 @@ C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAu
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsulta8.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte1.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte2.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte3.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte4.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte5.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte6.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.Reportes.Forms.FrmReporte7.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.CopyComplete
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsultarFacturas.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmBienvenido.resources
@@ -397,3 +390,8 @@ C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLabo
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form3.resources
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form4.resources
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form5.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form1.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form2.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form3.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form4.resources
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Reportes.Forms.Form5.resources

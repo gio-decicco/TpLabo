@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\botte\\Documents\\Rocio\\TUP\\LC2\\TPI\\repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {}
+    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\botte\\Documents\\Rocio\\TUP\\LC2\\TPI\\repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
+    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\botte\\Documents\\Rocio\\TUP\\LC2\\TPI\\repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
         "projectName": "CityCarBackend",
-        "projectPath": "C:\\Users\\botte\\Documents\\Rocio\\TUP\\LC2\\TPI\\repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
-        "packagesPath": "C:\\Users\\botte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\botte\\Documents\\Rocio\\TUP\\LC2\\TPI\\repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\obj\\",
+        "projectPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "packagesPath": "C:\\Users\\Gio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\botte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
