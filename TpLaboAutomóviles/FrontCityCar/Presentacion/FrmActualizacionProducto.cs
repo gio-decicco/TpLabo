@@ -78,7 +78,7 @@ namespace CityCarFrontEnd.Presentacion
                 if (saveOk)
                 {
                     MessageBox.Show("Se modificó con éxito el producto");
-                    cargarLista();
+                    await cargarLista();
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace CityCarFrontEnd.Presentacion
                 if (saveOk)
                 {
                     MessageBox.Show("Se eliminó con éxito el producto");
-                    cargarLista();
+                    await cargarLista();
                 }
                 else
                 {
@@ -107,10 +107,10 @@ namespace CityCarFrontEnd.Presentacion
 
         private async Task<bool> BorrarProducto(Producto oProducto)
         {
-            string url = "http://localhost:5106/BorrarProductos";
+            string url = "http://localhost:5106/BorrarProductos/";
             string productoJson= JsonConvert.SerializeObject(oProducto);
 
-            var result = await ClienteSingleton.Instancia().DeleteAsync(url, productoJson);
+            var result = await ClienteSingleton.Instancia().DeleteAsync(url+oProducto.IdProducto);
             return result.Equals("true");
         }
         private async Task<bool> ModificarProductoAsync(Producto producto)

@@ -67,12 +67,12 @@ namespace CityCarAPI.Controllers
         }
 
         // DELETE api/<ProductosController>/5
-        [HttpDelete("/BorrarProductos")]
-        public IActionResult Delete(Producto producto)
+        [HttpDelete("/BorrarProductos/{id}")]
+        public IActionResult Delete(int id)
         {
-            if (producto != null)
+            if (id != 0)
             {
-                bool result = servicio.Deleteproducto(producto);
+                bool result = servicio.Deleteproducto(id);
                 return Ok(result);
             }
             else

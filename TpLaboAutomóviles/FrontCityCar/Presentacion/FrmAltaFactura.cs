@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios;
 using CityCarBackEnd.Servicios.Concreta;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using CityCarFrontend.Cliente;
+using Newtonsoft.Json;
 
 namespace CityCarFrontEnd.Presentacion
 {
@@ -23,13 +26,13 @@ namespace CityCarFrontEnd.Presentacion
         private IServiceProducto servicioProducto;
         private IServiceCliente servicioCliente;
         private ServiceFactory fabrica;
-        private Factura nueva;
+        private Factura factura;
         double subtotal = 0;
         double total = 0;
         public FrmAltaFactura(ServiceFactory fabrica)
         {
             InitializeComponent();
-            nueva = new Factura();
+            factura = new Factura();
             this.fabrica = fabrica;
             servicioFactura = fabrica.CrearServiceFactura();
             servicioCliente = fabrica.CrearServiceCliente();
@@ -40,7 +43,7 @@ namespace CityCarFrontEnd.Presentacion
         {
             if (DtgDetalles.CurrentCell.ColumnIndex == 4)
             {
-                nueva.QuitarDetalle(DtgDetalles.CurrentRow.Index); 
+                factura.QuitarDetalle(DtgDetalles.CurrentRow.Index);
                 DtgDetalles.Rows.Remove(DtgDetalles.CurrentRow);
             }
         }
@@ -57,34 +60,43 @@ namespace CityCarFrontEnd.Presentacion
 
         private void cargarProximoId()
         {
-            LblNroFactura.Text = "Factura N°" + servicioFactura.CargarProxId();
+            //var data = ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProximoId");
+            //List<int> lst= JsonConvert.DeserializeObject<List<int>>(data);
+
+            LblNroFactura.Text = "Factura N°: " + ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProximoId");
         }
 
-        private void cargarComboFormasPago()
+        private async void cargarComboFormasPago()
         {
-            CboFormaPago.DataSource = servicioFactura.ReadFormaPago();
-            CboFormaPago.ValueMember = "idFormaPago";
-            CboFormaPago.DisplayMember = "formaPago";
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getFormasPago");
+            List<FormasPago> lst = JsonConvert.DeserializeObject<List<FormasPago>>(data);
+                          
+            CboFormaPago.DataSource = lst;
             CboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        
 
-        private void cargarComboCliente()
+        private async void cargarComboCliente()
         {
-            CboClientes.DataSource = servicioCliente.ReadClientes();
-            CboClientes.DisplayMember = "c.ToString()";
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getClientes");
+            List<Cliente>lst=JsonConvert.DeserializeObject<List<Cliente>>(data);
+
+            CboClientes.DataSource = lst;
             CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarComboProducto()
+        private async void cargarComboProducto()
         {
-            CboProductos.DataSource = servicioProducto.ReadProductos();
-            CboProductos.DisplayMember = "p.ToString()";
+            var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getProductos");
+            List<Producto> lst = JsonConvert.DeserializeObject<List<Producto>>(data);
+
+            CboProductos.DataSource = lst;
             CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(Detalle_Facturas detalle in nueva.lDetalles)
+            foreach (Detalle_Facturas detalle in factura.lDetalles)
             {
                 if (CboProductos.Text == detalle.Producto.Descripcion)
                 {
@@ -102,8 +114,8 @@ namespace CityCarFrontEnd.Presentacion
             d.Producto = producto;
             d.Cantidad = Convert.ToInt32(TxtCantidad.Text);
             d.PrecioUnitario = producto.Precio;
-            nueva.AgregarDetalle(d);
-            DtgDetalles.Rows.Add(new object[] { producto.IdProducto, producto.Descripcion,producto.Precio*Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
+            factura.AgregarDetalle(d);
+            DtgDetalles.Rows.Add(new object[] { producto.IdProducto, producto.Descripcion, producto.Precio * Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
             subtotal += producto.Precio * Convert.ToInt32(TxtCantidad.Text);
             TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
             total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
@@ -174,17 +186,18 @@ namespace CityCarFrontEnd.Presentacion
             return true;
         }
 
-        private void BtnConfirmar_Click(object sender, EventArgs e)
+        private async void BtnConfirmar_Click(object sender, EventArgs e)
         {
 
             Cliente cliente = (Cliente)CboClientes.SelectedItem;
-            nueva.Cliente = cliente;
-            nueva.Fecha = DtpFecha.Value;
-            DataRowView item2 = (DataRowView)CboFormaPago.SelectedItem;
-            nueva.FormaPago = Convert.ToInt32(item2[0]);
-            nueva.Descuento = Convert.ToInt32(TxtDescuento.Text);
+            factura.Cliente = cliente;
+            factura.Fecha = DtpFecha.Value;
+            FormasPago item2 = (FormasPago)CboFormaPago.SelectedItem;
+            factura.FormaPago = Convert.ToInt32(item2.Id);
+            factura.Descuento = Convert.ToInt32(TxtDescuento.Text);
+            var saveOk = await AltaFacturaAsync(factura);
 
-            if (DaoFacturas.Instancia().Create(nueva))
+            if (saveOk)
             {
                 MessageBox.Show("La factura se ingreso correctamente");
                 this.Dispose();
@@ -194,7 +207,15 @@ namespace CityCarFrontEnd.Presentacion
                 MessageBox.Show("No fue posible la incersion");
             }
         }
+        private async Task<bool> AltaFacturaAsync(Factura factura)
+        {
+            string url = "http://localhost:5106/AltaFactura";
+            var facturaJson = JsonConvert.SerializeObject(factura);
+            
+            var result =  await ClienteSingleton.Instancia().PostAsync(url, facturaJson);
+            return result.Equals("true");
 
+        }
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea cancelar la operacion?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)

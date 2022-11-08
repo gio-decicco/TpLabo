@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Interfaces;
@@ -12,9 +13,9 @@ namespace CityCarBackEnd.Servicios
 {
     public class FacturaService : IServiceFactura
     {
-        public bool BajaFactura(Factura factura)
+        public bool BajaFactura(int id)
         {
-            return DaoFacturas.Instancia().Delete(factura);
+            return DaoFacturas.Instancia().Delete(id);
         }
         public bool AltaFactura(Factura factura)
         {
@@ -35,7 +36,7 @@ namespace CityCarBackEnd.Servicios
             return DaoFacturas.Instancia().ConsultarProximoId();
         }
 
-        public DataTable ReadFormaPago()
+        public List<FormasPago> ReadFormaPago()
         {
             return DaoFacturas.Instancia().ReadFormasPago();
         }

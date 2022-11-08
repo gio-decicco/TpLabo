@@ -34,9 +34,9 @@ namespace CityCarBackend.Fachada
             return DaoClientes.Instancia().Read();
         }
 
-        public bool DeleteCliente(Cliente cliente)
+        public bool DeleteCliente(int id)
         {
-            return DaoClientes.Instancia().Delete(cliente);
+            return DaoClientes.Instancia().Delete(id);
 
         }
 
@@ -59,9 +59,9 @@ namespace CityCarBackend.Fachada
             return DaoFacturas.Instancia().Read(idCliente);
         }
 
-        public bool DeleteFacturas(Factura factura)
+        public bool DeleteFacturas(int id)
         {
-            return DaoFacturas.Instancia().Delete(factura);
+            return DaoFacturas.Instancia().Delete(id);
         }
         
         public bool Savefactura(Factura factura)
@@ -73,9 +73,9 @@ namespace CityCarBackend.Fachada
 
 
 
-        public bool Deleteproducto(Producto producto)
+        public bool Deleteproducto(int id)
         {
-            return DaoProductos.Instancia().Delete(producto);
+            return DaoProductos.Instancia().Delete(id);
         }
 
         public List<Producto> GetProductos()
@@ -91,6 +91,15 @@ namespace CityCarBackend.Fachada
         public bool UpdateProducto(Producto producto)
         {
             return DaoProductos.Instancia().Update(producto);
+        }
+
+        public List<FormasPago> GetFormasPagos()
+        {
+            return DaoFacturas.Instancia().ReadFormasPago();
+        }
+        public int GetProximoId()
+        {
+            return DaoFacturas.Instancia().ConsultarProximoId();
         }
     }
 }

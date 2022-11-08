@@ -12,6 +12,6 @@ namespace CityCarBackEnd.Datos.Interfaces
     {
         bool Create(Factura factura);
         List<Factura> Read(int idCliente);
-        bool Delete(Factura factura);
+        bool Delete(int id);
     }
 }

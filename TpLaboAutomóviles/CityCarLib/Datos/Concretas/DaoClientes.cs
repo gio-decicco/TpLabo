@@ -56,7 +56,7 @@ namespace CityCarBackEnd.Datos.Concretas
             return ok;
         }
 
-        public bool Delete(Cliente cliente)
+        public bool Delete(int id)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -66,7 +66,7 @@ namespace CityCarBackEnd.Datos.Concretas
                 cmd.CommandText = "spBorrarCliente";
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
-                cmd.Parameters.AddWithValue("@idCliente", cliente.IdCliente);
+                cmd.Parameters.AddWithValue("@idCliente", id);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -96,12 +96,12 @@ namespace CityCarBackEnd.Datos.Concretas
             Desconectar();
 
              foreach (DataRow dr in tabla.Rows)
-            {
+             {
                 Barrio b = new Barrio();
                 b.Id=Convert.ToInt32(dr["idBarrio"]);
                 b.Nombre = Convert.ToString(dr["barrio"]);
                 lista.Add(b);
-            }
+             }
             
             return lista;
 

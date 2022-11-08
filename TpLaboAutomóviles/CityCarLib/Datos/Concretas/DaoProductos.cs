@@ -70,7 +70,7 @@ namespace CityCarBackEnd.Datos.Concretas
             return p;
         }
 
-        public bool Delete(Producto producto)
+        public bool Delete(int id)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -80,7 +80,7 @@ namespace CityCarBackEnd.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarProducto";
-                cmd.Parameters.AddWithValue("@id", producto.IdProducto);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }

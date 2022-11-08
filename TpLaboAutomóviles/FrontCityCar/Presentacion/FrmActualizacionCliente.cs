@@ -103,12 +103,11 @@ namespace CityCarFrontEnd.Presentacion
             if (MessageBox.Show("¡Está a punto de eliminar este cliente!", "Borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)  == DialogResult.Yes)
             {
                 Cliente c = (Cliente)LstClientes.SelectedItem;
-                string clienteJson = JsonConvert.SerializeObject(c);
                 if (c != null)
                 {
                     try
                     {
-                        await ClienteSingleton.Instancia().DeleteAsync("http://localhost:5106/EliminarClientes/",c.IdCliente.ToString());
+                        await ClienteSingleton.Instancia().DeleteAsync("http://localhost:5106/BorrarClientes/"+c.IdCliente);
                         MessageBox.Show("Se eliminó el cliente.");
                         cargarLista();
                     }

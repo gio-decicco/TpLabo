@@ -13,17 +13,19 @@ namespace CityCarBackend.Fachada
         public List<Barrio> GetBarrios();
         public List<Cliente> GetClientes();
         public bool SaveCliente(Cliente cliente);
-        public bool DeleteCliente(Cliente cliente);
+        public bool DeleteCliente(int id);
         public bool UpdateCliente(Cliente cliente);
 
         public bool SaveProducto(Producto producto);
         List<Producto> GetProductos();
-        bool Deleteproducto(Producto producto);
+        bool Deleteproducto(int id);
         bool UpdateProducto(Producto producto);
 
         bool Savefactura(Factura factura);
         List<Factura> GetFacturas(int idCliente);
-        bool DeleteFacturas(Factura factura);
+        bool DeleteFacturas(int id);
+        List<FormasPago> GetFormasPagos();
+        int GetProximoId();
         
 
     }

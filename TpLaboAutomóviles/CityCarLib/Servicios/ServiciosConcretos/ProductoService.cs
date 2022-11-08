@@ -16,9 +16,9 @@ namespace CityCarBackEnd.Servicios.ServiciosConcretos
             return DaoProductos.Instancia().Create(producto);
         }
 
-        public bool BajaProducto(Producto producto)
+        public bool BajaProducto(int id)
         {
-            return DaoProductos.Instancia().Delete(producto);
+            return DaoProductos.Instancia().Delete(id);
         }
 
         public bool ModificacionProducto(Producto producto)

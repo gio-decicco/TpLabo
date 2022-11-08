@@ -10,7 +10,7 @@ namespace CityCarBackEnd.Servicios.Interfaces
     public interface IServiceProducto
     {
         bool AltaProducto(Producto producto);
-        bool BajaProducto(Producto producto);
+        bool BajaProducto(int id);
         bool ModificacionProducto(Producto producto);
         List<Producto> ReadProductos();
         List<Producto> ReadProductosPorPrecio(int max, int min);

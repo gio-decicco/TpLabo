@@ -1,4 +1,6 @@
-﻿using CityCarBackEnd.Dominio;
+﻿using CityCarBackend.Dominio;
+using CityCarBackend.Fachada;
+using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Concreta;
 using CityCarBackEnd.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -11,19 +13,20 @@ namespace CityCarAPI.Controllers
     [ApiController]
     public class FacturasController : ControllerBase
     {
-        private IServiceFactura servicio;
+        private ICityCarData servicio;
         public FacturasController()
         {
-            servicio = ServiceFactoryImp.Instancia().CrearServiceFactura();
+            servicio = new CityCarData();
         }
-
+        
+        
         // POST api/<FacturasController>
-        [HttpPost("/cargarFactura")]
+        [HttpPost("/AltaFactura")]
         public IActionResult Post(Factura factura)
         {
             if (factura != null)
             {
-                bool result = servicio.AltaFactura(factura);
+                bool result = servicio.Savefactura(factura);
                 return Ok(result);
 
             }
@@ -37,13 +40,29 @@ namespace CityCarAPI.Controllers
         {
             if (idFactura != null || idFactura != 0)
             {
-                return Ok(servicio.GetFacturaList(idFactura));
+                return Ok(servicio.GetFacturas(idFactura));
             }
             return BadRequest("Debe ingresar un numero de factura válido");
         }
 
+        [HttpPost("/BajaFactura2")]
+        public IActionResult DeleteFactura(int id)
+        {
+            if (id != 0)
+            {
+                bool result = servicio.DeleteFacturas(id);
+                return Ok(result);
 
-        // PUT api/<FacturasController>/5
+            }
+            else
+            {
+                return BadRequest("Debe ingresar una factura válida");
+            }
+        }
+
+
+
+        //PUT api/<FacturasController>/5
         //[HttpPut("/ModificarFactura")]
         //public IActionResult Put(Factura factura)
         //{
@@ -60,18 +79,48 @@ namespace CityCarAPI.Controllers
         //}
 
         // DELETE api/<FacturasController>/5
-        [HttpDelete("/BorrarFactura")]
-        public IActionResult Delete(Factura factura)
+        [HttpDelete("/BorrarFactura/{id}")]
+        public IActionResult Delete(int id)
         {
-            if (factura != null)
+            if (id != 0)
             {
-                bool result = servicio.BajaFactura(factura);
+                bool result = servicio.DeleteFacturas(id);
                 return Ok(result);
 
             }
             else
             {
                 return BadRequest("Debe ingresar una factura válida");
+            }
+        }
+
+        [HttpGet("/GetFormasPago")]
+        public IActionResult GetFormasPago()
+        {
+            List<FormasPago> lst = null;
+            try
+            {
+                lst = servicio.GetFormasPagos();
+                return Ok(lst);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/GetProximoId")]
+        public IActionResult GetProximoId()
+        {
+            int idProximo = 0;
+            try
+            {
+                idProximo = servicio.GetProximoId();
+                return Ok(idProximo);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
             }
         }
     }

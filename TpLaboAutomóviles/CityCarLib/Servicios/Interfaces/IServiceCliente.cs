@@ -12,7 +12,7 @@ namespace CityCarBackEnd.Servicios.Interfaces
     public interface IServiceCliente
     {
         bool AltaCliente(Cliente cliente);
-        bool BajaCliente(Cliente cliente);
+        bool BajaCliente(int id);
         bool ModificacionCliente(Cliente cliente);
         List<Cliente> ReadClientes();
         List<Barrio> CargarBarrios();

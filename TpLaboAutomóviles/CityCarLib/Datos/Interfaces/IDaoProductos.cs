@@ -12,7 +12,7 @@ namespace CityCarBackEnd.Datos.Interfaces
     {
         bool Create(Producto producto);
         List<Producto> Read();
-        bool Delete(Producto producto);
+        bool Delete(int id);
         bool Update(Producto producto);
         List<Producto> ReadProductosConsulta8(int min, int max);
     }

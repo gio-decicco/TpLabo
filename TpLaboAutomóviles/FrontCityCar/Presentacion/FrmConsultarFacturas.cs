@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Concretas;
 using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios;
 using CityCarBackEnd.Servicios.Factory;
 using CityCarBackEnd.Servicios.Interfaces;
+using CityCarFrontend.Cliente;
+using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
 
 namespace CityCarFrontEnd.Presentacion
 {
@@ -28,14 +32,19 @@ namespace CityCarFrontEnd.Presentacion
 
         private void FrmConsultarFacturas_Load(object sender, EventArgs e)
         {
-            CargarComboClientes();
+            CargarComboClientesAsync();
         }
 
-        private void CargarComboClientes()
+        private async void CargarComboClientesAsync()
         {
-            CboClientes.DataSource = servicioCliente.ReadClientes();
+            string url = ("http://localhost:5106/getClientes");
+            var data = await ClienteSingleton.Instancia().GetAsync(url);
+            List<Cliente> lst = JsonConvert.DeserializeObject<List<Cliente>>(data);
+
+            CboClientes.DataSource = lst;
+            CboClientes.ValueMember = "";
             CboClientes.DisplayMember = "p.ToString()";
-            CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboClientes.DropDownStyle= ComboBoxStyle.DropDownList;
         }
 
         private void CargarCombos()
@@ -81,6 +90,12 @@ namespace CityCarFrontEnd.Presentacion
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             CargarLista();
+            CargarDgv();
+        }
+
+        private void CargarDgv()
+        {
+            throw new NotImplementedException();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -96,7 +111,8 @@ namespace CityCarFrontEnd.Presentacion
             if (MessageBox.Show("¿Está seguro que desea eliminar esta factura?", "ELMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Factura factura = (Factura)LstFacturas.SelectedItem;
-                if (servicioFactura.BajaFactura(factura))
+                
+                if (servicioFactura.BajaFactura(factura.IdFactura))
                 {
                     MessageBox.Show("Se eliminó correctamente la factura");
                     CargarLista();

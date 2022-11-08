@@ -18,9 +18,9 @@ namespace CityCarBackEnd.Servicios.ServiciosConcretos
             return DaoClientes.Instancia().Create(cliente);
         }
 
-        public bool BajaCliente(Cliente cliente)
+        public bool BajaCliente(int id)
         {
-            return DaoClientes.Instancia().Delete(cliente);
+            return DaoClientes.Instancia().Delete(id);
         }
 
         public List<Barrio> CargarBarrios()

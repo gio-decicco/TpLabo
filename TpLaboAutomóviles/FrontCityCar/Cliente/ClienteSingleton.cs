@@ -43,7 +43,7 @@ namespace CityCarFrontend.Cliente
             return response;
         }
 
-        public async Task<string> DeleteAsync(string url, string data)
+        public async Task<string> DeleteAsync(string url)
         {
             var result = await cliente.DeleteAsync(url);
             var content = "";

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityCarBackend.Dominio;
 using CityCarBackEnd.Datos.Interfaces;
 using CityCarBackEnd.Dominio;
 
@@ -115,7 +116,7 @@ namespace CityCarBackEnd.Datos.Concretas
             return ok;
         }
 
-        public bool Delete(Factura factura)
+        public bool Delete(int id)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -125,7 +126,7 @@ namespace CityCarBackEnd.Datos.Concretas
                 t = cnn.BeginTransaction();
                 cmd.Transaction = t;
                 cmd.CommandText = "spBorrarFactura";
-                cmd.Parameters.AddWithValue("@id", factura.IdFactura);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
                 t.Commit();
             }
@@ -226,14 +227,22 @@ namespace CityCarBackEnd.Datos.Concretas
             }
             return ok;
         }
-        public DataTable ReadFormasPago()
+        public List<FormasPago> ReadFormasPago()
         {
+            List<FormasPago> list = new List<FormasPago>();
             DataTable dt = new DataTable();
             Conectar();
             cmd.CommandText = "spConsultarFormasPago";
             dt.Load(cmd.ExecuteReader());
+            foreach (DataRow item in dt.Rows)
+            {
+                FormasPago fp = new FormasPago();
+                fp.Id = Convert.ToInt32(item[0]);
+                fp.Descripcion = Convert.ToString(item[1]);
+                list.Add(fp);
+            }
             Desconectar();
-            return dt;
+            return list;
         }
     }
 }
