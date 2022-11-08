@@ -68,6 +68,7 @@ namespace CityCarFrontEnd.Presentacion
 
         private async void cargarComboFormasPago()
         {
+            CboFormaPago.DataSource = null;
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getFormasPago");
             List<FormasPago> lst = JsonConvert.DeserializeObject<List<FormasPago>>(data);
                           
@@ -78,6 +79,7 @@ namespace CityCarFrontEnd.Presentacion
 
         private async void cargarComboCliente()
         {
+            CboClientes.DataSource = null;
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getClientes");
             List<Cliente>lst=JsonConvert.DeserializeObject<List<Cliente>>(data);
 
@@ -116,9 +118,13 @@ namespace CityCarFrontEnd.Presentacion
             d.PrecioUnitario = producto.Precio;
             factura.AgregarDetalle(d);
             DtgDetalles.Rows.Add(new object[] { producto.IdProducto, producto.Descripcion, producto.Precio * Convert.ToInt32(TxtCantidad.Text), TxtCantidad.Text });
-            subtotal += producto.Precio * Convert.ToInt32(TxtCantidad.Text);
+            double subtotal = 0;
+            foreach(Detalle_Facturas detalle in factura.lDetalles)
+            {
+                subtotal += detalle.PrecioUnitario *detalle.Cantidad;
+            }
             TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
-            total = total - (Convert.ToInt32(TxtDescuento.Text) * subtotal / 100);
+            double total = (Convert.ToInt32(TxtDescuento.Text)*subtotal)/100;
             TxtTotal.Text = "$ " + Convert.ToString(total);
         }
 
@@ -188,12 +194,11 @@ namespace CityCarFrontEnd.Presentacion
 
         private async void BtnConfirmar_Click(object sender, EventArgs e)
         {
-
             Cliente cliente = (Cliente)CboClientes.SelectedItem;
             factura.Cliente = cliente;
             factura.Fecha = DtpFecha.Value;
             FormasPago item2 = (FormasPago)CboFormaPago.SelectedItem;
-            factura.FormaPago = Convert.ToInt32(item2.Id);
+            factura.FormaPago = item2.Id;
             factura.Descuento = Convert.ToInt32(TxtDescuento.Text);
             var saveOk = await AltaFacturaAsync(factura);
 
@@ -227,6 +232,7 @@ namespace CityCarFrontEnd.Presentacion
         private void BtnNuevoCliente_Click(object sender, EventArgs e)
         {
             new FrmAltaCliente(this.fabrica).ShowDialog();
+            cargarComboCliente();
         }
     }
 }

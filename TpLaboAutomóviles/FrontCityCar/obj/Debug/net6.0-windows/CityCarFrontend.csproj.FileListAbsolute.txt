@@ -161,3 +161,4 @@ C:\repos\TPI_LCII_PII\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\r
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.pdb
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\CityCarFrontend.genruntimeconfig.cache
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\FrontCityCar\obj\Debug\net6.0-windows\ref\CityCarFrontend.dll
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\FrontCityCar\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

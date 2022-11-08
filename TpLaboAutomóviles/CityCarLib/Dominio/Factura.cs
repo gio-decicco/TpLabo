@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityCarBackend.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace CityCarBackEnd.Dominio
 {
     public class Factura
     {
-        public List<Detalle_Facturas> lDetalles;
         public int IdFactura { get; set; }
         public Cliente Cliente { get; set; }
         public DateTime Fecha { get; set; }
         public int Descuento { get; set; }
         public int FormaPago { get; set; }
+        public List<Detalle_Facturas> lDetalles { get; set; }
 
         public Factura()
         {

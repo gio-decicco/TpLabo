@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {}
+    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {}
   },
   "projects": {
-    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {
+    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
         "projectName": "CityCarAPI",
-        "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
-        "packagesPath": "C:\\Users\\Juan Carreggio\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarAPI\\obj\\",
+        "projectPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\CityCarAPI.csproj",
+        "packagesPath": "C:\\Users\\Gio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Juan Carreggio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
-                "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj"
+              "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
+                "projectPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj"
               }
             }
           }
@@ -92,21 +96,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
+    "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
         "projectName": "CityCarBackend",
-        "projectPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
-        "packagesPath": "C:\\Users\\Juan Carreggio\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\TPI_LCII_PII\\TpLaboAutomóviles\\CityCarLib\\obj\\",
+        "projectPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\CityCarBackend.csproj",
+        "packagesPath": "C:\\Users\\Gio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gio\\Desktop\\Tecnicatura\\LCII\\Tp\\Repo\\TpLabo\\TpLaboAutomóviles\\CityCarLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Juan Carreggio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -165,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

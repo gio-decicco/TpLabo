@@ -165,3 +165,6 @@ C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarAPI\obj\Debug\net6.0\CityCarAPI.
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarAPI\obj\Debug\net6.0\CityCarAPI.genruntimeconfig.cache
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarAPI\obj\Debug\net6.0\ref\CityCarAPI.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\CityCarAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarAPI\bin\Debug\net6.0\CityCarBackend.dll
+C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\CityCarAPI\bin\Debug\net6.0\CityCarBackend.pdb

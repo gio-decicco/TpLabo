@@ -62,6 +62,7 @@ namespace CityCarFrontEnd.Presentacion
 
         private async void CargarLista()
         {
+            LstFacturas.DataSource = null;
             Cliente cliente = (Cliente)CboClientes.SelectedItem;
             string url = "http://localhost:5106/GetFacturaId/";
             var data = await ClienteSingleton.Instancia().GetAsync(url + cliente.IdCliente);

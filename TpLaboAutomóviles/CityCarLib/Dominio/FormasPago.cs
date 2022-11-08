@@ -11,6 +11,12 @@ namespace CityCarBackend.Dominio
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
+        public FormasPago()
+        {
+            Id = 0;
+            Descripcion = String.Empty;
+        }
+
         public override string ToString()
         {
             return Descripcion;

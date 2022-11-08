@@ -36,15 +36,15 @@ namespace CityCarAPI.Controllers
                 return BadRequest("Debe ingresar una factura válida");
             }
         }
-        [HttpGet("{id}")]
-        public IActionResult GetDetalles(int idFactura)
-        {
-            if (idFactura != null || idFactura != 0)
-            {
-                return Ok(servicio.GetFacturas(idFactura));
-            }
-            return BadRequest("Debe ingresar un numero de factura válido");
-        }
+        //[HttpGet("{id}")]
+        //public IActionResult GetDetalles(int idFactura)
+        //{
+        //    if (idFactura != null || idFactura != 0)
+        //    {
+        //        return Ok(servicio.GetFacturas(idFactura));
+        //    }
+        //    return BadRequest("Debe ingresar un numero de factura válido");
+        //}
 
         [HttpPost("/BajaFactura2")]
         public IActionResult DeleteFactura(int id)
@@ -124,7 +124,7 @@ namespace CityCarAPI.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        [HttpGet("/GetFacturaId/{Id}")]
+        [HttpGet("/GetFacturaId/{id}")]
         public IActionResult GetFacturaConId(int id)
         {
             List<Factura> lst = null;
@@ -132,7 +132,6 @@ namespace CityCarAPI.Controllers
             {
                 lst = servicio.GetFacturas(id);
                 return Ok(lst);
-
             }
             catch
             {

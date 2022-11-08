@@ -12,6 +12,13 @@ namespace CityCarBackEnd.Dominio
         public string Descripcion { get; set; }
         public double Precio { get; set; }
 
+        public Producto()
+        {
+            IdProducto = 0;
+            Descripcion = String.Empty;
+            Precio = 0;
+        }
+
         public override string ToString()
         {
             return Descripcion;

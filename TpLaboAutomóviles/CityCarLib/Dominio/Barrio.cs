@@ -10,5 +10,10 @@ namespace CityCarBackend.Dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public Barrio()
+        {
+            Id = 0;
+            Nombre = String.Empty;
+        }
     }
 }

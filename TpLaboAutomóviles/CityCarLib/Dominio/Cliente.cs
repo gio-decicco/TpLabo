@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityCarBackend.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
@@ -15,6 +16,16 @@ namespace CityCarBackEnd.Dominio
         public string Calle { get; set; }
         public int Altura { get; set; }
         public int IdBarrio { get; set; }
+
+        public Cliente()
+        {
+            IdCliente = 0;
+            Nombre = String.Empty;
+            Apellido = String.Empty;
+            Calle = String.Empty;
+            Altura = 0;
+            IdBarrio = 0;
+        }
 
         public override string ToString()
         {
