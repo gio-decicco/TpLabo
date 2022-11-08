@@ -4,6 +4,7 @@ using CityCarBackEnd.Dominio;
 using CityCarBackEnd.Servicios.Concreta;
 using CityCarBackEnd.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,8 +19,8 @@ namespace CityCarAPI.Controllers
         {
             servicio = new CityCarData();
         }
-        
-        
+
+
         // POST api/<FacturasController>
         [HttpPost("/AltaFactura")]
         public IActionResult Post(Factura factura)
@@ -123,6 +124,22 @@ namespace CityCarAPI.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpGet("/GetFacturaId/{Id}")]
+        public IActionResult GetFacturaConId(int id)
+        {
+            List<Factura> lst = null;
+            try
+            {
+                lst = servicio.GetFacturas(id);
+                return Ok(lst);
+
+            }
+            catch
+            {
+                return BadRequest("Debe ingresar un numero de cliente válido");
+            }
+        }
+        
     }
 
 }

@@ -60,11 +60,14 @@ namespace CityCarFrontEnd.Presentacion
             }
         }
 
-        private void CargarLista()
+        private async void CargarLista()
         {
-            LstFacturas.DataSource = null;
             Cliente cliente = (Cliente)CboClientes.SelectedItem;
-            LstFacturas.DataSource = servicioFactura.GetFacturaList(cliente.IdCliente);
+            string url = "http://localhost:5106/GetFacturaId/";
+            var data = await ClienteSingleton.Instancia().GetAsync(url + cliente.IdCliente);
+            List<Factura> FacturaJson = JsonConvert.DeserializeObject<List<Factura>>(data);
+
+            LstFacturas.DataSource = FacturaJson;
         }
 
         private void LstFacturas_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace CityCarFrontEnd.Presentacion
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             CargarLista();
-            CargarDgv();
+            
         }
 
         private void CargarDgv()
