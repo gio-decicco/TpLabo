@@ -27,9 +27,7 @@ namespace CityCarFrontEnd.Presentacion
         {
             InitializeComponent();
             servicio = fabrica.CrearServiceCliente();
-           
         }
-
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             Cliente c = new Cliente();
@@ -45,19 +43,28 @@ namespace CityCarFrontEnd.Presentacion
             {
                 await ClienteSingleton.Instancia().PostAsync(url, clienteJson);
                 MessageBox.Show("Su cliente ha sido cargado con exito");
+                limpiar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error en la carga de cliente");
             }
         }
-
-        private void FrmAltaCliente_Load(object sender, EventArgs e)
+        private void limpiar()
         {
-            CargarComboBarrioAsync();
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtCalle.Text = "";
+            txtAltura.Text = "";
+            cboBarrio.SelectedIndex = -1;
+        }
+
+        private async void FrmAltaCliente_Load(object sender, EventArgs e)
+        {
+            await CargarComboBarrioAsync();
         }
         
-        private async void CargarComboBarrioAsync()
+        private async Task CargarComboBarrioAsync()
         {
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getBarrios");
             List<Barrio>lst= JsonConvert.DeserializeObject<List<Barrio>>(data);

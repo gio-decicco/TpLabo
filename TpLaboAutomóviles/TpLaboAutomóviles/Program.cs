@@ -1,4 +1,5 @@
-﻿
+﻿using Microsoft.ReportingServices;
+using Microsoft.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TpLaboAutomóviles
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -24,10 +25,10 @@ namespace TpLaboAutomóviles
             //if (form.login)
             //{
             //    form.Dispose();
-                //Application.Run(new frmBienvenido());
-                //Application.Run(new frmPrincipal2(new ServiceFactoryImp()));
+            //    Application.Run(new frmBienvenido());
+            //    Application.Run(new frmPrincipal2(new ServiceFactoryImp()));
                 ////Application.Run(new FrmPrincipal());
-            
+
+            }
         }
-    }
 }

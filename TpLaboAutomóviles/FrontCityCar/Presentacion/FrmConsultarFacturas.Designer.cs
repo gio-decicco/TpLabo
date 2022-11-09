@@ -64,9 +64,9 @@
             // 
             this.GroupFacturas.Controls.Add(this.LstFacturas);
             this.GroupFacturas.Location = new System.Drawing.Point(14, 80);
-            this.GroupFacturas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupFacturas.Margin = new System.Windows.Forms.Padding(4);
             this.GroupFacturas.Name = "GroupFacturas";
-            this.GroupFacturas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupFacturas.Padding = new System.Windows.Forms.Padding(4);
             this.GroupFacturas.Size = new System.Drawing.Size(463, 344);
             this.GroupFacturas.TabIndex = 0;
             this.GroupFacturas.TabStop = false;
@@ -77,7 +77,7 @@
             this.LstFacturas.FormattingEnabled = true;
             this.LstFacturas.ItemHeight = 15;
             this.LstFacturas.Location = new System.Drawing.Point(7, 22);
-            this.LstFacturas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LstFacturas.Margin = new System.Windows.Forms.Padding(4);
             this.LstFacturas.Name = "LstFacturas";
             this.LstFacturas.Size = new System.Drawing.Size(448, 304);
             this.LstFacturas.TabIndex = 0;
@@ -93,9 +93,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.LblFactura);
             this.groupBox2.Location = new System.Drawing.Point(484, 80);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(463, 344);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -105,7 +105,7 @@
             // 
             this.TxtDescuento.Enabled = false;
             this.TxtDescuento.Location = new System.Drawing.Point(122, 272);
-            this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDescuento.Name = "TxtDescuento";
             this.TxtDescuento.Size = new System.Drawing.Size(291, 23);
             this.TxtDescuento.TabIndex = 10;
@@ -115,7 +115,7 @@
             this.CboFormasPago.Enabled = false;
             this.CboFormasPago.FormattingEnabled = true;
             this.CboFormasPago.Location = new System.Drawing.Point(144, 186);
-            this.CboFormasPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CboFormasPago.Margin = new System.Windows.Forms.Padding(4);
             this.CboFormasPago.Name = "CboFormasPago";
             this.CboFormasPago.Size = new System.Drawing.Size(267, 23);
             this.CboFormasPago.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             this.TxtFecha.Enabled = false;
             this.TxtFecha.Location = new System.Drawing.Point(95, 100);
-            this.TxtFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtFecha.Margin = new System.Windows.Forms.Padding(4);
             this.TxtFecha.Name = "TxtFecha";
             this.TxtFecha.Size = new System.Drawing.Size(316, 23);
             this.TxtFecha.TabIndex = 7;
@@ -184,7 +184,7 @@
             // 
             this.CboClientes.FormattingEnabled = true;
             this.CboClientes.Location = new System.Drawing.Point(151, 32);
-            this.CboClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CboClientes.Margin = new System.Windows.Forms.Padding(4);
             this.CboClientes.Name = "CboClientes";
             this.CboClientes.Size = new System.Drawing.Size(638, 23);
             this.CboClientes.TabIndex = 0;
@@ -193,9 +193,9 @@
             // 
             this.groupBox3.Controls.Add(this.DtgDetalles);
             this.groupBox3.Location = new System.Drawing.Point(14, 430);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(934, 190);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -213,7 +213,7 @@
             this.ColPrecio,
             this.ColAcciones});
             this.DtgDetalles.Location = new System.Drawing.Point(7, 22);
-            this.DtgDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DtgDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.DtgDetalles.Name = "DtgDetalles";
             this.DtgDetalles.ReadOnly = true;
             this.DtgDetalles.RowHeadersWidth = 51;
@@ -264,8 +264,8 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(860, 819);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSalir.Location = new System.Drawing.Point(853, 689);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(88, 26);
             this.BtnSalir.TabIndex = 2;
@@ -276,8 +276,8 @@
             // BtnEliminar
             // 
             this.BtnEliminar.Enabled = false;
-            this.BtnEliminar.Location = new System.Drawing.Point(21, 817);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnEliminar.Location = new System.Drawing.Point(21, 689);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(88, 26);
             this.BtnEliminar.TabIndex = 3;
@@ -288,7 +288,7 @@
             // BtnCargar
             // 
             this.BtnCargar.Location = new System.Drawing.Point(841, 32);
-            this.BtnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(99, 26);
             this.BtnCargar.TabIndex = 8;
@@ -300,7 +300,7 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(835, 628);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(106, 23);
             this.textBox1.TabIndex = 12;
@@ -319,8 +319,8 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(841, 789);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(834, 659);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(106, 23);
             this.textBox2.TabIndex = 14;
@@ -328,7 +328,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(801, 793);
+            this.label8.Location = new System.Drawing.Point(794, 663);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 15);
@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 658);
+            this.ClientSize = new System.Drawing.Size(962, 726);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
@@ -352,7 +352,7 @@
             this.Controls.Add(this.GroupFacturas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboClientes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmConsultarFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultarFacturas";

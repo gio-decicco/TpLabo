@@ -79,6 +79,12 @@ namespace CityCarFrontEnd.Presentacion
                 {
                     MessageBox.Show("Se modificó con éxito el producto");
                     await cargarLista();
+                    BtnCancelar.Enabled = false;
+                    GroupDetalles.Enabled = false;
+                    GroupProductos.Enabled = true;
+                    BtnEliminar.Enabled = true;
+                    BtnModificar.Enabled = true;
+                    BtnConfirmar.Enabled = false;
                 }
                 else
                 {
@@ -97,6 +103,12 @@ namespace CityCarFrontEnd.Presentacion
                 {
                     MessageBox.Show("Se eliminó con éxito el producto");
                     await cargarLista();
+                    BtnCancelar.Enabled = false;
+                    GroupDetalles.Enabled = false;
+                    GroupProductos.Enabled = true;
+                    BtnEliminar.Enabled = true;
+                    BtnModificar.Enabled = true;
+                    BtnConfirmar.Enabled = false;
                 }
                 else
                 {

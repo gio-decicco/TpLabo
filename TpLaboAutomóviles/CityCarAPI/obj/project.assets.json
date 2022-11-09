@@ -438,6 +438,7 @@
         "dependencies": {
           "CircularProgressBar": "2.8.0.16",
           "Guna.UI2.WinForms": "2.0.3.5",
+          "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1537.0",
           "System.Data.SqlClient": "4.8.4",
           "WinFormAnimation": "1.6.0.4"
         },

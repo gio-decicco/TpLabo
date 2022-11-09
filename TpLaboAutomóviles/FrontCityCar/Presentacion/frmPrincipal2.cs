@@ -101,7 +101,7 @@ namespace CityCarFrontEnd.Presentacion
 
         private void button17_Click(object sender, EventArgs e)
         {
-            new FrmConsulta8(this.factory).ShowDialog();
+            //new FrmConsulta8(this.factory).ShowDialog();
             HideSubMenu();
         }
 

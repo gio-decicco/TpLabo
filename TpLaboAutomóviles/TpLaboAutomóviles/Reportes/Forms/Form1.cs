@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting;
+using Microsoft.ReportingServices;
 
 namespace TpLaboAutomóviles.Reportes.Forms
 {
@@ -22,6 +24,8 @@ namespace TpLaboAutomóviles.Reportes.Forms
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.vis_cliente_barrio' Puede moverla o quitarla según sea necesario.
             this.vis_cliente_barrioTableAdapter.Fill(this.dataSet1.vis_cliente_barrio);
 
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }

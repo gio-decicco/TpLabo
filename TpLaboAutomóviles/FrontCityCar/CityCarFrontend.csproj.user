@@ -19,9 +19,6 @@
     <Compile Update="Presentacion\frmBienvenido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\FrmConsulta8.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Presentacion\FrmConsultarFacturas.cs">
       <SubType>Form</SubType>
     </Compile>

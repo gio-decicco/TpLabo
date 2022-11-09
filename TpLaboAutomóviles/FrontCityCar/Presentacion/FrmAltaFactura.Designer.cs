@@ -55,8 +55,8 @@
             this.DtgDetalles = new System.Windows.Forms.DataGridView();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GroupFactura.SuspendLayout();
             this.GroupDetalles.SuspendLayout();
@@ -336,8 +336,8 @@
             this.DtgDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColId,
             this.ColProducto,
-            this.ColCantidad,
             this.ColPrecio,
+            this.ColCantidad,
             this.ColQuitar});
             this.DtgDetalles.Location = new System.Drawing.Point(7, 66);
             this.DtgDetalles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -365,14 +365,6 @@
             this.ColProducto.ReadOnly = true;
             this.ColProducto.Width = 550;
             // 
-            // ColCantidad
-            // 
-            this.ColCantidad.HeaderText = "Cantidad";
-            this.ColCantidad.MinimumWidth = 6;
-            this.ColCantidad.Name = "ColCantidad";
-            this.ColCantidad.ReadOnly = true;
-            this.ColCantidad.Width = 125;
-            // 
             // ColPrecio
             // 
             this.ColPrecio.HeaderText = "Precio";
@@ -380,6 +372,14 @@
             this.ColPrecio.Name = "ColPrecio";
             this.ColPrecio.ReadOnly = true;
             this.ColPrecio.Width = 125;
+            // 
+            // ColCantidad
+            // 
+            this.ColCantidad.HeaderText = "Cantidad";
+            this.ColCantidad.MinimumWidth = 6;
+            this.ColCantidad.Name = "ColCantidad";
+            this.ColCantidad.ReadOnly = true;
+            this.ColCantidad.Width = 125;
             // 
             // ColQuitar
             // 
@@ -440,11 +440,11 @@
         private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtSubtotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
-        private System.Windows.Forms.DataGridViewButtonColumn ColQuitar;
         private Button BtnListo;
+        private DataGridViewTextBoxColumn ColId;
+        private DataGridViewTextBoxColumn ColProducto;
+        private DataGridViewTextBoxColumn ColPrecio;
+        private DataGridViewTextBoxColumn ColCantidad;
+        private DataGridViewButtonColumn ColQuitar;
     }
 }

@@ -108,13 +108,13 @@ namespace CityCarFrontEnd.Presentacion
             }
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private async void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea eliminar esta factura?", "ELMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Factura factura = (Factura)LstFacturas.SelectedItem;
-                
-                if (servicioFactura.BajaFactura(factura.IdFactura))
+                var saveOk = await DeleteFactura();
+                if (saveOk)
                 {
                     MessageBox.Show("Se eliminó correctamente la factura");
                     CargarLista();
@@ -124,6 +124,13 @@ namespace CityCarFrontEnd.Presentacion
                     MessageBox.Show("No se pudo eliminar la factura");
                 }
             }
+        }
+
+        private async Task<bool> DeleteFactura()
+        {
+            Factura factura = (Factura)LstFacturas.SelectedItem;
+            var result = await ClienteSingleton.Instancia().DeleteAsync("http://localhost:5106/BorrarFactura/" + factura.IdFactura);
+            return result.Equals("true");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
