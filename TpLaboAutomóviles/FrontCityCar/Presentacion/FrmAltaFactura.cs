@@ -48,49 +48,49 @@ namespace CityCarFrontEnd.Presentacion
             }
         }
 
-        private void FrmAltaFactura_Load(object sender, EventArgs e)
+        private async void FrmAltaFactura_Load(object sender, EventArgs e)
         {
-            cargarProximoId();
-            cargarComboFormasPago();
+            await cargarProximoId();
+            await cargarComboFormasPago();
             GroupDetalles.Enabled = true;
-            cargarComboCliente();
-            cargarComboProducto();
+            await cargarComboCliente();
+            await cargarComboProducto();
             TxtDescuento.Text = "0";
         }
 
-        private void cargarProximoId()
+        private async Task cargarProximoId()
         {
             //var data = ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProximoId");
             //List<int> lst= JsonConvert.DeserializeObject<List<int>>(data);
 
-            LblNroFactura.Text = "Factura N°: " + ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProximoId");
+            LblNroFactura.Text = "Factura N°: " + await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/GetProximoId");
         }
 
-        private async void cargarComboFormasPago()
+        private async Task cargarComboFormasPago()
         {
             CboFormaPago.DataSource = null;
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getFormasPago");
-            List<FormasPago> lst = JsonConvert.DeserializeObject<List<FormasPago>>(data);
+            var lst = JsonConvert.DeserializeObject<List<FormasPago>>(data);
                           
             CboFormaPago.DataSource = lst;
             CboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         
 
-        private async void cargarComboCliente()
+        private async Task cargarComboCliente()
         {
             CboClientes.DataSource = null;
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getClientes");
-            List<Cliente>lst=JsonConvert.DeserializeObject<List<Cliente>>(data);
+            var lst=JsonConvert.DeserializeObject<List<Cliente>>(data);
 
             CboClientes.DataSource = lst;
             CboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private async void cargarComboProducto()
+        private async Task cargarComboProducto()
         {
             var data = await ClienteSingleton.Instancia().GetAsync("http://localhost:5106/getProductos");
-            List<Producto> lst = JsonConvert.DeserializeObject<List<Producto>>(data);
+            var lst = JsonConvert.DeserializeObject<List<Producto>>(data);
 
             CboProductos.DataSource = lst;
             CboProductos.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -124,7 +124,7 @@ namespace CityCarFrontEnd.Presentacion
                 subtotal += detalle.PrecioUnitario *detalle.Cantidad;
             }
             TxtSubtotal.Text = "$ " + Convert.ToString(subtotal);
-            double total = (Convert.ToInt32(TxtDescuento.Text)*subtotal)/100;
+            double total = subtotal - Convert.ToInt32(TxtDescuento.Text)*subtotal/100;
             TxtTotal.Text = "$ " + Convert.ToString(total);
         }
 
@@ -233,6 +233,11 @@ namespace CityCarFrontEnd.Presentacion
         {
             new FrmAltaCliente(this.fabrica).ShowDialog();
             cargarComboCliente();
+        }
+
+        private void BtnListo_Click(object sender, EventArgs e)
+        {
+            GroupFactura.Enabled = false;
         }
     }
 }

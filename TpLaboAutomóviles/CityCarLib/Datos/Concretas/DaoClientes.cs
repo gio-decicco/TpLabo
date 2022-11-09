@@ -167,6 +167,7 @@ namespace CityCarBackEnd.Datos.Concretas
             cmd.CommandText = "spConsultarClientesConId";
             cmd.Parameters.AddWithValue("@id", idCliente);
             tabla.Load(cmd.ExecuteReader());
+            cmd.Parameters.Clear();
             Cliente c = new Cliente();
             foreach (DataRow dr in tabla.Rows)
             {

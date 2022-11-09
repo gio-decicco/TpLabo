@@ -10,6 +10,7 @@ namespace CityCarBackend.Fachada
 {
     public interface ICityCarData
     {
+        public List<FormasPago> ReadFormaPagoConId(int id);
         public List<Barrio> GetBarrios();
         public List<Cliente> GetClientes();
         public bool SaveCliente(Cliente cliente);

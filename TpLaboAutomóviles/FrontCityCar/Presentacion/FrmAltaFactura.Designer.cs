@@ -33,6 +33,7 @@
             this.TxtDescuento = new System.Windows.Forms.TextBox();
             this.CboFormaPago = new System.Windows.Forms.ComboBox();
             this.GroupFactura = new System.Windows.Forms.GroupBox();
+            this.BtnListo = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnNuevoCliente = new System.Windows.Forms.Button();
             this.LblNroFactura = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             // 
             // GroupFactura
             // 
+            this.GroupFactura.Controls.Add(this.BtnListo);
             this.GroupFactura.Controls.Add(this.label9);
             this.GroupFactura.Controls.Add(this.BtnNuevoCliente);
             this.GroupFactura.Controls.Add(this.LblNroFactura);
@@ -118,6 +120,17 @@
             this.GroupFactura.TabIndex = 5;
             this.GroupFactura.TabStop = false;
             this.GroupFactura.Text = "Factura";
+            // 
+            // BtnListo
+            // 
+            this.BtnListo.Location = new System.Drawing.Point(696, 136);
+            this.BtnListo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnListo.Name = "BtnListo";
+            this.BtnListo.Size = new System.Drawing.Size(88, 24);
+            this.BtnListo.TabIndex = 13;
+            this.BtnListo.Text = "Listo";
+            this.BtnListo.UseVisualStyleBackColor = true;
+            this.BtnListo.Click += new System.EventHandler(this.BtnListo_Click);
             // 
             // label9
             // 
@@ -432,5 +445,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn ColQuitar;
+        private Button BtnListo;
     }
 }

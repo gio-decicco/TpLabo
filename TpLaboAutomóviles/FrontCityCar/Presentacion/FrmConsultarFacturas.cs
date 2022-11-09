@@ -30,76 +30,74 @@ namespace CityCarFrontEnd.Presentacion
             servicioCliente = fabrica.CrearServiceCliente();
         }
 
-        private void FrmConsultarFacturas_Load(object sender, EventArgs e)
+        private async void FrmConsultarFacturas_Load(object sender, EventArgs e)
         {
-            CargarComboClientesAsync();
+            await CargarComboClientesAsync();
         }
 
-        private async void CargarComboClientesAsync()
+        private async Task CargarComboClientesAsync()
         {
             string url = ("http://localhost:5106/getClientes");
             var data = await ClienteSingleton.Instancia().GetAsync(url);
-            List<Cliente> lst = JsonConvert.DeserializeObject<List<Cliente>>(data);
+            var lst = JsonConvert.DeserializeObject<List<Cliente>>(data);
 
             CboClientes.DataSource = lst;
-            CboClientes.ValueMember = "";
-            CboClientes.DisplayMember = "p.ToString()";
             CboClientes.DropDownStyle= ComboBoxStyle.DropDownList;
         }
 
-        private void CargarCombos()
+        private async Task CargarCombos()
         {
             Factura factura = (Factura)LstFacturas.SelectedItem;
             if (factura != null)
             {
                 TxtFecha.Text = Convert.ToString(factura.Fecha);
                 TxtDescuento.Text = Convert.ToString(factura.Descuento);
-                CboFormasPago.DataSource = DaoFacturas.Instancia().ReadFormasPagoConId(factura.FormaPago);
-                CboFormasPago.DisplayMember = "formaPago";
-                CboFormasPago.ValueMember = "idFormaPago";
+                string url = ("http://localhost:5106/GetFormasPago/");
+                var data = await ClienteSingleton.Instancia().GetAsync(url + factura.FormaPago);
+                var lstJson = JsonConvert.DeserializeObject<List<FormasPago>>(data);
+                CboFormasPago.DataSource = lstJson;
             }
         }
 
-        private async void CargarLista()
+        private async Task CargarLista()
         {
             LstFacturas.DataSource = null;
             Cliente cliente = (Cliente)CboClientes.SelectedItem;
             string url = "http://localhost:5106/GetFacturaId/";
             var data = await ClienteSingleton.Instancia().GetAsync(url + cliente.IdCliente);
-            List<Factura> FacturaJson = JsonConvert.DeserializeObject<List<Factura>>(data);
+            var FacturaJson = JsonConvert.DeserializeObject<List<Factura>>(data);
+
+            //LstFacturas.DataSource = DaoFacturas.Instancia().Read(cliente.IdCliente);
 
             LstFacturas.DataSource = FacturaJson;
         }
 
-        private void LstFacturas_SelectedIndexChanged(object sender, EventArgs e)
+        private async void LstFacturas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarCombos();
-            CargarDetalles();
+            await CargarCombos();
+            await CargarDetalles();
             BtnEliminar.Enabled = true;
         }
 
-        private void CargarDetalles()
+        private async Task CargarDetalles()
         {
             DtgDetalles.Rows.Clear();
             Factura factura = (Factura)LstFacturas.SelectedItem;
             if (factura != null)
             {
+                double subtotal = 0;
                 foreach (Detalle_Facturas detalle in factura.lDetalles)
                 {
                     DtgDetalles.Rows.Add(new object[] { detalle.Producto.IdProducto, detalle.Producto.Descripcion, detalle.Cantidad, detalle.PrecioUnitario });
+                    subtotal += detalle.PrecioUnitario * detalle.Cantidad;
                 }
+                textBox1.Text = Convert.ToString(subtotal);
             }
         }
 
-        private void BtnCargar_Click(object sender, EventArgs e)
+        private async void BtnCargar_Click(object sender, EventArgs e)
         {
-            CargarLista();
-            
-        }
-
-        private void CargarDgv()
-        {
-            throw new NotImplementedException();
+            await CargarLista();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -126,6 +124,16 @@ namespace CityCarFrontEnd.Presentacion
                     MessageBox.Show("No se pudo eliminar la factura");
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DtgDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

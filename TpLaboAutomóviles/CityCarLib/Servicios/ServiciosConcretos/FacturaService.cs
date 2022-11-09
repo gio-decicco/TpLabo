@@ -26,7 +26,7 @@ namespace CityCarBackEnd.Servicios
         {
             return DaoFacturas.Instancia().Read(idCliente);
         }
-        public DataTable ReadFormaDePagoConId(int id)
+        public List<FormasPago> ReadFormaDePagoConId(int id)
         {
             return DaoFacturas.Instancia().ReadFormasPagoConId(id);
         }

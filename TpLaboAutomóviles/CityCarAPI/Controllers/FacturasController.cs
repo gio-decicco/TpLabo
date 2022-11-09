@@ -17,7 +17,7 @@ namespace CityCarAPI.Controllers
         private ICityCarData servicio;
         public FacturasController()
         {
-            servicio = new CityCarData();
+            servicio = CityCarData.Instancia();
         }
 
 
@@ -105,6 +105,21 @@ namespace CityCarAPI.Controllers
                 return Ok(lst);
             }
             catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/GetFormasPago/{id}")]
+        public IActionResult GetFormasPagoConId(int id)
+        {
+            List<FormasPago> f = null;
+            try
+            {
+                f = servicio.ReadFormaPagoConId(id);
+                return Ok(f);
+            }
+            catch (Exception)
             {
                 return StatusCode(500, "Error interno! Intente luego");
             }

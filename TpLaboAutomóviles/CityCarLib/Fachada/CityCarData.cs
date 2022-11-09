@@ -11,11 +11,14 @@ namespace CityCarBackend.Fachada
 {
     public class CityCarData : ICityCarData
     {
-        public static CityCarData instancia;
-        public CityCarData()
+        private static CityCarData instancia;
+
+        private CityCarData()
         {
-            
+
         }
+
+
         public static CityCarData Instancia()
         {
 
@@ -100,6 +103,11 @@ namespace CityCarBackend.Fachada
         public int GetProximoId()
         {
             return DaoFacturas.Instancia().ConsultarProximoId();
+        }
+
+        public List<FormasPago> ReadFormaPagoConId(int id)
+        {
+            return DaoFacturas.Instancia().ReadFormasPagoConId(id);
         }
     }
 }

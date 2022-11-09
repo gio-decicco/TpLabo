@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -23,15 +24,23 @@ namespace CityCarBackEnd.Datos.Concretas
             }
             return instancia;
         }
-        public DataTable ReadFormasPagoConId(int id)
+        public List<FormasPago> ReadFormasPagoConId(int id)
         {
+            List<FormasPago> lst = new List<FormasPago>();
             DataTable tabla = new DataTable();
             Conectar();
             cmd.CommandText = "spReadFormasPagoConId";
             cmd.Parameters.AddWithValue("@id", id);
             tabla.Load(cmd.ExecuteReader());
             Desconectar();
-            return tabla;
+            FormasPago f = new FormasPago();
+            foreach (DataRow dr in tabla.Rows)
+            {
+                f.Id = Convert.ToInt32(dr[0]);
+                f.Descripcion = Convert.ToString(dr[1]);
+                lst.Add(f);
+            }
+            return lst;
         }
         public int ConsultarProximoId()
         {
@@ -40,7 +49,7 @@ namespace CityCarBackEnd.Datos.Concretas
             try
             {
                 Conectar();
-                cmd.CommandText = "spConsultarProximoIdFactura";
+                cmd.CommandText = "spProximoIdFactura";
                 SqlParameter param = new SqlParameter();
                 param.Direction = ParameterDirection.Output;
                 param.ParameterName = "@id";
@@ -149,34 +158,52 @@ namespace CityCarBackEnd.Datos.Concretas
         {
             List<Factura> facturas = new List<Factura>();
             DataTable tabla = new DataTable();
-            Conectar();
-            cmd.CommandText = "spConsultarFacturas";
-            cmd.Parameters.AddWithValue("@idCliente", idCliente);
-            tabla.Load(cmd.ExecuteReader());
-            foreach (DataRow dr in tabla.Rows)
+            SqlTransaction t = null;
+            try
             {
-                Factura f = new Factura();
-                f.IdFactura = Convert.ToInt32(dr[0]);
-                f.Cliente = DaoClientes.Instancia().ReadConId(Convert.ToInt32(dr[1]));
-                f.Fecha = Convert.ToDateTime(dr[2]);
-                f.Descuento = Convert.ToInt32(dr[3]);
-                f.FormaPago = Convert.ToInt32(dr[4]);
+                Conectar();
+                t = cnn.BeginTransaction();
+                cmd.Transaction = t;
+                cmd.CommandText = "spConsultarFacturas";
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                tabla.Load(cmd.ExecuteReader());
                 cmd.Parameters.Clear();
-                cmd.CommandText = "spConsultarDetalle";
-                cmd.Parameters.AddWithValue("@idFactura", f.IdFactura);
-                DataTable tablaDetalle = new DataTable();
-                tablaDetalle.Load(cmd.ExecuteReader());
-                foreach (DataRow dr2 in tablaDetalle.Rows)
+                foreach (DataRow dr in tabla.Rows)
                 {
-                    Detalle_Facturas d = new Detalle_Facturas();
-                    d.Producto = DaoProductos.Instancia().ReadConIndice(Convert.ToInt32(dr2[2]));
-                    d.Cantidad = Convert.ToInt32(dr2[3]);
-                    d.PrecioUnitario = Convert.ToDouble(dr2[4]);
-                    f.AgregarDetalle(d);
+                    Factura f = new Factura();
+                    f.IdFactura = Convert.ToInt32(dr[0]);
+                    f.Cliente = DaoClientes.Instancia().ReadConId(Convert.ToInt32(dr[1]));
+                    f.Fecha = Convert.ToDateTime(dr[2]);
+                    f.Descuento = Convert.ToInt32(dr[3]);
+                    f.FormaPago = Convert.ToInt32(dr[4]);
+                    cmd.CommandText = "spConsultarDetalle";
+                    cmd.Parameters.AddWithValue("@idFactura", f.IdFactura);
+                    DataTable tablaDetalle = new DataTable();
+                    tablaDetalle.Load(cmd.ExecuteReader());
+                    cmd.Parameters.Clear();
+                    foreach (DataRow dr2 in tablaDetalle.Rows)
+                    {
+                        Detalle_Facturas d = new Detalle_Facturas();
+                        d.Producto = DaoProductos.Instancia().ReadConIndice(Convert.ToInt32(dr2[2]));
+                        d.Cantidad = Convert.ToInt32(dr2[3]);
+                        d.PrecioUnitario = Convert.ToDouble(dr2[4]);
+                        f.AgregarDetalle(d);
+                    }
+                    facturas.Add(f);
                 }
-                facturas.Add(f);
+                t.Commit();
             }
-            Desconectar();
+            catch (Exception)
+            {
+                t.Rollback();
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    Desconectar();
+                }
+            }
             return facturas;
         }
 

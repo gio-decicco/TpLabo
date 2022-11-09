@@ -20,9 +20,6 @@ C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóvile
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.exe
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.pdb
 C:\repos\TpLab\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaCliente.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaProducto.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaFactura.resources
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.AssemblyReference.cache
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.SuggestedBindingRedirects.cache
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmAltaFactura.resources
@@ -37,7 +34,6 @@ C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAuto
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\TpLaboAutomóviles.exe.config
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\TpLaboAutomóviles.exe
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\TpLaboAutomóviles.pdb
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\AppConcesionaria.Presentacion.frmLogin.resources
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\repos\TPI_LCII_PII\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -208,10 +204,7 @@ C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAu
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsulta8.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.CopyComplete
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmConsultarFacturas.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmBienvenido.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\CircularProgressBar.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\WinFormAnimation.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\CircularProgressBar.xml
@@ -292,12 +285,8 @@ D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Compu
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.pdb
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmPrincipal2.resources
 D:\Daniel\Documentos\♥DANIEL\•Programacion UTN\2 CUATRI\Laboratorio de Computacion 2\TP_lab\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmDesarrolladores.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmDesarrolladores.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.frmPrincipal2.resources
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\bin\Debug\System.Data.SqlClient.xml
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmActualizacionCliente.resources
-C:\Users\Gio\Desktop\Tecnicatura\LCII\Tp\Repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmActualizacionProducto.resources
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.AssemblyReference.cache
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.csproj.SuggestedBindingRedirects.cache
 C:\Users\botte\Documents\Rocio\TUP\LC2\TPI\repo\TpLabo\TpLaboAutomóviles\TpLaboAutomóviles\obj\Debug\TpLaboAutomóviles.Presentacion.FrmActualizacionCliente.resources

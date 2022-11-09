@@ -17,14 +17,20 @@ namespace CityCarBackEnd.Datos
 
         protected void Conectar()
         {
-            cnn.Open();
-            cmd.Connection = cnn;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
+            if (cnn.State != ConnectionState.Open)
+            {
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+            }
         }
         protected void Desconectar()
         {
-            cnn.Close();
+            if (cnn.State != ConnectionState.Closed)
+            {
+                cnn.Close();
+            }
         }
     }
 }

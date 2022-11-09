@@ -14,7 +14,7 @@ namespace CityCarBackEnd.Servicios.Interfaces
         bool BajaFactura(int id);
         bool AltaFactura(Factura factura);
         List<Factura> GetFacturaList(int idCliente);
-        DataTable ReadFormaDePagoConId(int id);
+        List<FormasPago> ReadFormaDePagoConId(int id);
         List<FormasPago> ReadFormaPago();
         int CargarProxId();
     }

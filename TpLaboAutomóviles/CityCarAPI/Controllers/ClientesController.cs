@@ -17,7 +17,7 @@ namespace CityCarAPI.Controllers
         private ICityCarData servicio;
         public ClientesController()
         {
-            servicio = new CityCarData();
+            servicio = CityCarData.Instancia();
         }
         // GET: api/<ClientesController>
         [HttpGet("/getClientes")]
